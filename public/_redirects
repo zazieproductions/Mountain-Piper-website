@@ -1,0 +1,8 @@
+# Netlify redirects for SPA routing - ensures human-readable URLs work
+/weddings /index.html 200
+/funerals-memorials /index.html 200
+/events /index.html 200
+/lessons /index.html 200
+/about /index.html 200
+/contact /index.html 200
+/* /index.html 200

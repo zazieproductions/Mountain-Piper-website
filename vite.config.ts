@@ -23,5 +23,21 @@ export default defineConfig(async ({ mode }) => {
     plugins,
     envPrefix: ['VITE_', 'NEXT_PUBLIC_'],
     define: processEnvDefines,
-  };
+    server: {
+      host: '0.0.0.0',
+      port: 5173,
+      // @ts-ignore - allow all hosts for preview proxy (Vite 7+)
+      allowedHosts: true,
+      hmr: {
+        clientPort: 443,
+      },
+      headers: {
+        'X-Frame-Options': 'ALLOWALL',
+      },
+    },
+    preview: {
+      host: '0.0.0.0',
+      port: 4173,
+    },
+  } as any;
 })
