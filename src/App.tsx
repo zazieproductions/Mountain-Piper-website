@@ -9,12 +9,10 @@ import {
   GraduationCap,
   Heart,
   Mail,
-  MapPin,
   Menu,
   Music2,
   Phone,
   Sparkles,
-  Users,
   X,
 } from 'lucide-react'
 
@@ -42,8 +40,59 @@ const services = [
   },
 ]
 
+const aboutStats = [
+  { value: '43', label: 'Years on the pipes', detail: 'Performing, teaching & competing' },
+  { value: 'Pro', label: 'Grade solo competitor', detail: 'Eastern United States Pipe Band Assoc.' },
+  { value: '40+', label: 'Years of performances', detail: 'Weddings, memorials & celebrations' },
+  { value: 'Host band', label: 'Instructor', detail: 'Grandfather Mountain Highlanders' },
+]
+
+const teachers = [
+  { name: 'Jimmy McIntosh', honour: 'MBE', note: '' },
+  { name: 'Jimmy MacGregor', honour: '', note: '' },
+  { name: 'Ian McLellan', honour: 'BEM', note: 'World-renowned Strathclyde Police Pipe Band' },
+]
+
+const venues = [
+  'Weddings',
+  'Funerals & memorials',
+  "Kirkin' o' the Tartans",
+  'College commencements',
+  'Collegiate sporting events',
+  'Burning Man festivals',
+  'Regattas',
+  'Horse races',
+]
+
+const pillars = [
+  {
+    icon: Music2,
+    title: 'Performer',
+    text: 'More than four decades of music for life’s biggest days, from a quiet graveside lament to a festival crowd, with timing, tone, and attire handled flawlessly.',
+    note: 'Weddings · Memorials · Ceremonies',
+  },
+  {
+    icon: Award,
+    title: 'Competitor',
+    text: 'Kit competes as a soloist in the professional grade of the Eastern United States Pipe Band Association. That competitive standard shows up at every booking.',
+    note: 'EUSPBA · Professional grade',
+  },
+  {
+    icon: GraduationCap,
+    title: 'Teacher',
+    text: 'An instructor for the Grandfather Mountain Highlanders and a patient private teacher, equally at home with a single beginner or a full group of pipers.',
+    note: 'Private · Group · Band instruction',
+  },
+]
+
+const prefersReducedMotion = () =>
+  typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
 const scrollTo = (id: string) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  document.getElementById(id)?.scrollIntoView({
+    behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+    block: 'start',
+  })
 }
 
 function BrandMark() {
@@ -77,6 +126,50 @@ function SectionHeading({ eyebrow, title, copy }: { eyebrow: string; title: stri
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [showBookButton, setShowBookButton] = useState(false)
+
+  // Only show the floating mobile "Check availability" button between the hero and
+  // the contact section, so it never covers the hero CTA, the form, or the footer.
+  useEffect(() => {
+    let frame = 0
+    const update = () => {
+      frame = 0
+      const hero = document.getElementById('home')
+      const contact = document.getElementById('contact')
+      if (!hero || !contact) return
+      const pastHero = hero.getBoundingClientRect().bottom < 120
+      const beforeContact = contact.getBoundingClientRect().top > window.innerHeight * 0.85
+      setShowBookButton(pastHero && beforeContact)
+    }
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update)
+    }
+    update()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+      if (frame) window.cancelAnimationFrame(frame)
+    }
+  }, [])
+
+  // Close the mobile menu with Escape, or if the viewport grows past the mobile breakpoint.
+  useEffect(() => {
+    if (!menuOpen) return
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false)
+    }
+    const onResize = () => {
+      if (window.innerWidth > 820) setMenuOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    window.addEventListener('resize', onResize)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      window.removeEventListener('resize', onResize)
+    }
+  }, [menuOpen])
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
@@ -161,7 +254,7 @@ function App() {
         <section className="hero" id="home">
           <div className="hero-grain" />
           <div className="hero-image-wrap" aria-hidden="true">
-            <img src="/images/kit-rashid.jpg" alt="" />
+            <img src="/images/kit-rashid-mountains.jpeg" alt="" />
             <div className="hero-image-shade" />
           </div>
           <div className="hero-content">
@@ -171,10 +264,9 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="eyebrow"><MapPin size={14} /> Asheville, North Carolina</p>
+              <p className="eyebrow"><Music2 size={14} /> Weddings · Memorials · Ceremonies</p>
               <h1>
-                Piping with <em>presence.</em><br />
-                Music with meaning.
+                Professional Highland bagpiper <em>in Asheville, North Carolina.</em>
               </h1>
               <p className="hero-intro">
                 Kit Rashid brings the unmistakable sound of the Highland bagpipe to weddings,
@@ -253,48 +345,169 @@ function App() {
           </div>
         </section>
 
-        <section className="about section-pad" id="about">
-          <div className="container about-grid">
-            <motion.div
-              className="about-visual"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-            >
-              <div className="about-image-frame">
-                <img src="/images/event-piper.jpg" alt="Kit Rashid performing on the Highland bagpipes" />
-              </div>
-              <div className="about-plaque">
-                <Music2 size={23} />
-                <span><strong>Mountain Piper</strong><small>Asheville, NC</small></span>
-              </div>
-            </motion.div>
+        <section className="about" id="about">
+          <div className="about-intro section-pad">
+            <div className="container about-grid">
+              <motion.div
+                className="about-visual"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="about-image-frame">
+                  <img src="/images/kit-rashid-performing.jpeg" alt="Kit Rashid performing on the Highland bagpipes beside a stone tower" />
+                </div>
+                <motion.div
+                  className="about-inset"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ delay: 0.25, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <img src="/images/kit-rashid-stone-steps.jpeg" alt="Kit Rashid in full Highland dress on stone steps" />
+                </motion.div>
+                <div className="about-seal" aria-hidden="true">
+                  <svg viewBox="0 0 200 200">
+                    <defs>
+                      <path id="seal-circle" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0" />
+                    </defs>
+                    <text>
+                      <textPath href="#seal-circle">Performer · Teacher · Competitor ·</textPath>
+                    </text>
+                  </svg>
+                  <span><strong>43</strong><small>years</small></span>
+                </div>
+              </motion.div>
 
-            <motion.div
-              className="about-copy"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-            >
-              <p className="eyebrow dark">Meet the piper</p>
-              <h2>Kit Rashid</h2>
-              <p className="about-lead">Four decades of craft. A lifetime of musical curiosity. One commanding, deeply human sound.</p>
-              <p>
-                Originally from Rome, New York and proud to call Asheville home, Kit is a performer,
-                teacher, and professional-grade solo competitor whose playing is grounded in tradition
-                and delivered with warmth.
-              </p>
-              <p>
-                He performs with a steady eye for the details that matter—timing, tone, attire,
-                communication, and respect for the moment. The result is polished, personal, and never routine.
-              </p>
-              <div className="credential-list">
-                <div><Award /><span><strong>Professional solo competitor</strong><small>Eastern United States Pipe Band Association</small></span></div>
-                <div><Users /><span><strong>Experienced instructor</strong><small>Private students and group instruction</small></span></div>
-                <div><GraduationCap /><span><strong>Grandfather Mountain Highlanders</strong><small>Instructor for the Highland Games' host band</small></span></div>
+              <motion.div
+                className="about-copy"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <p className="eyebrow dark">Meet the piper</p>
+                <h2>Kit Rashid</h2>
+                <div className="about-route">
+                  <span>Rome, New York</span>
+                  <i aria-hidden="true" />
+                  <span>Asheville, North Carolina</span>
+                </div>
+                <p className="about-lead">
+                  Four decades of craft. A lifetime of musical devotion. One commanding, deeply human sound.
+                </p>
+                <p>
+                  Originally from Rome, New York, and proud to call Asheville home, Kit brings 43 years of
+                  experience as a performer, teacher, and competitor on the Highland bagpipe. He competes as a
+                  soloist in the <strong>professional grade of the Eastern United States Pipe Band Association</strong>,
+                  and serves as an instructor for the <strong>Grandfather Mountain Highlanders</strong>, the host
+                  band of the Grandfather Mountain Highland Games.
+                </p>
+                <p>
+                  For more than 40 years he has provided top-quality music for weddings, funerals,
+                  commencements, festivals, and just about every kind of occasion in between. Every
+                  performance is polished, personal, and delivered with respect for the moment.
+                </p>
+                <div className="about-lineage">
+                  <p className="lineage-intro">
+                    Kit has had the good fortune to study with some of piping's greats, including:
+                  </p>
+                  <ul>
+                    {teachers.map((teacher) => (
+                      <li key={teacher.name}>
+                        <span className="lineage-rank">PM</span>
+                        <span className="lineage-name">
+                          <strong>{teacher.name}</strong>
+                          {teacher.note && <small>{teacher.note}</small>}
+                        </span>
+                        {teacher.honour && <span className="lineage-honour">{teacher.honour}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="about-actions">
+                  <button className="button green" onClick={() => scrollTo('contact')}>Plan a performance <ArrowRight size={18} /></button>
+                  <button className="about-link" onClick={() => scrollTo('lessons')}>Study with Kit <ArrowRight size={15} /></button>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+
+          <div className="about-band">
+            <div className="container">
+              <motion.blockquote
+                className="about-quote"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.8 }}
+              >
+                <span className="quote-mark" aria-hidden="true">“</span>
+                <p>Put simply, piping is his <em>vocation</em>.</p>
+                <p className="about-quote-note">A firm commitment to sharing the music he loves in a way that is completely inclusive and always professional.</p>
+              </motion.blockquote>
+
+              <div className="about-stats">
+                {aboutStats.map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{ delay: index * 0.08 }}
+                  >
+                    <strong>{stat.value}</strong>
+                    <span>{stat.label}</span>
+                    <small>{stat.detail}</small>
+                  </motion.div>
+                ))}
               </div>
-              <button className="button green" onClick={() => scrollTo('contact')}>Plan a performance <ArrowRight size={18} /></button>
-            </motion.div>
+            </div>
+
+            <div className="venue-marquee">
+              <p className="venue-label">Heard at</p>
+              <ul className="sr-only">
+                {venues.map((venue) => <li key={venue}>{venue}</li>)}
+              </ul>
+              <div className="venue-track" aria-hidden="true">
+                {[...venues, ...venues].map((venue, index) => (
+                  <span key={`${venue}-${index}`}>{venue}<Music2 size={15} /></span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="about-pillars section-pad">
+            <div className="container">
+              <div className="pillars-heading">
+                <p className="eyebrow dark">Three disciplines, one standard</p>
+                <h3>Performer. Competitor. Teacher.</h3>
+              </div>
+              <div className="pillar-grid">
+                {pillars.map((pillar, index) => {
+                  const Icon = pillar.icon
+                  return (
+                    <motion.article
+                      className="pillar"
+                      key={pillar.title}
+                      initial={{ opacity: 0, y: 26 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <div className="pillar-top">
+                        <span className="pillar-icon"><Icon size={22} /></span>
+                        <span className="pillar-number">0{index + 1}</span>
+                      </div>
+                      <h4>{pillar.title}</h4>
+                      <p>{pillar.text}</p>
+                      <small>{pillar.note}</small>
+                    </motion.article>
+                  )
+                })}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -339,7 +552,7 @@ function App() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <img src="/images/piping-lesson.jpg" alt="Practice chanter, metronome, and traditional pipe music" />
+              <img src="/images/kit-rashid-artist-studios.jpeg" alt="Kit Rashid in full Highland dress holding bagpipes outside an artist studio" />
               <div className="lessons-note">Grounded in a musical tradition passed on for generations.</div>
             </motion.div>
           </div>
@@ -394,13 +607,18 @@ function App() {
       <footer>
         <div className="footer-main container">
           <div><BrandMark /><p>Traditional Highland bagpiping for meaningful occasions in Asheville and beyond.</p></div>
-          <div className="footer-nav"><strong>Explore</strong><button onClick={() => scrollTo('services')}>Services</button><button onClick={() => scrollTo('about')}>About Kit</button><button onClick={() => scrollTo('lessons')}>Lessons</button></div>
+          <div className="footer-nav"><strong>Explore</strong><button onClick={() => scrollTo('services')}>Services</button><button onClick={() => scrollTo('about')}>About Kit</button><button onClick={() => scrollTo('lessons')}>Lessons</button><button onClick={() => scrollTo('contact')}>Contact</button></div>
           <div className="footer-contact"><strong>Get in touch</strong><a href="tel:+18289741719">828.974.1719</a><a href="mailto:mountainpiper1@gmail.com">mountainpiper1@gmail.com</a><span>Asheville, North Carolina</span></div>
         </div>
         <div className="footer-bottom container"><span>© {new Date().getFullYear()} Mountain Piper. All rights reserved.</span><button onClick={() => scrollTo('home')}>Back to top ↑</button></div>
       </footer>
 
-      <button className="mobile-book" onClick={() => scrollTo('contact')}><CalendarDays size={17} /> Check availability</button>
+      <button
+        className={`mobile-book ${showBookButton ? 'visible' : ''}`}
+        onClick={() => scrollTo('contact')}
+        aria-hidden={!showBookButton}
+        tabIndex={showBookButton ? 0 : -1}
+      ><CalendarDays size={17} /> Check availability</button>
     </div>
   )
 }
