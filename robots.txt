@@ -1,0 +1,13 @@
+# Robots.txt for Mountain Piper - Asheville Bagpiper
+# https://mountainpiperavl.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://mountainpiperavl.com/sitemap.xml
+
+# Disallow no-value parameters (if any in future)
+Disallow: /*?*utm_*
+Disallow: /*?*fbclid*
+Disallow: /*?*gclid*

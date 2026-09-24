@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Link } from 'react-router-dom';
+import { routerBasename } from './publicAsset';
 import { useEffect } from 'react';
 import { Layout } from './components/Layout';
 import { HomePage } from './pages/HomePage';
@@ -33,8 +34,8 @@ function NotFoundPage() {
           The page you're looking for doesn't exist. Try the Asheville bagpiper homepage or explore weddings, funerals, events, lessons, and contact.
         </p>
         <div style={{ marginTop: '28px', display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a href="/" className="button gold">Back to home — Asheville bagpiper</a>
-          <a href="/contact" className="button outline-light">Contact</a>
+          <Link to="/" className="button gold">Back to home — Asheville bagpiper</Link>
+          <Link to="/contact" className="button outline-light">Contact</Link>
         </div>
       </div>
     </section>
@@ -43,7 +44,7 @@ function NotFoundPage() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename()}>
       <ScrollToTop />
       <Layout>
         <Routes>
