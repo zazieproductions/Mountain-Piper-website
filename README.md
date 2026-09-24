@@ -71,3 +71,20 @@ export default defineConfig([
   },
 ])
 ```
+
+---
+
+## Deployment (GitHub Pages)
+
+The site is a Vite/React single-page app, so GitHub Pages must publish the
+**built** output (`dist/`), not the raw source — otherwise the page renders
+empty.
+
+- A GitHub Actions workflow (`.github/workflows/deploy.yml`) builds the app on
+  every push to `main` and deploys it to Pages.
+- The build sets `VITE_BASE_PATH=/Mountain-Piper-website/` so all assets and
+  routes resolve under `https://zazieproductions.github.io/Mountain-Piper-website/`.
+- The workflow also copies the built `index.html` to `404.html`, so client-side
+  routes like `/weddings` work when opened directly.
+- In **Settings → Pages → Build and deployment**, the **Source** must be set to
+  **GitHub Actions** (not "Deploy from a branch") for the deployment to work.
