@@ -1,10 +1,34 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const rootDir = path.dirname(fileURLToPath(import.meta.url))
+// Project site: https://zazieproductions.github.io/Mountain-Piper-website/
+const pagesBase = '/Mountain-Piper-website/'
+
+function serveDevIndex() {
+  return {
+    name: 'serve-dev-index',
+    configureServer(server: { middlewares: { use: (fn: (req: { url?: string }, res: unknown, next: () => void) => void) => void } }) {
+      server.middlewares.use((req, _res, next) => {
+        const raw = req.url ?? ''
+        const pathOnly = raw.split('?')[0]
+        if (pathOnly === '/' || pathOnly === '/index.html') {
+          const qs = raw.includes('?') ? raw.slice(raw.indexOf('?')) : ''
+          req.url = `/index.dev.html${qs}`
+        }
+        next()
+      })
+    },
+  }
+}
 
 // https://vite.dev/config/
 export default defineConfig(async ({ mode }) => {
-  const plugins = [react(), tailwindcss()];
+  const pages = mode === 'pages'
+  const plugins = [react(), tailwindcss(), serveDevIndex()];
   try {
     // @ts-expect-error Optional preview-only plugin is injected at runtime.
     const m = await import('./.vite-source-tags.js');
@@ -20,9 +44,15 @@ export default defineConfig(async ({ mode }) => {
   }
 
   return {
+    base: pages ? pagesBase : '/',
     plugins,
     envPrefix: ['VITE_', 'NEXT_PUBLIC_'],
     define: processEnvDefines,
+    build: {
+      rollupOptions: {
+        input: path.resolve(rootDir, 'index.dev.html'),
+      },
+    },
     server: {
       host: '0.0.0.0',
       port: 5173,

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check, GraduationCap, Music2, Award, Clock } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { publicAsset, publicSrcSet } from '../publicAsset';
 
 export function LessonsPage() {
   const structuredData = [
@@ -116,9 +117,9 @@ export function LessonsPage() {
             <div style={{ position: 'relative', padding: '18px 18px 0 0' }}>
               <div style={{ position: 'absolute', inset: '0 0 36px 36px', background: 'var(--wine)' }} aria-hidden="true" />
               <picture>
-                <source srcSet="/images/kit-rashid-artist-studios-400.webp 400w, /images/kit-rashid-artist-studios-800.webp 800w" sizes="(max-width: 820px) 100vw, 500px" type="image/webp" />
+                <source srcSet={publicSrcSet([['images/kit-rashid-artist-studios-400.webp', '400w'], ['images/kit-rashid-artist-studios-800.webp', '800w']])} sizes="(max-width: 820px) 100vw, 500px" type="image/webp" />
                 <img
-                  src="/images/kit-rashid-artist-studios-800.jpg"
+                  src={publicAsset('images/kit-rashid-artist-studios-800.jpg')}
                   alt="Kit Rashid teaching Highland bagpipes, bagpipe lessons in Asheville, North Carolina"
                   width={800}
                   height={600}
