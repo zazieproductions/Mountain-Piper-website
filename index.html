@@ -1,694 +1,611 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Kit Rashid, Mountain Piper — professional Highland bagpiping for weddings, memorials, ceremonies, and lessons in Asheville, North Carolina." />
-    <title>Mountain Piper | Kit Rashid · Asheville, NC</title>
-    <script data-arena-recording="true">(function(){
-"use strict";
-var SK="__arena_rec",RRWEB_CDN="https://cdn.jsdelivr.net/npm/rrweb@2.0.0-alpha.4/dist/rrweb.min.js";
-var MAX_RECORDING_MS=600000,MAX_RRWEB_EVENTS=30000,MAX_INTERACTIONS=5000,MAX_CURSOR_POINTS=10000,recStopped=false;
-var stored=null;try{var raw=sessionStorage.getItem(SK);if(raw)stored=JSON.parse(raw);}catch(ex){}
-var meta=stored?stored.m||null:null,rrwebEvents=stored?stored.r||[]:[],rrwebStarted=false,startTime=stored?stored.st||Date.now():Date.now();
-var interactions=stored?stored.i||[]:[],cursorPath=stored?stored.c||[]:[],lastCursorSample=0,lastScrollSample=0;
-var pageHeight=document.documentElement.scrollHeight;
-var viewport={width:window.innerWidth,height:window.innerHeight};
-function isCapped(){if(recStopped)return true;if(Date.now()-startTime>=MAX_RECORDING_MS){recStopped=true;return true;}return false;}
-function persist(){try{var d=JSON.stringify({r:rrwebEvents,i:interactions,c:cursorPath,m:meta,st:startTime});sessionStorage.setItem(SK,d);}catch(ex){rrwebEvents=rrwebEvents.slice(Math.floor(rrwebEvents.length/2));try{sessionStorage.setItem(SK,JSON.stringify({r:rrwebEvents,i:interactions,c:cursorPath,m:meta,st:startTime}));}catch(ex2){}}}
-setInterval(persist,5000);
-window.addEventListener("resize",function(){viewport={width:window.innerWidth,height:window.innerHeight};pageHeight=document.documentElement.scrollHeight;});
-document.addEventListener("click",function(e){if(isCapped()||interactions.length>=MAX_INTERACTIONS)return;var el=e.target;var tag=el.tagName?el.tagName.toLowerCase():"";var text=(el.textContent||"").trim().substring(0,80);var classes=el.className&&typeof el.className==="string"?el.className.substring(0,120):"";interactions.push({type:"click",t:Date.now()-startTime,x:Math.round(e.clientX),y:Math.round(e.clientY),element:{tag:tag,text:text,classes:classes}});},true);
-window.addEventListener("scroll",function(){if(isCapped()||interactions.length>=MAX_INTERACTIONS)return;var now=Date.now();if(now-lastScrollSample<200)return;lastScrollSample=now;var scrollY=Math.round(window.scrollY||window.pageYOffset||0);var depthPct=pageHeight>viewport.height?Math.min(100,Math.round(((scrollY+viewport.height)/pageHeight)*100)):100;interactions.push({type:"scroll",t:now-startTime,y:scrollY,depth_pct:depthPct});},{passive:true});
-document.addEventListener("mousemove",function(e){if(isCapped()||cursorPath.length>=MAX_CURSOR_POINTS)return;var now=Date.now();if(now-lastCursorSample<250)return;lastCursorSample=now;cursorPath.push([Math.round(e.clientX),Math.round(e.clientY),now-startTime]);},{passive:true});
-document.addEventListener("keydown",function(e){if(isCapped()||interactions.length>=MAX_INTERACTIONS)return;if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;interactions.push({type:"keydown",t:Date.now()-startTime,key:e.key});},true);
-function buildAnalytics(){if(!meta)return null;var ph=document.documentElement.scrollHeight;var maxScroll=0,clickElements={},firstClick=null,firstScroll=null,totalDistance=0;for(var i=0;i<interactions.length;i++){var ev=interactions[i];if(ev.type==="scroll"){if(ev.depth_pct>maxScroll)maxScroll=ev.depth_pct;if(!firstScroll)firstScroll=ev.t;}if(ev.type==="click"){if(!firstClick)firstClick=ev.t;var key=ev.element.tag+":"+ev.element.text.substring(0,30);clickElements[key]=true;}}for(var j=1;j<cursorPath.length;j++){var dx=cursorPath[j][0]-cursorPath[j-1][0];var dy=cursorPath[j][1]-cursorPath[j-1][1];totalDistance+=Math.sqrt(dx*dx+dy*dy);}var duration=Date.now()-startTime;var clickHeatmap=[];for(var k=0;k<interactions.length;k++){if(interactions[k].type==="click")clickHeatmap.push([interactions[k].x,interactions[k].y]);}return{generation_id:meta.generationId,tournament_id:meta.tournamentId,started_at:new Date(startTime).toISOString(),ended_at:new Date().toISOString(),duration_ms:duration,viewport:viewport,page_height:ph,interactions:interactions,cursor_path:cursorPath,click_heatmap:clickHeatmap,summary:{total_clicks:clickHeatmap.length,total_scrolls:interactions.filter(function(e){return e.type==="scroll";}).length,max_scroll_depth_pct:maxScroll,unique_elements_clicked:Object.keys(clickElements).length,time_to_first_click_ms:firstClick,time_to_first_scroll_ms:firstScroll,cursor_distance_px:Math.round(totalDistance),active_time_ms:duration}};}
-function loadRrweb(){if(rrwebStarted)return;rrwebStarted=true;var s=document.createElement("script");s.src=RRWEB_CDN;s.onload=function(){var rec=(window.rrweb&&window.rrweb.record)||window.rrwebRecord;if(!rec)return;rec({emit:function(event){if(rrwebEvents.length>=MAX_RRWEB_EVENTS||isCapped())return;rrwebEvents.push(event);}});};s.onerror=function(){};document.head.appendChild(s);}
-window.addEventListener("message",function(e){if(!e.data||typeof e.data.type!=="string")return;if(e.data.type==="arena:init"){if(!meta)startTime=Date.now();meta={generationId:e.data.generationId||e.data.modelId,tournamentId:e.data.tournamentId};persist();loadRrweb();if(e.source)e.source.postMessage({type:"arena:init-ack",generationId:meta.generationId},"*");}if(e.data.type==="arena:flush"){var resp={type:"arena:recording-data",generationId:meta?meta.generationId:null,rrwebEvents:rrwebEvents,analytics:buildAnalytics()};try{sessionStorage.removeItem(SK);}catch(ex){}if(e.source)e.source.postMessage(resp,"*");}});
-loadRrweb();
-})();</script>
-  <script data-arena-views="true">(function(){var isTop=false;try{isTop=window.self===window.top;}catch(e){}if(!isTop)return;window.__ARENA_META={generationId:"gpt-5.6-sol-xhigh",tournamentId:"9db1718a-fce9-4ee0-a2ba-9bdf5a55a938"};var payload={tournamentId:"9db1718a-fce9-4ee0-a2ba-9bdf5a55a938",modelId:"gpt-5.6-sol-xhigh"};try{var r=document.referrer;if(r){var u=new URL(r);payload.referrerDomain=u.hostname;}}catch(e){}try{var vid=null;try{vid=localStorage.getItem('arena_vid');}catch(e){}if(!vid){vid=typeof crypto!=="undefined"&&crypto.randomUUID?crypto.randomUUID():(Date.now().toString(36)+Math.random().toString(36).slice(2)).slice(0,32);try{localStorage.setItem('arena_vid',vid);}catch(e){}}if(vid)payload.viewerId=vid;}catch(e){}try{fetch("https://www.designarena.ai/api/agon/page-views",{"method":"POST","headers":{"Content-Type":"application/json"},"body":JSON.stringify(payload),"keepalive":true});}catch(e){}})();</script>
-</head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-      <script data-element-picker>/**
- * Agon Element Picker — injected into the preview iframe.
- *
- * Two modes, both driven by postMessage from the parent:
- *
- * Inspect mode (click-to-select for AI chat prefill):
- *   Parent -> iframe:  { type: 'inspect:mode', enabled: true/false }
- *   iframe -> Parent:  { type: 'element:selected', file, line, column, tag, text, classes, id }
- *
- * Edit mode (WYSIWYG text editing):
- *   Parent -> iframe:  { type: 'arena:edit-mode', enabled: true/false }
- *   Parent -> iframe:  { type: 'arena:set-text', domPath, text }   // undo/redo
- *   iframe -> Parent:  { type: 'arena:text-edit', source: {file,line,col}|null,
- *                        tag, oldText, newText, domPath, ts }
- *
- * Capability handshake (parent shows edit UI only when the build is tagged):
- *   Parent -> iframe:  { type: 'arena:init', ... }   (already sent for recording)
- *   iframe -> Parent:  { type: 'arena:edit-capability', textEdit: true, tagged: bool }
- *
- * Source locations come from data-source-loc="file:line:col" attributes added
- * by the vite source-tags plugin (data-agon-source is read as a legacy fallback).
- */
-(function () {
-  'use strict';
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.documentElement.classList.add('js')</script>
 
-  // Capability markers — bumped whenever the picker gains behavior that older
-  // baked-in copies lack, so visual_picker_inject._refresh_stale_picker knows
-  // to re-inline this version.
-  //   arena:link-edit     — editing link / <a> text
-  //   arena:textnode-edit — editing a single text node inside a mixed-content
-  //                         element (e.g. <h1>Text<span>..</span></h1>)
-  //   arena:header-edit   — edit `user-select:none` headers/nav; box-only
-  //                         highlight (no source/tag label)
-  //   arena:multirun-edit — patch the exact text run of a multi-run element
-  //                         (e.g. lines split by <br/>), via runIndex
-  // marker: arena:link-edit arena:textnode-edit arena:header-edit arena:multirun-edit
+    <title>Asheville Bagpiper | Weddings, Funerals &amp; Events | Mountain Piper</title>
+    <meta name="description" content="Mountain Piper brings traditional Scottish bagpipes and interceltic music to weddings, funerals, memorials, and events across Asheville and Western North Carolina. Bagpipe lessons, too.">
+    <link rel="canonical" href="https://www.mountainpiper.com/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#12271c">
+    <meta name="geo.region" content="US-NC">
+    <meta name="geo.placename" content="Asheville, North Carolina">
+    <meta name="ICBM" content="35.5951, -82.5515">
 
-  var SOURCE_ATTR = 'data-source-loc';
-  var LEGACY_SOURCE_ATTR = 'data-agon-source';
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  var inspectEnabled = false;
-  var editEnabled = false;
-  var overlay = null;
-  var label = null;
-  var currentTarget = null;
-  var activeEdit = null; // { element, oldText }
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mountain Piper">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Asheville Bagpiper | Mountain Piper">
+    <meta property="og:description" content="Traditional Scottish bagpiping and interceltic music for weddings, funerals, memorials, and events in Asheville and Western North Carolina.">
+    <meta property="og:url" content="https://www.mountainpiper.com/">
+    <meta property="og:image" content="https://www.mountainpiper.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="A Highland bagpiper in full dress standing among the mountains of Western North Carolina">
+    <meta name="twitter:card" content="summary_large_image">
 
-  function getSourceAttr(el) {
-    return el.getAttribute(SOURCE_ATTR) || el.getAttribute(LEGACY_SOURCE_ATTR);
-  }
+    <link rel="preload" href="/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" as="image" type="image/avif" fetchpriority="high"
+      imagesrcset="/images/kit-rashid-mountains-640.avif 640w, /images/kit-rashid-mountains-960.avif 960w, /images/kit-rashid-mountains-1435.avif 1435w"
+      imagesizes="(min-width: 60rem) 26rem, 88vw">
 
-  function createOverlay() {
-    if (overlay) return;
+    <link rel="stylesheet" href="/css/site.css">
+    <script type="module" src="/js/main.js"></script>
 
-    overlay = document.createElement('div');
-    overlay.id = '__picker-overlay';
-    overlay.style.cssText = [
-      'position: fixed',
-      'pointer-events: none',
-      'z-index: 2147483647',
-      'border: 2px solid #3b82f6',
-      'background: rgba(59, 130, 246, 0.08)',
-      'transition: all 0.05s ease-out',
-      'display: none',
-      'box-sizing: border-box',
-    ].join(';');
-
-    label = document.createElement('div');
-    label.id = '__picker-label';
-    label.style.cssText = [
-      'position: fixed',
-      'pointer-events: none',
-      'z-index: 2147483647',
-      'background: #1e40af',
-      'color: #fff',
-      'font: 11px/1.4 monospace',
-      'padding: 2px 6px',
-      'border-radius: 3px',
-      'white-space: nowrap',
-      'display: none',
-      'max-width: 400px',
-      'overflow: hidden',
-      'text-overflow: ellipsis',
-    ].join(';');
-
-    document.body.appendChild(overlay);
-    document.body.appendChild(label);
-  }
-
-  function removeOverlay() {
-    if (overlay) { overlay.remove(); overlay = null; }
-    if (label) { label.remove(); label = null; }
-  }
-
-  function isPickerNode(el) {
-    return el === overlay || el === label ||
-      el.id === '__picker-overlay' || el.id === '__picker-label';
-  }
-
-  function findSourceAttr(el) {
-    while (el && el !== document.body && el !== document.documentElement) {
-      var src = getSourceAttr(el);
-      if (src) return { element: el, source: src };
-      el = el.parentElement;
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "MusicGroup"],
+      "@id": "https://www.mountainpiper.com/#business",
+      "name": "Mountain Piper",
+      "description": "Traditional Scottish bagpiping and interceltic music for weddings, funerals and memorials, festivals, corporate events, ceremonies, and bagpipe lessons in Asheville and throughout Western North Carolina.",
+      "url": "https://www.mountainpiper.com/",
+      "telephone": "+1-828-974-1719",
+      "email": "mountainpiper1@gmail.com",
+      "image": "https://www.mountainpiper.com/images/og-image.jpg",
+      "logo": "https://www.mountainpiper.com/favicon.svg",
+      "slogan": "Traditional Scottish bagpiping and interceltic music",
+      "foundingLocation": { "@type": "City", "name": "Asheville, North Carolina" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Asheville",
+        "addressRegion": "NC",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Asheville, North Carolina" },
+        { "@type": "AdministrativeArea", "name": "Western North Carolina" }
+      ],
+      "member": [
+        { "@type": "Person", "name": "Kit Rashid", "jobTitle": "Bagpiper", "url": "https://www.mountainpiper.com/about/" },
+        { "@type": "Person", "name": "Alex Stewart", "jobTitle": "Bagpiper", "url": "https://www.mountainpiper.com/about/" }
+      ],
+      "knowsAbout": [
+        "Great Highland bagpipe",
+        "Scottish bagpiping",
+        "Interceltic music",
+        "Wedding bagpiper",
+        "Funeral bagpiper",
+        "Bagpipe lessons"
+      ]
     }
-    return null;
-  }
-
-  function parseSource(sourceStr) {
-    // Format: "relative/path.tsx:line:col"
-    var parts = sourceStr.split(':');
-    if (parts.length < 3) return { file: sourceStr, line: 0, column: 0 };
-    var col = parseInt(parts.pop(), 10);
-    var line = parseInt(parts.pop(), 10);
-    var file = parts.join(':'); // rejoin in case path has colons (unlikely but safe)
-    return { file: file, line: line, column: col };
-  }
-
-  // Stable-enough CSS path so the parent can address this element for undo.
-  function domPath(el) {
-    var segs = [];
-    while (el && el !== document.body && el.parentElement) {
-      var i = 1;
-      var sib = el;
-      while ((sib = sib.previousElementSibling)) i++;
-      segs.unshift(el.tagName.toLowerCase() + ':nth-child(' + i + ')');
-      el = el.parentElement;
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://www.mountainpiper.com/#website",
+      "url": "https://www.mountainpiper.com/",
+      "name": "Mountain Piper",
+      "description": "Traditional Scottish bagpiping and interceltic music in Asheville, North Carolina.",
+      "publisher": { "@id": "https://www.mountainpiper.com/#business" },
+      "inLanguage": "en-US"
     }
-    return 'body > ' + segs.join(' > ');
-  }
-
-  // An element is whole-text-editable when it owns at least one non-whitespace
-  // text node and no element children — editing such an element via
-  // contenteditable is safe. Mixed-content elements are handled per-text-node
-  // (see resolveEditable / beginEditTextNode) instead.
-  function isTextEditable(el) {
-    if (!el || el.children.length > 0) return false;
-    for (var i = 0; i < el.childNodes.length; i++) {
-      var n = el.childNodes[i];
-      if (n.nodeType === Node.TEXT_NODE && n.textContent.trim()) return true;
-    }
-    return false;
-  }
-
-  // The text node directly under a viewport point, if it holds real text.
-  function textNodeAtPoint(x, y) {
-    var node = null;
-    if (document.caretPositionFromPoint) {
-      var cp = document.caretPositionFromPoint(x, y);
-      node = cp && cp.offsetNode;
-    } else if (document.caretRangeFromPoint) {
-      var r = document.caretRangeFromPoint(x, y);
-      node = r && r.startContainer;
-    }
-    if (node && node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
-      return node;
-    }
-    return null;
-  }
-
-  // First direct non-whitespace text child of an element, if any.
-  function firstDirectTextNode(el) {
-    if (!el) return null;
-    for (var i = 0; i < el.childNodes.length; i++) {
-      var n = el.childNodes[i];
-      if (n.nodeType === Node.TEXT_NODE && n.textContent.trim()) return n;
-    }
-    return null;
-  }
-
-  // Resolve what a hover/click at (x, y) should edit:
-  //   { kind: 'text', textNode, element }  — one text run inside a mixed element
-  //   { kind: 'element', element }         — a whole pure-text element
-  //   null                                 — nothing editable here
-  function resolveEditable(target, x, y) {
-    var tn = textNodeAtPoint(x, y);
-    if (tn) {
-      var p = tn.parentElement;
-      // Only split out an individual text node when the element also has
-      // element children (mixed content); pure-text elements use the cleaner
-      // whole-element path below.
-      if (p && !isPickerNode(p) && p.children.length > 0) {
-        return { kind: 'text', textNode: tn, element: p };
-      }
-    }
-    if (isTextEditable(target)) return { kind: 'element', element: target };
-    // Fallback for mixed-content elements whose caret can't be hit-tested
-    // (e.g. `user-select: none` headers/nav): edit the first direct text run.
-    if (target && !isPickerNode(target) && target.children.length > 0) {
-      var direct = firstDirectTextNode(target);
-      if (direct) return { kind: 'text', textNode: direct, element: target };
-    }
-    return null;
-  }
-
-  // Viewport rect of a text node's contents (falls back to its parent).
-  function rectOfTextNode(tn) {
-    try {
-      var r = document.createRange();
-      r.selectNodeContents(tn);
-      var rect = r.getBoundingClientRect();
-      if (rect && (rect.width || rect.height)) return rect;
-    } catch (e) { /* fall through */ }
-    return tn.parentElement ? tn.parentElement.getBoundingClientRect() : null;
-  }
-
-  function applyHighlight(rect, editable, labelEl, showLabel) {
-    if (!overlay || !rect) return;
-    overlay.style.top = rect.top + 'px';
-    overlay.style.left = rect.left + 'px';
-    overlay.style.width = rect.width + 'px';
-    overlay.style.height = rect.height + 'px';
-    overlay.style.borderColor = editable ? '#10b981' : '#3b82f6';
-    overlay.style.background = editable
-      ? 'rgba(16, 185, 129, 0.08)' : 'rgba(59, 130, 246, 0.08)';
-    overlay.style.display = 'block';
-
-    // Edit mode shows just the highlight box — no source/tag label.
-    if (!showLabel || !label) {
-      if (label) label.style.display = 'none';
-      return;
-    }
-
-    var tag = labelEl ? labelEl.tagName.toLowerCase() : 'text';
-    var src = labelEl ? getSourceAttr(labelEl) : null;
-    var labelText = '<' + tag + '>';
-    if (src) {
-      var parsed = parseSource(src);
-      labelText += '  ' + parsed.file + ':' + parsed.line;
-    }
-    if (editable) labelText += '  ✎';
-    label.textContent = labelText;
-    label.style.background = editable ? '#065f46' : '#1e40af';
-
-    // Position label above the highlight, or below if too close to top
-    var labelTop = rect.top - 22;
-    if (labelTop < 4) labelTop = rect.bottom + 4;
-    label.style.top = labelTop + 'px';
-    label.style.left = Math.max(4, rect.left) + 'px';
-    label.style.display = 'block';
-  }
-
-  function highlightElement(el, editable, showLabel) {
-    if (!el) return;
-    applyHighlight(el.getBoundingClientRect(), editable, el, showLabel);
-  }
-
-  function hideOverlay() {
-    if (overlay) overlay.style.display = 'none';
-    if (label) label.style.display = 'none';
-    currentTarget = null;
-  }
-
-  function postToParent(msg) {
-    if (window.parent && window.parent !== window) {
-      window.parent.postMessage(msg, '*');
-    }
-  }
-
-  // ---------------------------------------------------------------- inspect
-
-  function onMouseOver(e) {
-    if (!inspectEnabled && !editEnabled) return;
-    var target = e.target;
-    if (isPickerNode(target)) return;
-    if (activeEdit && target === activeEdit.element) { hideOverlay(); return; }
-
-    if (editEnabled) {
-      // Edit mode: highlight box only, no source/tag label (showLabel=false).
-      var res = resolveEditable(target, e.clientX, e.clientY);
-      if (res) {
-        currentTarget = res.element;
-        if (res.kind === 'text') {
-          applyHighlight(rectOfTextNode(res.textNode), true, res.element, false);
-        } else {
-          highlightElement(res.element, true, false);
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How far in advance should I book a bagpiper in Asheville?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "As early as you can, especially for spring and fall weekends in Western North Carolina. Weddings are often planned many months out, while memorial services can come together in days — either way, reach out and Mountain Piper will let you know promptly whether your date is possible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the piper play a special request or a family tune?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often, yes. The Highland bagpipe has a fixed nine-note scale, so not every melody translates, but much does — and the repertoire already includes marches, slow airs, hymns, and dance tunes from across the Celtic nations. Share the tune you have in mind and you will get an honest answer about whether it can be done well."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the piper wear?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Full Highland dress: kilt, sporran, hose, and the rest of the traditional kit, unless you ask for something quieter. For memorial services the dress can be toned down on request."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the Great Highland bagpipe play indoors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, with judgment. It is a powerful outdoor voice, so indoor placement — a balcony, a hallway, a doorway — is chosen to suit the room. For intimate rooms, playing at the threshold as guests arrive or depart often works beautifully. Talk it through when you inquire."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does it cost to hire a bagpiper in Asheville?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every occasion is different — timing, travel, and the shape of the performance all matter — so Mountain Piper quotes each event individually rather than publishing flat rates. Share the date, place, and what you have in mind, and you will receive a tailored quote."
+          }
         }
-      } else {
-        currentTarget = target;
-        highlightElement(target, false, false);
-      }
-      return;
+      ]
     }
+    </script>
+  </head>
 
-    var found = findSourceAttr(target);
-    if (found) {
-      currentTarget = found.element;
-      highlightElement(found.element, false, true);
-    } else {
-      currentTarget = target;
-      highlightElement(target, false, true);
-    }
-  }
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-  function onMouseOut(e) {
-    if (!inspectEnabled && !editEnabled) return;
-    var related = e.relatedTarget;
-    if (related === overlay || related === label) return;
-    if (!e.relatedTarget || e.relatedTarget === document) {
-      hideOverlay();
-    }
-  }
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Mountain Piper — home">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <rect width="64" height="64" rx="14" fill="rgba(201,163,90,0.14)"></rect>
+            <g fill="none" stroke="#d9b877" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 44 L24 22 L32 34 L38 25 L54 44"></path>
+              <path d="M15 44 H49"></path>
+              <path d="M46 12 V34 M42 16.5 H50"></path>
+            </g>
+          </svg>
+          <span class="brand-text">
+            <strong>Mountain Piper</strong>
+            <small>Asheville, North Carolina</small>
+          </span>
+        </a>
 
-  function onInspectClick(e) {
-    if (!inspectEnabled) return;
+        <nav class="site-nav" aria-label="Main navigation">
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu" data-nav-toggle>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
+          <ul class="nav-menu" id="nav-menu">
+            <li><a href="/weddings/"><span aria-hidden="true" class="nav-index">01</span> Weddings</a></li>
+            <li><a href="/funerals-memorials/"><span aria-hidden="true" class="nav-index">02</span> Funerals &amp; Memorials</a></li>
+            <li><a href="/events/"><span aria-hidden="true" class="nav-index">03</span> Events</a></li>
+            <li><a href="/bagpipe-lessons/"><span aria-hidden="true" class="nav-index">04</span> Lessons</a></li>
+            <li><a href="/about/"><span aria-hidden="true" class="nav-index">05</span> About</a></li>
+            <li class="nav-cta"><a href="/contact/">Check Availability</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-    e.preventDefault();
-    e.stopPropagation();
-    e.stopImmediatePropagation();
+    <main id="main">
+      <!-- ============================ HERO ============================ -->
+      <section class="hero" aria-labelledby="home-hero-heading">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="hero-badge">Traditional Scottish bagpiping &amp; interceltic music</p>
+            <h1 id="home-hero-heading">Your Asheville bagpiper for <em>life’s biggest moments.</em></h1>
+            <p class="hero-intro">
+              Pipers <strong>Kit Rashid</strong> and <strong>Alex Stewart</strong> bring the unmistakable
+              voice of the Great Highland bagpipe to weddings, funerals and memorials, festivals, and
+              private celebrations across <strong>Asheville and Western North Carolina</strong> — and pass
+              the tradition on through bagpipe lessons.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-gold" href="/contact/">
+                Check availability &amp; pricing
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+              <a class="btn btn-ghost" href="#services">Explore the services</a>
+            </div>
+            <div class="hero-proof">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+              <div>
+                <strong>Kit Rashid — 43 years at the pipes</strong>
+                <small>Solo competitor in the professional grade of the Eastern U.S. Pipe Band Association</small>
+              </div>
+            </div>
+          </div>
 
-    var target = e.target;
-    if (isPickerNode(target)) return;
+          <div class="hero-media">
+            <div class="arch-frame">
+              <picture>
+                <source type="image/avif" srcset="/images/kit-rashid-mountains-640.avif 640w, /images/kit-rashid-mountains-960.avif 960w, /images/kit-rashid-mountains-1435.avif 1435w" sizes="(min-width: 60rem) 26rem, 88vw">
+                <source type="image/webp" srcset="/images/kit-rashid-mountains-640.webp 640w, /images/kit-rashid-mountains-960.webp 960w, /images/kit-rashid-mountains-1435.webp 1435w" sizes="(min-width: 60rem) 26rem, 88vw">
+                <img
+                  src="/images/kit-rashid-mountains-960.jpg"
+                  width="1435" height="2048"
+                  alt="Bagpiper Kit Rashid in full Highland dress holding his Great Highland bagpipes beside a mountain stream in Western North Carolina"
+                  fetchpriority="high"
+                  decoding="async">
+              </picture>
+            </div>
+          </div>
+        </div>
 
-    var found = findSourceAttr(target);
-    var element = found ? found.element : target;
-    var sourceStr = found ? found.source : null;
+        <div class="hero-strip">
+          <div class="container">
+            <div>
+              <strong>43 years</strong>
+              <span>of piping experience</span>
+            </div>
+            <div>
+              <strong>Pro grade</strong>
+              <span>solo competitor, EUSPBA</span>
+            </div>
+            <div>
+              <strong>Asheville, NC</strong>
+              <span>serving all of Western North Carolina</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    var info = {
-      type: 'element:selected',
-      tag: element.tagName.toLowerCase(),
-      text: (element.textContent || '').trim().substring(0, 200),
-      classes: element.className && typeof element.className === 'string'
-        ? element.className.substring(0, 300) : '',
-      id: element.id || '',
-      file: null,
-      line: null,
-      column: null,
-    };
+      <svg class="ridgelines from-dark" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h1440v26c-72 10-133 4-197-14C1168-10 1108 2 1038 14 957 28 911 12 838 6 770 0 726 20 660 26 583 34 524 14 450 10 384 7 331 24 262 34 184 45 118 22 0 34V0Z" opacity="0.16"></path>
+        <path fill="currentColor" d="M0 0h1440v44c-92 8-160-8-236-20-88-14-156 12-240 18-76 5-132-14-208-22-84-9-142 12-222 20C450 49 392 30 316 28 226 26 158 46 0 54V0Z" opacity="0.28"></path>
+      </svg>
 
-    if (sourceStr) {
-      var parsed = parseSource(sourceStr);
-      info.file = parsed.file;
-      info.line = parsed.line;
-      info.column = parsed.column;
-    }
+      <!-- ========================== SERVICES ========================== -->
+      <section class="section" id="services" aria-labelledby="services-heading">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">What the pipes can do</p>
+            <h2 id="services-heading">One ancient instrument, every kind of occasion.</h2>
+            <p>
+              From a mountaintop wedding to a quiet graveside farewell, Mountain Piper shapes each
+              performance around the moment — the setting, the timing, and the feeling you want people
+              to carry home with them.
+            </p>
+          </div>
 
-    postToParent(info);
-    console.log('[element-picker] Selected:', info);
-  }
+          <div class="card-grid cols-4">
+            <article class="card" data-reveal>
+              <span class="card-number" aria-hidden="true">01</span>
+              <span class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+              </span>
+              <h3>Weddings</h3>
+              <p>
+                A processional no one forgets. Pipes for the guests’ arrival, the ceremony itself, and
+                the joyful noise afterward — at churches, estates, and overlooks across WNC.
+              </p>
+              <p class="card-link">
+                <a class="text-link" href="/weddings/">
+                  A bagpiper for your wedding
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </a>
+              </p>
+            </article>
 
-  function enableInspect() {
-    if (inspectEnabled) return;
-    if (editEnabled) disableEdit();
-    inspectEnabled = true;
-    createOverlay();
-    document.addEventListener('mouseover', onMouseOver, true);
-    document.addEventListener('mouseout', onMouseOut, true);
-    document.addEventListener('click', onInspectClick, true);
-    document.body.style.cursor = 'crosshair';
-    console.log('[element-picker] Inspect mode ON');
-  }
+            <article class="card" data-reveal style="--reveal-delay: 80ms">
+              <span class="card-number" aria-hidden="true">02</span>
+              <span class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+              </span>
+              <h3>Funerals &amp; Memorials</h3>
+              <p>
+                A dignified tribute, handled with care. Slow airs and hymns at the service, the
+                graveside, or a celebration of life — coordinated quietly with your family and funeral
+                director.
+              </p>
+              <p class="card-link">
+                <a class="text-link" href="/funerals-memorials/">
+                  Funeral &amp; memorial piping
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </a>
+              </p>
+            </article>
 
-  function disableInspect() {
-    if (!inspectEnabled) return;
-    inspectEnabled = false;
-    document.removeEventListener('mouseover', onMouseOver, true);
-    document.removeEventListener('mouseout', onMouseOut, true);
-    document.removeEventListener('click', onInspectClick, true);
-    hideOverlay();
-    removeOverlay();
-    document.body.style.cursor = '';
-    console.log('[element-picker] Inspect mode OFF');
-  }
+            <article class="card" data-reveal style="--reveal-delay: 160ms">
+              <span class="card-number" aria-hidden="true">03</span>
+              <span class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+              </span>
+              <h3>Events &amp; Festivals</h3>
+              <p>
+                Pageantry and presence for festivals, corporate gatherings, ceremonies, and private
+                parties — from Highland games weekends to an unforgettable surprise entrance.
+              </p>
+              <p class="card-link">
+                <a class="text-link" href="/events/">
+                  A piper for your event
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </a>
+              </p>
+            </article>
 
-  // ------------------------------------------------------------------- edit
+            <article class="card" data-reveal style="--reveal-delay: 240ms">
+              <span class="card-number" aria-hidden="true">04</span>
+              <span class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+              </span>
+              <h3>Bagpipe Lessons</h3>
+              <p>
+                Learn the Great Highland bagpipe the right way — patient, traditional instruction for
+                beginners on the practice chanter through experienced players polishing their competition
+                repertoire.
+              </p>
+              <p class="card-link">
+                <a class="text-link" href="/bagpipe-lessons/">
+                  Bagpipe lessons in Asheville
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </a>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-  function commitEdit() {
-    if (!activeEdit) return;
-    // For text-node edits the contenteditable target is a temporary wrapper
-    // span, but the source location + tag belong to the element that owns the
-    // text (sourceEl). childIndex addresses the specific text run for undo.
-    var editEl = activeEdit.element;
-    var srcEl = activeEdit.kind === 'text' ? activeEdit.sourceEl : editEl;
-    var childIndex = activeEdit.kind === 'text' ? activeEdit.childIndex : null;
-    var runIndex = activeEdit.kind === 'text' ? activeEdit.textRunIndex : null;
-    var oldText = activeEdit.oldText;
-    var newText = editEl.textContent;
-    endEdit();
+      <!-- ========================== ABOUT TEASER ======================= -->
+      <section class="section" aria-labelledby="pipers-heading" style="background: var(--paper); border-block: 1px solid rgba(18,39,28,0.08);">
+        <div class="container split">
+          <div class="split-media" data-reveal>
+            <div class="frame arch">
+              <picture>
+                <source type="image/avif" srcset="/images/kit-rashid-artist-studios-480.avif 480w, /images/kit-rashid-artist-studios-768.avif 768w, /images/kit-rashid-artist-studios-1024.avif 1024w" sizes="(min-width: 58rem) 30rem, 90vw">
+                <source type="image/webp" srcset="/images/kit-rashid-artist-studios-480.webp 480w, /images/kit-rashid-artist-studios-768.webp 768w, /images/kit-rashid-artist-studios-1024.webp 1024w" sizes="(min-width: 58rem) 30rem, 90vw">
+                <img
+                  src="/images/kit-rashid-artist-studios-768.jpg"
+                  width="1024" height="1536"
+                  alt="Kit Rashid in kilt and waistcoat holding his bagpipes at the doorway of an artist studio in Asheville"
+                  loading="lazy"
+                  decoding="async">
+              </picture>
+            </div>
+            <div class="float-note">
+              <strong>“Piping is his vocation.”</strong>
+              A lifetime of craft, shared inclusively and professionally — every single time.
+            </div>
+          </div>
 
-    if (newText === oldText) return;
+          <div class="split-copy" data-reveal>
+            <p class="eyebrow">The pipers</p>
+            <h2 id="pipers-heading">Meet Kit Rashid &amp; Alex Stewart.</h2>
+            <p class="lead">
+              Two pipers, one shared devotion: traditional Scottish bagpiping and the interceltic
+              music that grew around it.
+            </p>
+            <p>
+              <strong>Kit Rashid</strong>, proud to call Asheville home, has spent 43 years as a
+              performer, teacher, and competitor on the Highland bagpipe. He competes as a soloist in
+              the professional grade of the Eastern United States Pipe Band Association and serves as
+              an instructor for the Grandfather Mountain Highlanders, host band of the Grandfather
+              Mountain Highland Games.
+            </p>
+            <p>
+              Together with <strong>Alex Stewart</strong>, he brings that standard to every wedding,
+              memorial, festival stage, and lesson — music played the way it was meant to be played,
+              for the people it matters to most.
+            </p>
+            <p>
+              <a class="text-link" href="/about/">
+                Read the pipers’ story
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
 
-    var sourceStr = getSourceAttr(srcEl);
-    postToParent({
-      type: 'arena:text-edit',
-      source: sourceStr ? parseSource(sourceStr) : null,
-      tag: srcEl.tagName.toLowerCase(),
-      oldText: oldText,
-      newText: newText,
-      domPath: domPath(srcEl),
-      childIndex: childIndex,
-      runIndex: runIndex,
-      ts: Date.now(),
-    });
-  }
+      <!-- ========================== HOW IT WORKS ======================= -->
+      <section class="section band-dark on-dark" aria-labelledby="standard-heading">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">Booking, made simple</p>
+            <h2 id="standard-heading">Professional from the first note to the final farewell.</h2>
+            <p>
+              You bring the occasion; Mountain Piper brings four decades of craft and calm. Here is how
+              every engagement unfolds.
+            </p>
+          </div>
+          <div class="steps">
+            <div class="step" data-reveal>
+              <h3>Tell us about the moment</h3>
+              <p>
+                Share the date, the place, and the feeling you’re after — a joyful recessional, a quiet
+                lament, a room that needs stirring. No detail is too small.
+              </p>
+            </div>
+            <div class="step" data-reveal style="--reveal-delay: 100ms">
+              <h3>Shape the music together</h3>
+              <p>
+                Timing, tune selection, attire, and placement are planned with you — and, when needed,
+                with your officiant, planner, or funeral director.
+              </p>
+            </div>
+            <div class="step" data-reveal style="--reveal-delay: 200ms">
+              <h3>Be fully present on the day</h3>
+              <p>
+                The piper arrives early, in full Highland dress, with every note prepared. You simply
+                live the moment while the pipes do their work.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  function cancelEdit() {
-    if (!activeEdit) return;
-    activeEdit.element.textContent = activeEdit.oldText;
-    endEdit();
-  }
+      <svg class="ridgelines from-dark" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M0 0h1440v26c-72 10-133 4-197-14C1168-10 1108 2 1038 14 957 28 911 12 838 6 770 0 726 20 660 26 583 34 524 14 450 10 384 7 331 24 262 34 184 45 118 22 0 34V0Z" opacity="0.16"></path>
+        <path fill="currentColor" d="M0 0h1440v44c-92 8-160-8-236-20-88-14-156 12-240 18-76 5-132-14-208-22-84-9-142 12-222 20C450 49 392 30 316 28 226 26 158 46 0 54V0Z" opacity="0.28"></path>
+      </svg>
 
-  function endEdit() {
-    if (!activeEdit) return;
-    var el = activeEdit.element;
-    el.removeAttribute('contenteditable');
-    el.style.outline = activeEdit.prevOutline;
-    el.style.removeProperty('user-select');
-    el.style.removeProperty('-webkit-user-select');
-    el.removeEventListener('blur', onEditBlur);
-    el.removeEventListener('keydown', onEditKeydown);
-    // Text-node edits: unwrap the temporary span back into a plain text node so
-    // the DOM structure matches the (now-edited) source.
-    if (activeEdit.kind === 'text' && el.parentNode) {
-      el.parentNode.replaceChild(document.createTextNode(el.textContent), el);
-    }
-    // Restore the href we stashed while editing a link (see beginEdit).
-    if (activeEdit.anchor && activeEdit.prevHref != null) {
-      activeEdit.anchor.setAttribute('href', activeEdit.prevHref);
-    }
-    activeEdit = null;
-  }
+      <!-- ========================== SERVICE AREA ======================= -->
+      <section class="section" aria-labelledby="area-heading">
+        <div class="container">
+          <div class="area-panel" data-reveal>
+            <img
+              src="/images/blue-ridge-ridgelines-1280.jpg"
+              srcset="/images/blue-ridge-ridgelines-768.jpg 768w, /images/blue-ridge-ridgelines-1280.jpg 1280w, /images/blue-ridge-ridgelines-1920.jpg 1376w"
+              sizes="(min-width: 72rem) 69rem, calc(100vw - 2.75rem)"
+              width="1376" height="768"
+              alt=""
+              role="presentation"
+              loading="lazy"
+              decoding="async">
+            <p class="eyebrow" style="color: var(--gold-soft);">Where the pipes are heard</p>
+            <h2 id="area-heading">Based in Asheville. At home in the mountains.</h2>
+            <p>
+              Mountain Piper serves all of <strong>Western North Carolina</strong> — from intimate
+              gatherings in Asheville’s gardens and sanctuaries to festival stages across the Blue
+              Ridge. If your occasion is in the mountains, the pipes can be there too.
+            </p>
+            <ul class="area-towns" aria-label="Communities served across Western North Carolina">
+              <li>Asheville</li>
+              <li>Black Mountain</li>
+              <li>Weaverville</li>
+              <li>Arden</li>
+              <li>Candler</li>
+              <li>Hendersonville</li>
+              <li>Waynesville</li>
+              <li>Brevard</li>
+              <li>…and mountain towns throughout WNC</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-  function onEditBlur() {
-    commitEdit();
-  }
+      <!-- ========================== FAQ ================================ -->
+      <section class="section-tight" aria-labelledby="faq-heading">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">Good to know</p>
+            <h2 id="faq-heading">Questions, answered.</h2>
+          </div>
+          <div class="faq" data-reveal>
+            <details>
+              <summary>How far in advance should I book a bagpiper in Asheville?</summary>
+              <div class="faq-answer">
+                <p>
+                  As early as you can, especially for spring and fall weekends in Western North
+                  Carolina. Weddings are often planned many months out, while memorial services can
+                  come together in days — either way, <a href="/contact/">reach out</a> and Mountain
+                  Piper will let you know promptly whether your date is possible.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>Can the piper play a special request or a family tune?</summary>
+              <div class="faq-answer">
+                <p>
+                  Often, yes. The Highland bagpipe has a fixed nine-note scale, so not every melody
+                  translates — but much does, and the repertoire already includes marches, slow airs,
+                  hymns, and dance tunes from across the Celtic nations. Share the tune you have in
+                  mind and you’ll get an honest answer about whether it can be done well.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>What does the piper wear?</summary>
+              <div class="faq-answer">
+                <p>
+                  Full Highland dress — kilt, sporran, hose, and the rest of the traditional kit —
+                  unless you ask for something quieter. For memorial services the dress can be toned
+                  down on request.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>Can the Great Highland bagpipe play indoors?</summary>
+              <div class="faq-answer">
+                <p>
+                  Yes, with judgment. It is a powerful outdoor voice, so indoor placement — a balcony,
+                  a hallway, a doorway — is chosen to suit the room. For intimate spaces, piping at the
+                  threshold as guests arrive or depart often works beautifully. Talk it through when
+                  you inquire.
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>How much does it cost to hire a bagpiper in Asheville?</summary>
+              <div class="faq-answer">
+                <p>
+                  Every occasion is different — timing, travel, and the shape of the performance all
+                  matter — so Mountain Piper quotes each event individually rather than publishing flat
+                  rates. <a href="/contact/">Share the date, place, and what you have in mind</a>, and
+                  you’ll receive a tailored quote.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
 
-  function onEditKeydown(e) {
-    e.stopPropagation();
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      commitEdit();
-    } else if (e.key === 'Escape') {
-      e.preventDefault();
-      cancelEdit();
-    }
-  }
+      <!-- ========================== CTA ================================ -->
+      <section class="cta-band on-dark" aria-labelledby="cta-heading">
+        <hr class="tartan-ribbon" aria-hidden="true">
+        <div class="container cta-inner">
+          <p class="eyebrow" style="justify-content: center;">Check availability &amp; pricing</p>
+          <h2 id="cta-heading">Let’s make your moment <em>unforgettable.</em></h2>
+          <p>
+            Tell Mountain Piper about your wedding, memorial, event, or first lesson — you’ll hear
+            back personally from Kit or Alex.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-gold" href="/contact/">
+              Send an inquiry
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+            <a class="btn btn-ghost" href="tel:+18289741719">Call 828.974.1719</a>
+          </div>
+          <p class="cta-contact-line">
+            <a href="tel:+18289741719">828.974.1719</a>
+            <span class="sep" aria-hidden="true">·</span>
+            <a href="mailto:mountainpiper1@gmail.com">mountainpiper1@gmail.com</a>
+          </p>
+        </div>
+      </section>
+    </main>
 
-  // Nearest enclosing link whose href should be neutralized while editing, so a
-  // click (caret placement) or Enter (commit) doesn't navigate away. Restored
-  // in endEdit; JS-driven router navigation is suppressed in onEditClick.
-  function stashAnchorHref(el) {
-    var anchor = el.tagName === 'A' ? el : (el.closest ? el.closest('a') : null);
-    var prevHref = anchor && anchor.hasAttribute('href') ? anchor.getAttribute('href') : null;
-    if (anchor && prevHref != null) anchor.removeAttribute('href');
-    return { anchor: prevHref != null ? anchor : null, prevHref: prevHref };
-  }
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/" aria-label="Mountain Piper — home">
+            <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+              <rect width="64" height="64" rx="14" fill="rgba(201,163,90,0.14)"></rect>
+              <g fill="none" stroke="#d9b877" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 44 L24 22 L32 34 L38 25 L54 44"></path>
+                <path d="M15 44 H49"></path>
+                <path d="M46 12 V34 M42 16.5 H50"></path>
+              </g>
+            </svg>
+            <span class="brand-text">
+              <strong>Mountain Piper</strong>
+              <small>Asheville, North Carolina</small>
+            </span>
+          </a>
+          <p>
+            Traditional Scottish bagpiping and interceltic music for weddings, funerals and memorials,
+            events, and bagpipe lessons — in Asheville and throughout Western North Carolina.
+          </p>
+        </div>
 
-  // Turn `el` into a focused, select-all contenteditable region.
-  function activateEditable(el) {
-    try {
-      el.setAttribute('contenteditable', 'plaintext-only');
-      if (!el.isContentEditable) el.setAttribute('contenteditable', 'true');
-    } catch (err) {
-      el.setAttribute('contenteditable', 'true');
-    }
-    el.style.outline = '2px solid #10b981';
-    // Headers/nav are frequently `user-select: none`, which also blocks
-    // contenteditable editing; force it on (important beats class styles) for
-    // the duration of the edit. Cleared in endEdit (element) / discarded with
-    // the wrapper (text).
-    el.style.setProperty('user-select', 'text', 'important');
-    el.style.setProperty('-webkit-user-select', 'text', 'important');
-    el.addEventListener('blur', onEditBlur);
-    el.addEventListener('keydown', onEditKeydown);
-    el.focus();
+        <nav aria-label="Footer navigation">
+          <p class="footer-heading">Explore</p>
+          <ul class="footer-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/weddings/">Weddings</a></li>
+            <li><a href="/funerals-memorials/">Funerals &amp; Memorials</a></li>
+            <li><a href="/events/">Events</a></li>
+            <li><a href="/bagpipe-lessons/">Bagpipe Lessons</a></li>
+            <li><a href="/about/">About the Pipers</a></li>
+            <li><a href="/contact/">Check Availability</a></li>
+          </ul>
+        </nav>
 
-    // Select all text so a replacement starts with a clean slate
-    try {
-      var range = document.createRange();
-      range.selectNodeContents(el);
-      var sel = window.getSelection();
-      sel.removeAllRanges();
-      sel.addRange(range);
-    } catch (err) { /* selection is best-effort */ }
-
-    hideOverlay();
-  }
-
-  // Edit a whole pure-text element in place.
-  function beginEdit(el) {
-    if (activeEdit) commitEdit();
-    var href = stashAnchorHref(el);
-    activeEdit = {
-      kind: 'element',
-      element: el,
-      oldText: el.textContent,
-      prevOutline: el.style.outline,
-      anchor: href.anchor,
-      prevHref: href.prevHref,
-    };
-    activateEditable(el);
-  }
-
-  // Edit a single text run inside a mixed-content element (e.g. the leading
-  // text of <h1>Text<span>..</span></h1>). The run is wrapped in a temporary
-  // span so only it becomes editable; the wrapper is removed in endEdit, and
-  // the edit is reported against the owning element's source location.
-  function beginEditTextNode(textNode, sourceEl) {
-    if (activeEdit) commitEdit();
-
-    var parent = textNode.parentElement;
-    var childIndex = Array.prototype.indexOf.call(parent.childNodes, textNode);
-    // Index of this text node among the parent's non-whitespace direct text
-    // runs — lets the server patch the exact run of a multi-run element
-    // (e.g. <h1>A<br/>B<br/>C</h1>), not just the first.
-    var textRunIndex = 0;
-    for (var k = 0; k < parent.childNodes.length; k++) {
-      var cn = parent.childNodes[k];
-      if (cn === textNode) break;
-      if (cn.nodeType === Node.TEXT_NODE && cn.textContent.trim()) textRunIndex++;
-    }
-    var oldText = textNode.textContent;
-    var href = stashAnchorHref(parent);
-
-    var wrap = document.createElement('span');
-    wrap.setAttribute('data-agon-edit-wrap', '');
-    parent.replaceChild(wrap, textNode);
-    wrap.appendChild(textNode);
-
-    activeEdit = {
-      kind: 'text',
-      element: wrap,
-      sourceEl: sourceEl || parent,
-      childIndex: childIndex,
-      textRunIndex: textRunIndex,
-      oldText: oldText,
-      prevOutline: wrap.style.outline,
-      anchor: href.anchor,
-      prevHref: href.prevHref,
-    };
-    activateEditable(wrap);
-  }
-
-  function onEditClick(e) {
-    if (!editEnabled) return;
-
-    var target = e.target;
-    if (isPickerNode(target)) return;
-
-    // Clicks inside the element being edited behave normally (caret moves).
-    // When editing link text, still swallow the event so the app's own click
-    // handlers (e.g. router <Link> navigation) don't fire — caret placement is
-    // the browser default action and survives stopImmediatePropagation.
-    if (activeEdit && (target === activeEdit.element || activeEdit.element.contains(target))) {
-      if (activeEdit.anchor) {
-        e.stopPropagation();
-        e.stopImmediatePropagation();
-      }
-      return;
-    }
-
-    e.preventDefault();
-    e.stopPropagation();
-    e.stopImmediatePropagation();
-
-    if (activeEdit) commitEdit();
-    var res = resolveEditable(target, e.clientX, e.clientY);
-    if (res && res.kind === 'text') {
-      beginEditTextNode(res.textNode, res.element);
-    } else if (res && res.kind === 'element') {
-      beginEdit(res.element);
-    }
-  }
-
-  function enableEdit() {
-    if (editEnabled) return;
-    if (inspectEnabled) disableInspect();
-    editEnabled = true;
-    createOverlay();
-    document.addEventListener('mouseover', onMouseOver, true);
-    document.addEventListener('mouseout', onMouseOut, true);
-    document.addEventListener('click', onEditClick, true);
-    document.body.style.cursor = 'text';
-    console.log('[element-picker] Edit mode ON');
-  }
-
-  function disableEdit() {
-    if (!editEnabled) return;
-    if (activeEdit) commitEdit();
-    editEnabled = false;
-    document.removeEventListener('mouseover', onMouseOver, true);
-    document.removeEventListener('mouseout', onMouseOut, true);
-    document.removeEventListener('click', onEditClick, true);
-    hideOverlay();
-    removeOverlay();
-    document.body.style.cursor = '';
-    console.log('[element-picker] Edit mode OFF');
-  }
-
-  // Parent-driven text set, used for undo/redo of committed edits. When
-  // childIndex is provided the edit targeted a single text run of a
-  // mixed-content element, so only that child node is restored (setting the
-  // element's textContent would clobber its sibling elements).
-  function setText(path, text, childIndex) {
-    var el = null;
-    try { el = document.querySelector(path); } catch (err) { /* bad selector */ }
-    if (!el) {
-      console.warn('[element-picker] arena:set-text target not found:', path);
-      return;
-    }
-    if (activeEdit && activeEdit.element === el) cancelEdit();
-    if (childIndex != null && el.childNodes[childIndex]) {
-      el.childNodes[childIndex].textContent = text;
-    } else {
-      el.textContent = text;
-    }
-  }
-
-  function reportCapability() {
-    var tagged = !!document.querySelector(
-      '[' + SOURCE_ATTR + '], [' + LEGACY_SOURCE_ATTR + ']'
-    );
-    postToParent({ type: 'arena:edit-capability', textEdit: true, tagged: tagged });
-  }
-
-  // ---------------------------------------------------------------- wiring
-
-  window.addEventListener('message', function (e) {
-    if (!e.data || typeof e.data.type !== 'string') return;
-
-    switch (e.data.type) {
-      case 'inspect:mode':
-        if (e.data.enabled) enableInspect();
-        else disableInspect();
-        break;
-      case 'arena:edit-mode':
-        if (e.data.enabled) enableEdit();
-        else disableEdit();
-        break;
-      case 'arena:set-text':
-        setText(e.data.domPath, e.data.text, e.data.childIndex);
-        break;
-      case 'arena:init':
-        reportCapability();
-        break;
-    }
-  });
-
-  // Also support toggling via keyboard for standalone testing:
-  //   Alt+Shift+I — inspect mode, Alt+Shift+E — edit mode
-  document.addEventListener('keydown', function (e) {
-    if (e.altKey && e.shiftKey && e.key === 'I') {
-      inspectEnabled ? disableInspect() : enableInspect();
-    } else if (e.altKey && e.shiftKey && e.key === 'E') {
-      editEnabled ? disableEdit() : enableEdit();
-    }
-  });
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', reportCapability);
-  } else {
-    reportCapability();
-  }
-
-  console.log('[element-picker] Loaded. inspect:mode / arena:edit-mode (or Alt+Shift+I / Alt+Shift+E).');
-})();
-</script>
+        <div>
+          <p class="footer-heading">Contact</p>
+          <address>
+            <strong>Mountain Piper</strong>
+            <span>Asheville, North Carolina</span>
+            <a href="tel:+18289741719">828.974.1719</a>
+            <a href="mailto:mountainpiper1@gmail.com">mountainpiper1@gmail.com</a>
+          </address>
+          <p class="footer-area-note">Based in Asheville · Serving Western North Carolina</p>
+        </div>
+      </div>
+      <div class="footer-bottom container">
+        <p>© <span data-year>2026</span> Mountain Piper. All rights reserved.</p>
+        <p>Traditional Scottish bagpiping &amp; interceltic music — Asheville, NC</p>
+      </div>
+    </footer>
   </body>
 </html>
