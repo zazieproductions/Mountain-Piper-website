@@ -19,7 +19,13 @@ export default defineConfig(async ({ mode }) => {
     processEnvDefines[`process.env.${key}`] = JSON.stringify(value);
   }
 
+  // Base path the site is served under. GitHub Pages serves this repo at
+  // https://zazieproductions.github.io/Mountain-Piper-website/, so the Pages
+  // workflow sets VITE_BASE_PATH=/Mountain-Piper-website/ at build time.
+  const base = env.VITE_BASE_PATH || '/';
+
   return {
+    base,
     plugins,
     envPrefix: ['VITE_', 'NEXT_PUBLIC_'],
     define: processEnvDefines,

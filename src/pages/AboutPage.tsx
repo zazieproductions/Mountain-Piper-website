@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check, Award, Music2, GraduationCap } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { publicPath } from '../utils/paths';
 
 export function AboutPage() {
   const structuredData = [
@@ -58,9 +59,9 @@ export function AboutPage() {
           <div className="about-visual">
             <div className="about-image-frame">
               <picture>
-                <source srcSet="/images/kit-rashid-performing-400.webp 400w, /images/kit-rashid-performing-800.webp 800w" sizes="(max-width: 820px) 100vw, 400px" type="image/webp" />
+                <source srcSet={`${publicPath('images/kit-rashid-performing-400.webp')} 400w, ${publicPath('images/kit-rashid-performing-800.webp')} 800w`} sizes="(max-width: 820px) 100vw, 400px" type="image/webp" />
                 <img
-                  src="/images/kit-rashid-performing-800.jpg"
+                  src={`${publicPath('images/kit-rashid-performing-800.jpg')}`}
                   alt="Kit Rashid performing Highland bagpipes, Scottish bagpiper in Western North Carolina"
                   width={800}
                   height={1000}
@@ -71,9 +72,9 @@ export function AboutPage() {
             </div>
             <div className="about-inset">
               <picture>
-                <source srcSet="/images/kit-rashid-stone-steps-400.webp 400w, /images/kit-rashid-stone-steps-800.webp 800w" sizes="200px" type="image/webp" />
+                <source srcSet={`${publicPath('images/kit-rashid-stone-steps-400.webp')} 400w, ${publicPath('images/kit-rashid-stone-steps-800.webp')} 800w`} sizes="200px" type="image/webp" />
                 <img
-                  src="/images/kit-rashid-stone-steps-800.jpg"
+                  src={`${publicPath('images/kit-rashid-stone-steps-800.jpg')}`}
                   alt="Kit Rashid in Highland dress on stone steps, Asheville bagpiper"
                   width={400}
                   height={533}

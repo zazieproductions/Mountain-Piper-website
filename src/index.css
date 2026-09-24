@@ -337,7 +337,7 @@ main { flex: 1; }
 .lessons-note { position: absolute; right: 0; bottom: 0; width: 280px; padding: 20px 22px; background: var(--forest); color: rgba(255,255,255,.72); font-family: 'Libre Caslon Display', Georgia, serif; font-size: 16px; line-height: 1.45; }
 
 .contact { position: relative; background: var(--forest); color: white; overflow: hidden; }
-.contact-texture { position: absolute; inset: 0 48% 0 0; opacity: .18; background: linear-gradient(90deg, rgba(9,38,31,.6), transparent), url('/images/kit-rashid-stone-steps-800.webp') center / cover; mix-blend-mode: luminosity; }
+.contact-texture { position: absolute; inset: 0 48% 0 0; opacity: .18; background: linear-gradient(90deg, rgba(9,38,31,.6), transparent), var(--contact-texture-img, none) center / cover; mix-blend-mode: luminosity; }
 .contact-grid { position: relative; display: grid; grid-template-columns: .85fr 1fr; gap: 80px; align-items: start; }
 .contact-copy { padding-top: 24px; }
 .contact h2 { max-width: 530px; font-size: clamp(44px, 5vw, 72px); line-height: .98; }

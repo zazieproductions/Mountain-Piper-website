@@ -1,6 +1,8 @@
+import { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Award, Check, Church, GraduationCap, Heart, Music2, Sparkles, CalendarDays, Phone, Mail } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { publicPath } from '../utils/paths';
 
 const services = [
   {
@@ -156,9 +158,9 @@ export function HomePage() {
         <div className="hero-grain" aria-hidden="true" />
         <div className="hero-media" aria-hidden="true">
           <picture>
-            <source srcSet="/images/kit-rashid-mountains-400.webp 400w, /images/kit-rashid-mountains-800.webp 800w, /images/kit-rashid-mountains-1200.webp 1200w" sizes="(max-width: 820px) 100vw, 54vw" type="image/webp" />
+            <source srcSet={`${publicPath('images/kit-rashid-mountains-400.webp')} 400w, ${publicPath('images/kit-rashid-mountains-800.webp')} 800w, ${publicPath('images/kit-rashid-mountains-1200.webp')} 1200w`} sizes="(max-width: 820px) 100vw, 54vw" type="image/webp" />
             <img
-              src="/images/kit-rashid-mountains-1200.jpg"
+              src={`${publicPath('images/kit-rashid-mountains-1200.jpg')}`}
               alt=""
               width={1200}
               height={800}
@@ -261,9 +263,9 @@ export function HomePage() {
             <div className="about-visual">
               <div className="about-image-frame">
                 <picture>
-                  <source srcSet="/images/kit-rashid-performing-400.webp 400w, /images/kit-rashid-performing-800.webp 800w" sizes="(max-width: 820px) 100vw, 400px" type="image/webp" />
+                  <source srcSet={`${publicPath('images/kit-rashid-performing-400.webp')} 400w, ${publicPath('images/kit-rashid-performing-800.webp')} 800w`} sizes="(max-width: 820px) 100vw, 400px" type="image/webp" />
                   <img
-                    src="/images/kit-rashid-performing-800.jpg"
+                    src={`${publicPath('images/kit-rashid-performing-800.jpg')}`}
                     alt="Kit Rashid performing on the Highland bagpipes beside a stone tower in Western North Carolina"
                     width={800}
                     height={1000}
@@ -274,9 +276,9 @@ export function HomePage() {
               </div>
               <div className="about-inset">
                 <picture>
-                  <source srcSet="/images/kit-rashid-stone-steps-400.webp 400w, /images/kit-rashid-stone-steps-800.webp 800w" sizes="200px" type="image/webp" />
+                  <source srcSet={`${publicPath('images/kit-rashid-stone-steps-400.webp')} 400w, ${publicPath('images/kit-rashid-stone-steps-800.webp')} 800w`} sizes="200px" type="image/webp" />
                   <img
-                    src="/images/kit-rashid-stone-steps-800.jpg"
+                    src={`${publicPath('images/kit-rashid-stone-steps-800.jpg')}`}
                     alt="Kit Rashid in full Highland dress on stone steps, Asheville bagpiper"
                     width={400}
                     height={533}
@@ -441,9 +443,9 @@ export function HomePage() {
           </div>
           <div className="lessons-image">
             <picture>
-              <source srcSet="/images/kit-rashid-artist-studios-400.webp 400w, /images/kit-rashid-artist-studios-800.webp 800w" sizes="(max-width: 820px) 100vw, 500px" type="image/webp" />
+              <source srcSet={`${publicPath('images/kit-rashid-artist-studios-400.webp')} 400w, ${publicPath('images/kit-rashid-artist-studios-800.webp')} 800w`} sizes="(max-width: 820px) 100vw, 500px" type="image/webp" />
               <img
-                src="/images/kit-rashid-artist-studios-800.jpg"
+                src={`${publicPath('images/kit-rashid-artist-studios-800.jpg')}`}
                 alt="Kit Rashid in full Highland dress holding bagpipes outside an artist studio in Asheville, North Carolina"
                 width={800}
                 height={600}
@@ -457,7 +459,11 @@ export function HomePage() {
       </section>
 
       <section className="contact section-pad" id="contact" aria-labelledby="contact-heading">
-        <div className="contact-texture" aria-hidden="true" />
+        <div
+          className="contact-texture"
+          aria-hidden="true"
+          style={{ '--contact-texture-img': `url("${publicPath('images/kit-rashid-stone-steps-800.webp')}")` } as CSSProperties}
+        />
         <div className="container contact-grid">
           <div className="contact-copy">
             <p className="eyebrow">Booking inquiries</p>

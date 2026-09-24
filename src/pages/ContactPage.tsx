@@ -1,7 +1,8 @@
-import { FormEvent, useState } from 'react';
+import { CSSProperties, FormEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CalendarDays, Check, Mail, MapPin, Phone } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { publicPath } from '../utils/paths';
 
 type FormErrors = {
   name?: string;
@@ -108,7 +109,11 @@ export function ContactPage() {
       </section>
 
       <section className="contact section-pad" id="contact-form" aria-labelledby="form-heading">
-        <div className="contact-texture" aria-hidden="true" />
+        <div
+          className="contact-texture"
+          aria-hidden="true"
+          style={{ '--contact-texture-img': `url("${publicPath('images/kit-rashid-stone-steps-800.webp')}")` } as CSSProperties}
+        />
         <div className="container contact-grid">
           <div className="contact-copy">
             <p className="eyebrow">Get in touch</p>
