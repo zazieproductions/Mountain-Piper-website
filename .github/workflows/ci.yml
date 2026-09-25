@@ -56,7 +56,7 @@ jobs:
           echo "Pages base path verified in dist-pages/index.dev.html"
 
       - name: Upload pages build
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: pages-build
           path: dist-pages
