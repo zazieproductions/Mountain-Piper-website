@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, Sparkles, Music2, GraduationCap, Church } from 'lucide-react';
+import { ArrowRight, Check, Sparkles, GraduationCap, Church } from 'lucide-react';
 import { SEO } from '../components/SEO';
 
 export function EventsPage() {

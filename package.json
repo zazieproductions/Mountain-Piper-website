@@ -1,13 +1,21 @@
 {
-  "name": "vite-react-ts",
+  "name": "mountain-piper-website",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Marketing website for Mountain Piper — Kit Rashid, professional Highland bagpiper in Asheville, North Carolina.",
+  "homepage": "https://zazieproductions.github.io/Mountain-Piper-website/",
+  "license": "UNLICENSED",
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:pages": "tsc -b && vite build --mode pages && node scripts/publish-github-pages.mjs",
+    "typecheck": "tsc -b",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "preview": "vite preview"
   },
   "dependencies": {

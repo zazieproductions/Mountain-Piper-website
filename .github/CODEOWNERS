@@ -1,0 +1,11 @@
+# Default owner for everything in the repository.
+* @zazieproductions
+
+# The publish pipeline can commit to main, so changes here get explicit review.
+/scripts/publish-github-pages.mjs @zazieproductions
+/.github/workflows/ @zazieproductions
+
+# Build output is generated — a change here is usually an accident.
+/index.html @zazieproductions
+/404.html @zazieproductions
+/assets/ @zazieproductions
