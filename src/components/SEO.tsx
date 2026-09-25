@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { defaultOgImage, siteName, siteUrl } from '../siteConfig';
 
 type SEOProps = {
   title: string;
@@ -10,20 +11,17 @@ type SEOProps = {
   noIndex?: boolean;
 };
 
-const SITE_URL = 'https://mountainpiperavl.com';
-const DEFAULT_OG_IMAGE = `${SITE_URL}/images/kit-rashid-mountains-1200.webp`;
-
 export function SEO({
   title,
   description,
   canonicalPath,
-  ogImage = DEFAULT_OG_IMAGE,
+  ogImage = defaultOgImage,
   ogType = 'website',
   structuredData,
   noIndex = false,
 }: SEOProps) {
-  const canonicalUrl = `${SITE_URL}${canonicalPath}`;
-  const fullTitle = title.includes('Mountain Piper') ? title : `${title} | Mountain Piper - Kit Rashid`;
+  const canonicalUrl = `${siteUrl}${canonicalPath}`;
+  const fullTitle = title.includes('Mountain Piper') ? title : `${title} | ${siteName}`;
 
   useEffect(() => {
     // Title
@@ -103,5 +101,3 @@ export function SEO({
 
   return null;
 }
-
-export const siteUrl = SITE_URL;

@@ -1,0 +1,64 @@
+name: CI
+
+# Verification only. This workflow never writes to the repository — the sibling
+# `publish-pages.yml` is what deploys. Keeping them separate means a review
+# build can never mutate the live site.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Lint · Typecheck · Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+      # Build again in `pages` mode so a base-path regression is caught here
+      # rather than after it has been committed to main by publish-pages.yml.
+      - name: Build for GitHub Pages
+        run: npx vite build --mode pages --outDir dist-pages --emptyOutDir
+
+      - name: Verify GitHub Pages base path
+        run: |
+          if ! grep -q "/Mountain-Piper-website/assets/" dist-pages/index.dev.html; then
+            echo "::error::The pages build does not reference /Mountain-Piper-website/assets/ — the published site would load blank."
+            exit 1
+          fi
+          echo "Pages base path verified in dist-pages/index.dev.html"
+
+      - name: Upload pages build
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-build
+          path: dist-pages
+          retention-days: 7
+          if-no-files-found: error

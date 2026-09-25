@@ -1,0 +1,60 @@
+Copyright (c) Mountain Piper — Kit Rashid, Asheville, North Carolina.
+All rights reserved.
+
+This repository contains proprietary, client-owned work. It is published
+publicly so that it can be viewed, referenced and learned from. It is **not**
+licensed for reuse, redistribution or derivative commercial use.
+
+-----------------------------------------------------------------------------
+What you MAY do
+-----------------------------------------------------------------------------
+
+  * Read the source code for reference, study and education.
+  * Fork this repository privately to inspect it.
+  * Cite or link to it as an example of work.
+  * Open issues and pull requests that improve this specific project.
+
+-----------------------------------------------------------------------------
+What you MAY NOT do without prior written permission
+-----------------------------------------------------------------------------
+
+  * Copy, adapt, rebrand or republish the site, in whole or in part, for any
+    other person, business or purpose.
+  * Reuse the photography, copy, brand name, logo, colour system or design.
+  * Redistribute this codebase as a template, boilerplate, starter kit,
+    theme or product, free or paid.
+  * Remove or alter copyright, attribution or contact information.
+
+-----------------------------------------------------------------------------
+Third-party code
+-----------------------------------------------------------------------------
+
+This project builds on open-source software whose own licences apply to those
+components independently of this notice — including React, React DOM, React
+Router, TypeScript, Vite, Tailwind CSS, lucide-react and Framer Motion. Each is
+used under its original open-source licence; see `package.json` and each
+project's repository for details.
+
+-----------------------------------------------------------------------------
+Disclaimer
+-----------------------------------------------------------------------------
+
+THE SOFTWARE AND CONTENT ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
+OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR CONTENT OR THE USE
+OR OTHER DEALINGS IN THE SOFTWARE OR CONTENT.
+
+-----------------------------------------------------------------------------
+
+To request permission to reuse any part of this project, contact:
+
+    Mountain Piper — Kit Rashid
+    mountainpiper1@gmail.com
+    +1 828.974.1719
+
+If you would rather this repository carry a standard open-source licence such
+as MIT or Apache-2.0, replace this file with the licence text and update the
+badge in `README.md`.

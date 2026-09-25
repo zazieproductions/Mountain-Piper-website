@@ -1,0 +1,62 @@
+name: Feature request
+description: Suggest a new capability for the website.
+title: "[Feature] "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This site is deliberately small: no backend, no CMS, no analytics, no
+        hosting bill. Proposals that preserve that are the easiest to accept.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: >
+        Who is affected, and what are they trying to do that they cannot do
+        today? A booking enquiry that gets lost counts. A nice-to-have animation
+        probably does not.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to see?
+      placeholder: Describe the behaviour, not the implementation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: >
+        Could this be solved with copy, an existing section, or a third-party
+        service instead of new code?
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: What would this touch?
+      multiple: true
+      options:
+        - Content or copy
+        - Design or layout
+        - A new route or section
+        - SEO or structured data
+        - Accessibility
+        - Performance
+        - Build, CI or deployment
+        - A new dependency
+
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Guardrails
+      description: Please confirm the proposal respects these.
+      options:
+        - label: It can work without adding a backend
+        - label: It does not add a third-party script that tracks visitors
+        - label: It can be made accessible and responsive

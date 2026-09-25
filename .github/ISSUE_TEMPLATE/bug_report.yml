@@ -1,0 +1,89 @@
+name: Bug report
+description: Something on the site is broken or behaving incorrectly.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this.
+
+        If the whole page renders **blank**, check
+        [docs/TROUBLESHOOTING.md](https://github.com/zazieproductions/Mountain-Piper-website/blob/main/docs/TROUBLESHOOTING.md#blank-page-on-github-pages)
+        first — that is almost always a base-path mismatch.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where did this happen?
+      options:
+        - Home /
+        - Weddings
+        - Funerals & Memorials
+        - Events
+        - Lessons
+        - About
+        - Contact / booking form
+        - Site-wide (header, footer, navigation)
+        - Build, CI or deployment
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      placeholder: Describe what you saw. Include the exact URL.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1. Go to …
+        2. Click …
+        3. See …
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Where did you see it?
+      multiple: true
+      options:
+        - Live site (GitHub Pages)
+        - Custom domain (mountainpiperavl.com)
+        - Local dev server (npm run dev)
+        - Local preview build
+
+  - type: input
+    id: device
+    attributes:
+      label: Browser and device
+      placeholder: e.g. Safari 17 on iPhone 14, Chrome 129 on Windows 11
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Console errors
+      description: >
+        Open DevTools → Console and paste anything red. Delete this section if
+        there was nothing.
+      render: text
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag images in here.

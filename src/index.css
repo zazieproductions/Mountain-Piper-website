@@ -1,4 +1,14 @@
-@import "tailwindcss";
+/*
+ * Tailwind is used here for its preflight (reset) layer only — every component
+ * class in this project is hand-authored further down this file. Source
+ * detection is disabled because it scans the whole repository by default and
+ * generates utilities from prose in the Markdown docs.
+ *
+ * If utility classes are ever introduced in src/, re-enable detection with:
+ *   @import "tailwindcss" source(none);
+ *   @source "../src";
+ */
+@import "tailwindcss" source(none);
 
 :root {
   font-family: 'DM Sans', system-ui, -apple-system, sans-serif;

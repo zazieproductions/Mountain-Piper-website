@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Book a performance or ask about availability
+    url: mailto:mountainpiper1@gmail.com?subject=Mountain%20Piper%20booking%20inquiry
+    about: >
+      This tracker is for website problems, not booking. For weddings, funerals,
+      events or bagpipe lessons, email Kit directly — or call 828.974.1719.
+
+  - name: Report a security problem privately
+    url: https://github.com/zazieproductions/Mountain-Piper-website/blob/main/SECURITY.md
+    about: >
+      Please do not open a public issue for a vulnerability. SECURITY.md
+      explains how to report one privately.

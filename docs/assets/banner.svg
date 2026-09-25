@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400" role="img" aria-label="Mountain Piper — Kit Rashid, professional Highland bagpiper in Asheville, North Carolina">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#09261f"/>
+      <stop offset="55%" stop-color="#12362c"/>
+      <stop offset="100%" stop-color="#19483b"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e1b964" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#e1b964" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="400" fill="url(#bg)"/>
+  <circle cx="1120" cy="60" r="320" fill="url(#glow)"/>
+
+  <!-- far ridge -->
+  <path d="M0 300 L160 214 L268 268 L360 196 L520 300 L660 236 L780 292 L900 224 L1040 300 L1180 244 L1280 292 L1280 400 L0 400 Z" fill="#0d2f26" opacity="0.85"/>
+  <!-- near ridge -->
+  <path d="M0 344 L130 288 L240 330 L370 262 L500 344 L640 296 L760 340 L900 278 L1030 344 L1160 300 L1280 340 L1280 400 L0 400 Z" fill="#082019" opacity="0.95"/>
+
+  <line x1="0" y1="0" x2="1280" y2="0" stroke="#e1b964" stroke-opacity="0.55" stroke-width="3"/>
+
+  <!-- seal: mountains + chanter -->
+  <g transform="translate(96 96)">
+    <circle cx="52" cy="52" r="50" fill="none" stroke="#e1b964" stroke-opacity="0.75" stroke-width="2"/>
+    <circle cx="52" cy="52" r="42" fill="none" stroke="#e1b964" stroke-opacity="0.28" stroke-width="1"/>
+    <path d="M22 66 L42 32 L54 52 L62 40 L84 66" fill="none" stroke="#e1b964" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M28 70 H78 M38 77 H68" stroke="#e1b964" stroke-opacity="0.8" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M72 24 V52 M67 29 H77" stroke="#e1b964" stroke-opacity="0.8" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- wordmark -->
+  <text x="228" y="152" font-family="Georgia, 'Times New Roman', serif" font-size="74" fill="#f5f1e8" letter-spacing="-1">Mountain Piper</text>
+  <line x1="230" y1="180" x2="1180" y2="180" stroke="#e1b964" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="230" y="212" font-family="'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="17" fill="#e1b964" letter-spacing="4.2">KIT RASHID  ·  ASHEVILLE, NORTH CAROLINA</text>
+
+  <text x="230" y="256" font-family="'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="21" fill="#c9d6cf">Professional Highland bagpiper — weddings, memorials, ceremonies and lessons</text>
+  <text x="230" y="284" font-family="'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="21" fill="#c9d6cf">across Western North Carolina.</text>
+
+  <!-- stack pills -->
+  <g font-family="'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" letter-spacing="1.1">
+    <g>
+      <rect x="230" y="316" width="112" height="30" rx="15" fill="none" stroke="#e1b964" stroke-opacity="0.45"/>
+      <text x="286" y="336" fill="#e1b964" text-anchor="middle">REACT 19</text>
+    </g>
+    <g>
+      <rect x="354" y="316" width="146" height="30" rx="15" fill="none" stroke="#e1b964" stroke-opacity="0.45"/>
+      <text x="427" y="336" fill="#e1b964" text-anchor="middle">TYPESCRIPT</text>
+    </g>
+    <g>
+      <rect x="512" y="316" width="98" height="30" rx="15" fill="none" stroke="#e1b964" stroke-opacity="0.45"/>
+      <text x="561" y="336" fill="#e1b964" text-anchor="middle">VITE 7</text>
+    </g>
+    <g>
+      <rect x="622" y="316" width="182" height="30" rx="15" fill="none" stroke="#e1b964" stroke-opacity="0.45"/>
+      <text x="713" y="336" fill="#e1b964" text-anchor="middle">GITHUB PAGES</text>
+    </g>
+  </g>
+</svg>

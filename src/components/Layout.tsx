@@ -24,8 +24,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showBookButton, setShowBookButton] = useState(false);
   const location = useLocation();
+  const [menuPathname, setMenuPathname] = useState(location.pathname);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const firstMenuLinkRef = useRef<HTMLAnchorElement>(null);
+
+  // Close the mobile menu on route change. Adjusting state during render (rather
+  // than in an effect) skips the extra paint where the menu would still be open
+  // over the page the visitor just navigated to.
+  // https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes
+  if (menuPathname !== location.pathname) {
+    setMenuPathname(location.pathname);
+    setMenuOpen(false);
+  }
 
   // Show floating CTA only between hero and contact on homepage, always visible on other pages after scroll
   useEffect(() => {
@@ -55,11 +65,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       window.removeEventListener('resize', onScroll);
       if (frame) window.cancelAnimationFrame(frame);
     };
-  }, [location.pathname]);
-
-  // Close menu on route change
-  useEffect(() => {
-    setMenuOpen(false);
   }, [location.pathname]);
 
   // Close menu with Escape, handle focus trap basics

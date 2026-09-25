@@ -1,0 +1,37 @@
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: monthly
+      day: monday
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    groups:
+      # Framework and build tooling move together; batching them keeps the
+      # queue readable without hiding a breaking change inside a big bump.
+      dev-tooling:
+        patterns:
+          - "eslint*"
+          - "@eslint/*"
+          - "typescript*"
+          - "typescript-eslint"
+          - "@types/*"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+      day: monday
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - ci

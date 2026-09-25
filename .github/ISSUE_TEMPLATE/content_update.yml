@@ -1,0 +1,82 @@
+name: Content update
+description: Change copy, photography, prices, repertoire or business details.
+title: "[Content] "
+labels: [content]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for changes to words, images and business facts — not for code
+        changes. See
+        [docs/CONTENT.md](https://github.com/zazieproductions/Mountain-Piper-website/blob/main/docs/CONTENT.md)
+        for where each piece of content lives in the source.
+
+        Copy on this site is written for local search. If you are rewording a
+        heading, please keep the target keyword in it (for example *"Asheville
+        wedding bagpiper"*).
+
+  - type: dropdown
+    id: page
+    attributes:
+      label: Which page?
+      multiple: true
+      options:
+        - Home
+        - Weddings
+        - Funerals & Memorials
+        - Events
+        - Lessons
+        - About
+        - Contact
+        - Site-wide (header, footer)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of change?
+      multiple: true
+      options:
+        - Correct a factual error (phone, email, address, credential)
+        - Reword existing copy
+        - Add a new section
+        - Repertoire or tune list
+        - Pricing or lesson formats
+        - Photography
+        - FAQ
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: What does it say now?
+      description: Quote the existing text so it can be found.
+
+  - type: textarea
+    id: replacement
+    attributes:
+      label: What should it say instead?
+      description: Paste the exact replacement text.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: How urgent is this?
+      options:
+        - Routine — no deadline
+        - Soon — within a fortnight
+        - Urgent — wrong information is live right now
+    validations:
+      required: true
+
+  - type: textarea
+    id: images
+    attributes:
+      label: New photography
+      description: >
+        Attach images here. Landscape photos work best. Each one needs a short
+        description of what it shows, which will become the alt text.
