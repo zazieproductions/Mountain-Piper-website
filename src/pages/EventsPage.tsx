@@ -7,13 +7,13 @@ export function EventsPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Bagpiper for Events",
-      "name": "Bagpiper for Events Asheville | Highland Bagpiper Western North Carolina",
-      "description": "Professional bagpiper for events in Asheville and Western North Carolina. Ceremonies, commencements, festivals, church services, and private events.",
+      "serviceType": "Piper for Events",
+      "name": "Piper for Events Asheville | Highland Piper Western North Carolina",
+      "description": "Professional piper for events in Asheville and Western North Carolina. Ceremonies, commencements, festivals, church services, and private events.",
       "provider": {
         "@type": "ProfessionalService",
         "name": "Mountain Piper - Kit Rashid",
-        "telephone": "+1-828-974-1719",
+        "telephone": "+18642070085",
         "address": { "@type": "PostalAddress", "addressLocality": "Asheville", "addressRegion": "NC", "addressCountry": "US" }
       },
       "areaServed": [
@@ -27,7 +27,7 @@ export function EventsPage() {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mountainpiperavl.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Bagpiper for Events Asheville", "item": "https://mountainpiperavl.com/events" }
+        { "@type": "ListItem", "position": 2, "name": "Piper for Events Asheville", "item": "https://mountainpiperavl.com/events" }
       ]
     }
   ];
@@ -35,24 +35,17 @@ export function EventsPage() {
   return (
     <>
       <SEO
-        title="Bagpiper for Events Asheville | Ceremonies, Festivals & Private Events"
-        description="Hire a professional bagpiper for events in Asheville and Western North Carolina. Highland bagpipes for commencements, festivals, church services, Kirkin' o' the Tartans and private events."
+        title="Piper for Events Asheville | Ceremonies, Festivals & Private Events"
+        description="Hire a professional piper for events in Asheville and Western North Carolina. Highland bagpipes for commencements, festivals, church services, Kirkin' o' the Tartans and private events."
         canonicalPath="/events"
         structuredData={structuredData}
       />
 
       <section className="page-hero" aria-labelledby="events-heading">
         <div className="container">
-          <nav aria-label="Breadcrumb">
-            <ol className="breadcrumb">
-              <li><Link to="/">Home</Link></li>
-              <li aria-current="page">Bagpiper for Events Asheville</li>
-            </ol>
-          </nav>
-          <p className="eyebrow"><Sparkles size={14} aria-hidden="true" /> Highland bagpiper for events in Western North Carolina</p>
-          <h1 id="events-heading">Bagpiper for events in Asheville <em>that call for pageantry.</em></h1>
+          <h1 id="events-heading">Ceremonies &amp; <em>events</em></h1>
           <p className="lead">
-            From college commencements and Kirkin' o' the Tartans to festivals, sporting events, and private celebrations, the Highland bagpipe brings emotional power and tradition. Kit Rashid performs as an Asheville bagpiper for events across Western North Carolina.
+            From college commencements and Kirkin' o' the Tartans to festivals, sporting events, and private celebrations, the Highland bagpipe brings emotional power and tradition. Kit Rashid performs as an Asheville piper for events across Western North Carolina.
           </p>
           <div style={{ marginTop: '28px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             <Link to="/contact" className="button gold">Check event date <ArrowRight size={18} aria-hidden="true" /></Link>
@@ -64,11 +57,10 @@ export function EventsPage() {
       <section className="content-section section-pad" aria-labelledby="events-types-heading">
         <div className="container">
           <div style={{ maxWidth: '760px', marginBottom: '48px' }}>
-            <p className="eyebrow dark">Event types</p>
             <h2 id="events-types-heading" style={{ fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Highland bagpipes for ceremonies and celebrations throughout WNC.</h2>
             <div className="prose" style={{ marginTop: '16px' }}>
               <p>
-                As a Highland bagpiper based in Asheville, Kit has performed for a wide range of events across Western North Carolina and beyond — each with its own traditions, timing, and audience. Every event performance is tailored to the setting and purpose.
+                As a Highland piper based in Asheville, Kit has performed for a wide range of events across Western North Carolina and beyond — each with its own traditions, timing, and audience. Every event performance is tailored to the setting and purpose.
               </p>
             </div>
           </div>
@@ -120,17 +112,17 @@ export function EventsPage() {
       <section className="content-section alt section-pad" aria-labelledby="event-details-heading">
         <div className="container two-col">
           <div>
-            <h2 id="event-details-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05 }}>What to expect from an Asheville bagpiper for your event.</h2>
+            <h2 id="event-details-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05 }}>What to expect from an Asheville piper for your event.</h2>
             <div className="prose" style={{ marginTop: '16px' }}>
               <p>
-                Booking a bagpiper for events in Asheville and Western North Carolina starts with a conversation about your event's purpose, venue, and schedule. Kit provides guidance on timing, placement, and repertoire so the bagpipes support your event rather than overwhelm it.
+                Booking a piper for events in Asheville and Western North Carolina starts with a conversation about your event's purpose, venue, and schedule. Kit provides guidance on timing, placement, and repertoire so the bagpipes support your event rather than overwhelm it.
               </p>
               <p>
                 As a professional-grade piper and instructor for the Grandfather Mountain Highlanders, Kit brings both musical standards and practical experience with mountain venues, variable weather, and diverse audiences.
               </p>
             </div>
             <ul className="check-list">
-              <li><Check aria-hidden="true" /> Local Asheville bagpiper with 43 years experience</li>
+              <li><Check aria-hidden="true" /> Local Asheville piper with 43 years experience</li>
               <li><Check aria-hidden="true" /> Professional-grade EUSPBA competitor</li>
               <li><Check aria-hidden="true" /> Full Highland dress and polished presentation</li>
               <li><Check aria-hidden="true" /> Direct coordination — no agency, no middleman</li>
@@ -156,7 +148,6 @@ export function EventsPage() {
 
       <section className="contact section-pad" aria-labelledby="events-contact-heading">
         <div className="container" style={{ textAlign: 'center', maxWidth: '720px' }}>
-          <p className="eyebrow">Book an Asheville bagpiper for your event</p>
           <h2 id="events-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Make your event in Western North Carolina unforgettable.</h2>
           <p style={{ color: 'rgba(255,255,255,.7)', marginTop: '20px', lineHeight: 1.7 }}>
             Tell Kit about your event in Asheville or Western North Carolina — date, location, and the atmosphere you're envisioning — for a personal response.

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Check, Award, Music2, GraduationCap } from 'lucide-react';
+import { KitBiography } from '../components/KitBiography';
 import { SEO } from '../components/SEO';
 import { publicAsset, publicSrcSet } from '../publicAsset';
 
@@ -9,10 +10,10 @@ export function AboutPage() {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Kit Rashid",
-      "jobTitle": "Professional Highland Bagpiper",
-      "description": "Professional Highland bagpiper based in Asheville, North Carolina with 43 years experience as performer, teacher and competitor. Instructor for Grandfather Mountain Highlanders.",
+      "jobTitle": "Professional Highland Piper",
+      "description": "Professional Highland piper based in Asheville, North Carolina with 43 years experience as performer, teacher and competitor. Instructor for Grandfather Mountain Highlanders.",
       "address": { "@type": "PostalAddress", "addressLocality": "Asheville", "addressRegion": "NC", "addressCountry": "US" },
-      "telephone": "+1-828-974-1719",
+      "telephone": "+18642070085",
       "email": "mountainpiper1@gmail.com",
       "url": "https://mountainpiperavl.com/about",
       "knowsAbout": ["Highland bagpipes", "Scottish bagpipes", "Bagpipe lessons", "EUSPBA"],
@@ -23,7 +24,7 @@ export function AboutPage() {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mountainpiperavl.com/" },
-        { "@type": "ListItem", "position": 2, "name": "About - Scottish Bagpiper Western North Carolina", "item": "https://mountainpiperavl.com/about" }
+        { "@type": "ListItem", "position": 2, "name": "About - Scottish Piper Western North Carolina", "item": "https://mountainpiperavl.com/about" }
       ]
     }
   ];
@@ -31,8 +32,8 @@ export function AboutPage() {
   return (
     <>
       <SEO
-        title="About Kit Rashid | Scottish Bagpiper & Highland Bagpiper Asheville"
-        description="Meet Kit Rashid, professional Highland bagpiper based in Asheville, NC. 43 years experience, professional-grade EUSPBA competitor, instructor for Grandfather Mountain Highlanders. Scottish bagpiper serving Western North Carolina."
+        title="About Kit Rashid | Scottish Piper & Highland Piper Asheville"
+        description="Meet Kit Rashid, professional Highland piper based in Asheville, NC. 43 years experience, professional-grade EUSPBA competitor, instructor for Grandfather Mountain Highlanders. Scottish piper serving Western North Carolina."
         canonicalPath="/about"
         ogImage="https://mountainpiperavl.com/images/kit-rashid-performing-800.webp"
         structuredData={structuredData}
@@ -40,17 +41,7 @@ export function AboutPage() {
 
       <section className="page-hero" aria-labelledby="about-heading">
         <div className="container">
-          <nav aria-label="Breadcrumb">
-            <ol className="breadcrumb">
-              <li><Link to="/">Home</Link></li>
-              <li aria-current="page">About - Scottish Bagpiper WNC</li>
-            </ol>
-          </nav>
-          <p className="eyebrow"><Music2 size={14} aria-hidden="true" /> Scottish bagpiper · Highland bagpiper · Asheville, NC</p>
-          <h1 id="about-heading">Kit Rashid <em>professional Highland bagpiper in Asheville.</em></h1>
-          <p className="lead">
-            Originally from Rome, New York, and proud to call Asheville home, Kit brings 43 years of experience as a performer, teacher, and competitor on the Highland bagpipe. A Scottish bagpiper in Western North Carolina with a vocation for sharing this music at meaningful moments.
-          </p>
+          <h1 id="about-heading">About <em>Kit Rashid</em></h1>
         </div>
       </section>
 
@@ -62,7 +53,7 @@ export function AboutPage() {
                 <source srcSet={publicSrcSet([['images/kit-rashid-performing-400.webp', '400w'], ['images/kit-rashid-performing-800.webp', '800w']])} sizes="(max-width: 820px) 100vw, 400px" type="image/webp" />
                 <img
                   src={publicAsset('images/kit-rashid-performing-800.jpg')}
-                  alt="Kit Rashid performing Highland bagpipes, Scottish bagpiper in Western North Carolina"
+                  alt="Kit Rashid performing Highland bagpipes, Scottish piper in Western North Carolina"
                   width={800}
                   height={1000}
                   loading="lazy"
@@ -75,7 +66,7 @@ export function AboutPage() {
                 <source srcSet={publicSrcSet([['images/kit-rashid-stone-steps-400.webp', '400w'], ['images/kit-rashid-stone-steps-800.webp', '800w']])} sizes="200px" type="image/webp" />
                 <img
                   src={publicAsset('images/kit-rashid-stone-steps-800.jpg')}
-                  alt="Kit Rashid in Highland dress on stone steps, Asheville bagpiper"
+                  alt="Kit Rashid in Highland dress on stone steps, Asheville piper"
                   width={400}
                   height={533}
                   loading="lazy"
@@ -97,25 +88,8 @@ export function AboutPage() {
           </div>
 
           <div className="about-copy">
-            <p className="eyebrow dark">The piper</p>
-            <h2 id="about-story-heading" style={{ fontSize: 'clamp(48px, 5vw, 72px)' }}>Four decades of craft and devotion.</h2>
-            <div className="about-route" aria-label="From Rome, New York to Asheville, North Carolina">
-              <span>Rome, New York</span>
-              <i aria-hidden="true" />
-              <span>Asheville, North Carolina</span>
-            </div>
-            <p className="about-lead">
-              Put simply, piping is his vocation — a firm commitment to sharing the music he loves in a way that is completely inclusive and always professional.
-            </p>
-            <p>
-              Kit competes as a soloist in the <strong>professional grade of the Eastern United States Pipe Band Association (EUSPBA)</strong>, maintaining the competitive standard that shows up at every booking, whether it's a wedding in Asheville, a memorial in Buncombe County, or a ceremony elsewhere in Western North Carolina.
-            </p>
-            <p>
-              He serves as an instructor for the <strong>Grandfather Mountain Highlanders</strong>, the host band of the Grandfather Mountain Highland Games — one of the most storied Highland gatherings in the United States, held in the mountains of Western North Carolina.
-            </p>
-            <p>
-              For more than 40 years he has provided top-quality Highland bagpipe music for weddings, funerals, commencements, festivals, and just about every kind of occasion in between. Every performance is polished, personal, and delivered with respect for the moment.
-            </p>
+            <h2 id="about-story-heading" className="sr-only">About Kit Rashid</h2>
+            <KitBiography />
             <div className="about-lineage">
               <p className="lineage-intro">Kit has had the good fortune to study with some of piping's greats, including:</p>
               <ul>
@@ -142,8 +116,7 @@ export function AboutPage() {
       <section className="about-pillars section-pad" aria-labelledby="pillars-heading">
         <div className="container">
           <div className="pillars-heading">
-            <p className="eyebrow dark">Three disciplines, one standard</p>
-            <h3 id="pillars-heading">Performer. Competitor. Teacher. Asheville bagpiper.</h3>
+            <h3 id="pillars-heading">Performer. Competitor. Teacher.</h3>
           </div>
           <div className="pillar-grid">
             <article className="pillar">
@@ -180,14 +153,10 @@ export function AboutPage() {
       <section className="content-section alt section-pad" aria-labelledby="highland-heading">
         <div className="container two-col">
           <div>
-            <p className="eyebrow dark">Highland tradition</p>
-            <h2 id="highland-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05 }}>Scottish bagpiper and Highland bagpiper in Western North Carolina.</h2>
+            <h2 id="highland-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05 }}>The Highland bagpipe</h2>
             <div className="prose" style={{ marginTop: '16px' }}>
               <p>
                 The Highland bagpipe is often called the Scottish bagpipe — its sound is inseparable from Scottish heritage, but its power translates across cultures and occasions. In Asheville and Western North Carolina, where mountain traditions and Scottish heritage run deep, the bagpipe feels particularly at home.
-              </p>
-              <p>
-                Whether you search for Scottish bagpiper Western North Carolina, Highland bagpiper Asheville, or simply Asheville bagpipes, the goal is the same: a live, acoustic instrument played with technical command and musical sensitivity for a moment that matters.
               </p>
               <p>
                 Kit's background as both a performer and teacher means he can speak to the instrument's history, repertoire, and etiquette while keeping focus on your event — not on performance for its own sake.
@@ -218,10 +187,9 @@ export function AboutPage() {
 
       <section className="contact section-pad" aria-labelledby="about-contact-heading">
         <div className="container" style={{ textAlign: 'center', maxWidth: '720px' }}>
-          <p className="eyebrow">Book an Asheville bagpiper</p>
-          <h2 id="about-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Work with a professional Highland bagpiper based in Asheville.</h2>
+          <h2 id="about-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Work with a professional Highland piper based in Asheville.</h2>
           <p style={{ color: 'rgba(255,255,255,.7)', marginTop: '20px', lineHeight: 1.7 }}>
-            Whether you need a wedding bagpiper in Asheville, a funeral bagpiper in Western North Carolina, or bagpipe lessons in Asheville, reach out with your date and location.
+            Whether you need a wedding piper in Asheville, a funeral piper in Western North Carolina, or bagpipe lessons in Asheville, reach out with your date and location.
           </p>
           <div style={{ marginTop: '32px', display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact" className="button gold">Contact Kit <ArrowRight size={18} aria-hidden="true" /></Link>

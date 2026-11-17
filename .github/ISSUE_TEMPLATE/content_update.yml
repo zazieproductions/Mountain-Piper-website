@@ -13,7 +13,7 @@ body:
 
         Copy on this site is written for local search. If you are rewording a
         heading, please keep the target keyword in it (for example *"Asheville
-        wedding bagpiper"*).
+        wedding piper"*).
 
   - type: dropdown
     id: page

@@ -1,7 +1,7 @@
 # Search engine optimisation
 
 This site exists to be found. Every technical decision below serves one question: *when someone in
-Western North Carolina searches for a bagpiper, does this page answer them?*
+Western North Carolina searches for a piper, does this page answer them?*
 
 - [Strategy](#strategy)
 - [Route map](#route-map)
@@ -18,7 +18,7 @@ Western North Carolina searches for a bagpiper, does this page answer them?*
 
 Three constraints shaped the approach:
 
-1. **Local intent dominates.** People search "bagpiper Asheville" or "wedding bagpiper Western NC",
+1. **Local intent dominates.** People search "piper Asheville" or "wedding piper Western NC",
    not "highland bagpipes". Copy leads with place.
 2. **Service pages are separate landing surfaces.** A wedding planner and a funeral director need
    completely different answers, so weddings, funerals, events and lessons each get their own
@@ -30,13 +30,13 @@ Three constraints shaped the approach:
 
 | Route | `<title>` | Primary schema |
 |---|---|---|
-| `/` | Asheville Bagpiper \| Highland Bagpipes for Weddings, Funerals & Events | `ProfessionalService`, `BreadcrumbList`, `FAQPage` |
-| `/weddings` | Asheville Wedding Bagpiper \| Bagpiper for Weddings in Western North Carolina | `Service`, `BreadcrumbList`, `FAQPage` |
-| `/funerals-memorials` | Funeral Bagpiper Asheville \| Memorial Bagpiper Western North Carolina | `Service`, `BreadcrumbList`, `FAQPage` |
-| `/events` | Bagpiper for Events Asheville \| Ceremonies, Festivals & Private Events | `Service`, `BreadcrumbList` |
+| `/` | Asheville Piper \| Highland Bagpipes for Weddings, Funerals & Events | `ProfessionalService`, `BreadcrumbList`, `FAQPage` |
+| `/weddings` | Asheville Wedding Piper \| Piper for Weddings in Western North Carolina | `Service`, `BreadcrumbList`, `FAQPage` |
+| `/funerals-memorials` | Funeral Piper Asheville \| Memorial Piper Western North Carolina | `Service`, `BreadcrumbList`, `FAQPage` |
+| `/events` | Piper for Events Asheville \| Ceremonies, Festivals & Private Events | `Service`, `BreadcrumbList` |
 | `/lessons` | Bagpipe Lessons Asheville \| Highland Bagpipe Lessons Western North Carolina | `Service`, `BreadcrumbList`, `FAQPage` |
-| `/about` | About Kit Rashid \| Scottish Bagpiper & Highland Bagpiper Asheville | `Person`, `BreadcrumbList` |
-| `/contact` | Contact Asheville Bagpiper \| Check Availability for Weddings, Funerals & Events | `ContactPage`, `BreadcrumbList` |
+| `/about` | About Kit Rashid \| Scottish Piper & Highland Piper Asheville | `Person`, `BreadcrumbList` |
+| `/contact` | Contact Asheville Piper \| Check Availability for Weddings, Funerals & Events | `ContactPage`, `BreadcrumbList` |
 
 Titles are set in each page's `<SEO title=…>` prop. `SEO.tsx` appends
 `| Mountain Piper - Kit Rashid` only when the title does not already contain "Mountain Piper" —
@@ -49,8 +49,8 @@ It is invoked once per page:
 
 ```tsx
 <SEO
-  title="Asheville Wedding Bagpiper | Bagpiper for Weddings in Western North Carolina"
-  description="Hire a professional wedding bagpiper in Asheville and Western North Carolina…"
+  title="Asheville Wedding Piper | Piper for Weddings in Western North Carolina"
+  description="Hire a professional wedding piper in Asheville and Western North Carolina…"
   canonicalPath="/weddings"
   structuredData={structuredData}
 />
@@ -123,7 +123,7 @@ is worse.
 - **Exactly one `<h1>` per page**, containing the page's target phrase.
 - **`aria-labelledby`** ties every `<section>` to its heading, so the heading structure doubles as
   the accessibility outline.
-- **Descriptive internal link text.** The footer nav uses full phrases ("Wedding Bagpiper
+- **Descriptive internal link text.** The footer nav uses full phrases ("Wedding Piper
   Asheville") rather than "Weddings" — deliberate, and worth keeping.
 - **Breadcrumbs are visible**, not just structured data.
 - **Images** carry `alt` text (or `alt=""` when decorative), plus explicit `width`/`height`.

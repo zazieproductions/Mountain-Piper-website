@@ -1,5 +1,4 @@
 import { FormEvent, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { ArrowRight, CalendarDays, Check, Mail, MapPin, Phone } from 'lucide-react';
 import { SEO } from '../components/SEO';
 
@@ -20,14 +19,14 @@ export function ContactPage() {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mountainpiperavl.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Contact - Asheville Bagpiper", "item": "https://mountainpiperavl.com/contact" }
+        { "@type": "ListItem", "position": 2, "name": "Contact - Asheville Piper", "item": "https://mountainpiperavl.com/contact" }
       ]
     },
     {
       "@context": "https://schema.org",
       "@type": "ContactPage",
-      "name": "Contact Mountain Piper - Asheville Bagpiper",
-      "description": "Contact Kit Rashid, professional Highland bagpiper based in Asheville, NC. Check availability for weddings, funerals, events and bagpipe lessons in Western North Carolina.",
+      "name": "Contact Mountain Piper - Asheville Piper",
+      "description": "Contact Kit Rashid, professional Highland piper based in Asheville, NC. Check availability for weddings, funerals, events and bagpipe lessons in Western North Carolina.",
       "url": "https://mountainpiperavl.com/contact"
     }
   ];
@@ -85,24 +84,17 @@ export function ContactPage() {
   return (
     <>
       <SEO
-        title="Contact Asheville Bagpiper | Check Availability for Weddings, Funerals & Events"
-        description="Contact Kit Rashid, professional Highland bagpiper based in Asheville, NC. Check availability for weddings, funerals, memorials, events and bagpipe lessons across Western North Carolina. 828.974.1719"
+        title="Contact Asheville Piper | Check Availability for Weddings, Funerals & Events"
+        description="Contact Kit Rashid, professional Highland piper based in Asheville, NC. Check availability for weddings, funerals, memorials, events and bagpipe lessons across Western North Carolina. +1 (864) 207-0085"
         canonicalPath="/contact"
         structuredData={structuredData}
       />
 
       <section className="page-hero" aria-labelledby="contact-heading">
         <div className="container">
-          <nav aria-label="Breadcrumb">
-            <ol className="breadcrumb">
-              <li><Link to="/">Home</Link></li>
-              <li aria-current="page">Contact Asheville Bagpiper</li>
-            </ol>
-          </nav>
-          <p className="eyebrow"><CalendarDays size={14} aria-hidden="true" /> Booking inquiries · Asheville & Western North Carolina</p>
-          <h1 id="contact-heading">Contact <em>Mountain Piper</em> — Asheville bagpiper.</h1>
+          <h1 id="contact-heading">Contact <em>Mountain Piper</em></h1>
           <p className="lead">
-            Every occasion is different. Share your date, location in Asheville or Western North Carolina, and a bit about the moment you have in mind. Kit responds personally with availability and a tailored quote.
+            Share your date, venue, and what you have in mind. Kit responds personally with availability and a tailored quote.
           </p>
         </div>
       </section>
@@ -111,16 +103,12 @@ export function ContactPage() {
         <div className="contact-texture" aria-hidden="true" />
         <div className="container contact-grid">
           <div className="contact-copy">
-            <p className="eyebrow">Get in touch</p>
-            <h2 id="form-heading">Make your moment resonate in Asheville.</h2>
-            <p>
-              Looking for an Asheville bagpiper for your wedding, funeral, memorial, or event? Or bagpipe lessons in Asheville? This form helps Kit understand your needs for a quick, personal response.
-            </p>
+            <h2 id="form-heading">Booking inquiries</h2>
             
             <div className="direct-contact" aria-label="Direct contact methods">
-              <a href="tel:+18289741719">
+              <a href="tel:+18642070085">
                 <span aria-hidden="true"><Phone /></span>
-                <div><small>Call Kit</small><strong>828.974.1719</strong></div>
+                <div><small>Call Kit</small><strong>+1 (864) 207-0085</strong></div>
               </a>
               <a href="mailto:mountainpiper1@gmail.com">
                 <span aria-hidden="true"><Mail /></span>
@@ -155,7 +143,7 @@ export function ContactPage() {
               <span id="inquiry-form-title">Performance inquiry</span>
               <small>All fields marked * are required</small>
             </div>
-            <p id="form-instructions" className="sr-only">Fill out this form to inquire about booking an Asheville bagpiper. Required fields are marked with an asterisk. Submitting opens your email app.</p>
+            <p id="form-instructions" className="sr-only">Fill out this form to inquire about booking an Asheville piper. Required fields are marked with an asterisk. Submitting opens your email app.</p>
             
             <div className="form-row">
               <label htmlFor="name">Full name * 
@@ -206,10 +194,10 @@ export function ContactPage() {
                   aria-describedby={errors.eventType ? 'eventType-error' : undefined}
                 >
                   <option value="" disabled>Select one</option>
-                  <option value="Wedding">Wedding - Asheville wedding bagpiper</option>
-                  <option value="Memorial or funeral">Memorial or funeral - Funeral bagpiper Asheville</option>
-                  <option value="Ceremony or private event">Ceremony or private event - Bagpiper for events Asheville</option>
-                  <option value="Bagpipe lessons">Bagpipe lessons - Bagpipe lessons Asheville</option>
+                  <option value="Wedding">Wedding</option>
+                  <option value="Memorial or funeral">Memorial or funeral</option>
+                  <option value="Ceremony or private event">Ceremony or private event</option>
+                  <option value="Bagpipe lessons">Bagpipe lessons</option>
                   <option value="Other">Other</option>
                 </select>
                 {errors.eventType && <span id="eventType-error" className="field-error" role="alert">{errors.eventType}</span>}
@@ -254,45 +242,12 @@ export function ContactPage() {
               </p>
             )}
             <p className="form-fineprint">
-              Submitting opens your default email app with a pre-filled message to mountainpiper1@gmail.com. No information is stored on this website. For time-sensitive funeral inquiries in Asheville, calling 828.974.1719 is fastest.
+              Submitting opens your default email app with a pre-filled message to mountainpiper1@gmail.com. No information is stored on this website. For time-sensitive funeral inquiries in Asheville, calling +1 (864) 207-0085 is fastest.
             </p>
           </form>
         </div>
       </section>
 
-      <section className="local-seo section-pad" aria-labelledby="contact-local-heading">
-        <div className="container local-grid">
-          <div>
-            <h2 id="contact-local-heading" style={{ fontFamily: 'Libre Caslon Display' }}>Asheville bagpiper — serving Western North Carolina.</h2>
-            <div className="prose">
-              <p>
-                Mountain Piper is based in Asheville, North Carolina. If you're searching for a bagpiper near me in Asheville, a bagpiper for weddings in Western North Carolina, or a bagpiper for funerals in Western North Carolina, include your venue city when you inquire.
-              </p>
-              <p>
-                Kit performs for weddings, funerals, memorials, ceremonies, and events throughout Asheville, Buncombe County, Black Mountain, Weaverville, Hendersonville, Waynesville, and the greater Western North Carolina region.
-              </p>
-            </div>
-            <ul className="service-area-list" aria-label="Areas served">
-              <li>Asheville bagpiper</li>
-              <li>Western North Carolina</li>
-              <li>Buncombe County</li>
-              <li>Black Mountain</li>
-              <li>Weaverville</li>
-              <li>Hendersonville</li>
-            </ul>
-          </div>
-          <div>
-            <h3 style={{ fontFamily: 'Libre Caslon Display', fontSize: '20px', margin: '0 0 12px' }}>Quick links for high-intent searches</h3>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '8px' }}>
-              <li><Link to="/weddings" style={{ fontSize: '14px', textDecoration: 'underline' }}>Asheville wedding bagpiper & bagpiper for weddings in Western North Carolina</Link></li>
-              <li><Link to="/funerals-memorials" style={{ fontSize: '14px', textDecoration: 'underline' }}>Funeral bagpiper Asheville & bagpiper for funerals in Western North Carolina</Link></li>
-              <li><Link to="/events" style={{ fontSize: '14px', textDecoration: 'underline' }}>Bagpiper for events Asheville & Scottish bagpiper Western North Carolina</Link></li>
-              <li><Link to="/lessons" style={{ fontSize: '14px', textDecoration: 'underline' }}>Bagpipe lessons Asheville & Highland bagpiper Asheville</Link></li>
-              <li><Link to="/about" style={{ fontSize: '14px', textDecoration: 'underline' }}>About Kit — Scottish bagpiper & Highland bagpiper Asheville</Link></li>
-            </ul>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

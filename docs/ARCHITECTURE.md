@@ -114,7 +114,7 @@ SPA can set the document title or canonical URL, every page component renders:
 
 ```tsx
 <SEO
-  title="Asheville Wedding Bagpiper | Bagpiper for Weddings in Western North Carolina"
+  title="Asheville Wedding Piper | Piper for Weddings in Western North Carolina"
   description="…"
   canonicalPath="/weddings"
   structuredData={structuredData}
