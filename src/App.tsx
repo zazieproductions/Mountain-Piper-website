@@ -31,10 +31,10 @@ function NotFoundPage() {
         <p className="eyebrow">404 — Page not found</p>
         <h1 id="notfound-heading" style={{ fontSize: 'clamp(36px, 5vw, 56px)' }}>This page has piped to a different glen.</h1>
         <p className="lead" style={{ margin: '20px auto 0' }}>
-          The page you're looking for doesn't exist. Try the Asheville bagpiper homepage or explore weddings, funerals, events, lessons, and contact.
+          The page you're looking for doesn't exist. Return home or contact Kit for help.
         </p>
         <div style={{ marginTop: '28px', display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link to="/" className="button gold">Back to home — Asheville bagpiper</Link>
+          <Link to="/" className="button gold">Back to home</Link>
           <Link to="/contact" className="button outline-light">Contact</Link>
         </div>
       </div>

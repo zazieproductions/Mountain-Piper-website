@@ -92,7 +92,7 @@ fine), and strings containing an apostrophe must use double quotes.
 ### Rewording a heading
 
 The `<h1>` on each page carries the phrase the page is trying to rank for. **Keep the key phrase
-in it.** "Asheville wedding bagpiper" should stay in the weddings `<h1>`. Rewording around it is
+in it.** "Asheville wedding piper" should stay in the weddings `<h1>`. Rewording around it is
 fine; removing it costs rankings.
 
 ### Adding an FAQ
@@ -111,8 +111,8 @@ Look for the `<SEO … />` element near the top of the page component:
 
 ```tsx
 <SEO
-  title="Asheville Wedding Bagpiper | Bagpiper for Weddings in Western North Carolina"
-  description="Hire a professional wedding bagpiper in Asheville…"
+  title="Asheville Wedding Piper | Piper for Weddings in Western North Carolina"
+  description="Hire a professional wedding piper in Asheville…"
   canonicalPath="/weddings"
   structuredData={structuredData}
 />
@@ -176,14 +176,14 @@ footer, the mobile menu, the contact page and the structured data.
 
 | Detail | Files containing it |
 |---|---|
-| Phone `828.974.1719` / `+18289741719` | `src/components/Layout.tsx`, `src/pages/{Home,Contact,Funeral,Events,Lessons,Wedding,About}Page.tsx`, `index.dev.html` |
+| Phone `+1 (864) 207-0085` / `+18642070085` | `src/components/Layout.tsx`, `src/pages/{Home,Contact,Funeral,Events,Lessons,Wedding,About}Page.tsx`, `index.dev.html` |
 | Email `mountainpiper1@gmail.com` | `src/components/Layout.tsx`, `src/pages/{Home,Contact,About}Page.tsx`, `index.dev.html` |
 | Service area (Asheville, Western NC, Buncombe County) | every page's `structuredData`, `index.dev.html`, `sitemap.xml` |
 
 **To change the phone number or email, search the whole repository for the old value and update
 every occurrence.** A missed one leaves a dead link in the footer or, worse, wrong data in Google's
-business listing. Both formats matter: the display form (`828.974.1719`) and the link form
-(`tel:+18289741719`).
+business listing. Both formats matter: the display form (`+1 (864) 207-0085`) and the link form
+(`tel:+18642070085`).
 
 ## What not to touch
 

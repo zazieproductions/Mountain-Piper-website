@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, Heart, Music2, Clock, MapPin, Users } from 'lucide-react';
+import { ArrowRight, Check, Music2, Clock, MapPin, Users } from 'lucide-react';
 import { SEO } from '../components/SEO';
 
 export function WeddingPage() {
@@ -7,13 +7,13 @@ export function WeddingPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Bagpiper for Wedding",
-      "name": "Asheville Wedding Bagpiper - Highland Bagpipes for Weddings",
-      "description": "Professional Highland bagpiper for weddings in Asheville and Western North Carolina. Prelude, processional, recessional and reception bagpipes.",
+      "serviceType": "Piper for Wedding",
+      "name": "Asheville Wedding Piper - Highland Bagpipes for Weddings",
+      "description": "Professional Highland piper for weddings in Asheville and Western North Carolina. Prelude, processional, recessional and reception bagpipes.",
       "provider": {
         "@type": "ProfessionalService",
         "name": "Mountain Piper - Kit Rashid",
-        "telephone": "+1-828-974-1719",
+        "telephone": "+18642070085",
         "address": { "@type": "PostalAddress", "addressLocality": "Asheville", "addressRegion": "NC", "addressCountry": "US" }
       },
       "areaServed": [
@@ -27,7 +27,7 @@ export function WeddingPage() {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mountainpiperavl.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Wedding Bagpiper Asheville", "item": "https://mountainpiperavl.com/weddings" }
+        { "@type": "ListItem", "position": 2, "name": "Wedding Piper Asheville", "item": "https://mountainpiperavl.com/weddings" }
       ]
     },
     {
@@ -36,7 +36,7 @@ export function WeddingPage() {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How long does a wedding bagpiper play for?",
+          "name": "How long does a wedding piper play for?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Most wedding bookings in Asheville include prelude as guests arrive (15-20 minutes), processional, and recessional. Additional time for cocktail hour or reception can be arranged. Timing is tailored to your schedule."
@@ -65,8 +65,8 @@ export function WeddingPage() {
   return (
     <>
       <SEO
-        title="Asheville Wedding Bagpiper | Bagpiper for Weddings in Western North Carolina"
-        description="Professional bagpiper for weddings in Asheville and Western North Carolina. Highland bagpipes for ceremony prelude, processional, recessional and reception. Based in Asheville, NC."
+        title="Asheville Wedding Piper | Piper for Weddings in Western North Carolina"
+        description="Professional piper for weddings in Asheville and Western North Carolina. Highland bagpipes for ceremony prelude, processional, recessional and reception. Based in Asheville, NC."
         canonicalPath="/weddings"
         ogImage="https://mountainpiperavl.com/images/kit-rashid-mountains-1200.webp"
         structuredData={structuredData}
@@ -74,14 +74,7 @@ export function WeddingPage() {
 
       <section className="page-hero" aria-labelledby="wedding-heading">
         <div className="container">
-          <nav aria-label="Breadcrumb">
-            <ol className="breadcrumb">
-              <li><Link to="/">Home</Link></li>
-              <li aria-current="page">Wedding Bagpiper Asheville</li>
-            </ol>
-          </nav>
-          <p className="eyebrow"><Heart size={14} aria-hidden="true" /> Bagpiper for weddings in Western North Carolina</p>
-          <h1 id="wedding-heading">Asheville wedding bagpiper for <em>a ceremony no one will forget.</em></h1>
+          <h1 id="wedding-heading">Music for your <em>wedding</em></h1>
           <p className="lead">
             The Highland bagpipe brings pageantry, emotion, and a sense of occasion that photographs can't capture. Based in Asheville, Kit Rashid provides professional wedding bagpipes across Western North Carolina — from intimate mountain elopements to grand ballroom processionals.
           </p>
@@ -95,11 +88,10 @@ export function WeddingPage() {
       <section className="content-section section-pad" aria-labelledby="wedding-services-heading">
         <div className="container two-col">
           <div>
-            <p className="eyebrow dark">Wedding services</p>
             <h2 id="wedding-services-heading">How bagpipes fit your Asheville wedding day.</h2>
             <div className="prose">
               <p>
-                As an Asheville bagpiper, Kit tailors each wedding performance to your venue, timeline, and the feeling you want your guests to carry. Whether you're planning a wedding in downtown Asheville, a mountaintop ceremony near Black Mountain, or a celebration in the broader Western North Carolina region, the bagpipes can anchor key moments.
+                As an Asheville piper, Kit tailors each wedding performance to your venue, timeline, and the feeling you want your guests to carry. Whether you're planning a wedding in downtown Asheville, a mountaintop ceremony near Black Mountain, or a celebration in the broader Western North Carolina region, the bagpipes can anchor key moments.
               </p>
               <p>
                 Most couples book for ceremony prelude, processional, and recessional. The sound of Highland bagpipes carrying across a mountain venue or greeting guests as they arrive creates an immediate sense of arrival and celebration.
@@ -135,7 +127,6 @@ export function WeddingPage() {
       <section className="content-section alt section-pad" aria-labelledby="repertoire-heading">
         <div className="container">
           <div style={{ maxWidth: '720px' }}>
-            <p className="eyebrow dark">Repertoire</p>
             <h2 id="repertoire-heading" style={{ fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Wedding bagpipe music for Western North Carolina ceremonies.</h2>
             <div className="prose" style={{ marginTop: '20px' }}>
               <p>
@@ -178,8 +169,7 @@ export function WeddingPage() {
       <section className="faq-section section-pad" aria-labelledby="wedding-faq-heading">
         <div className="container faq-grid">
           <div>
-            <p className="eyebrow dark">Wedding bagpiper FAQ</p>
-            <h2 id="wedding-faq-heading" style={{ fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Common questions about hiring a bagpiper for weddings in Asheville.</h2>
+            <h2 id="wedding-faq-heading" style={{ fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Common questions about hiring a piper for weddings in Asheville.</h2>
             <p style={{ color: 'var(--muted)', marginTop: '16px', lineHeight: 1.7 }}>
               Planning a wedding in Asheville or Western North Carolina? Here are answers to questions couples often ask about booking Highland bagpipes.
             </p>
@@ -187,7 +177,7 @@ export function WeddingPage() {
           </div>
           <div className="faq-list">
             <div className="faq-item">
-              <h3>How far in advance should we book a wedding bagpiper in Asheville?</h3>
+              <h3>How far in advance should we book a wedding piper in Asheville?</h3>
               <p>Weekend dates, especially in fall and spring wedding season in Western North Carolina, book early. If you have a date in mind, inquire as soon as your venue is set. Kit responds personally with availability.</p>
             </div>
             <div className="faq-item">
@@ -199,7 +189,7 @@ export function WeddingPage() {
               <p>Yes. Kit coordinates directly with planners, venue managers, and officiants in Asheville and across Western North Carolina to confirm timing, placement, and acoustics for a smooth ceremony.</p>
             </div>
             <div className="faq-item">
-              <h3>What should we provide for the bagpiper at our venue?</h3>
+              <h3>What should we provide for the piper at our venue?</h3>
               <p>Usually just a designated arrival time, a point of contact on the day, and a bit of space to warm up out of earshot. Highland pipes are loud and best placed with sight lines and wind in mind for outdoor mountain venues.</p>
             </div>
           </div>
@@ -208,7 +198,6 @@ export function WeddingPage() {
 
       <section className="contact section-pad" aria-labelledby="wedding-contact-heading">
         <div className="container" style={{ textAlign: 'center', maxWidth: '720px' }}>
-          <p className="eyebrow">Book your Asheville wedding bagpiper</p>
           <h2 id="wedding-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Check availability for your wedding date in Western North Carolina.</h2>
           <p style={{ color: 'rgba(255,255,255,.7)', marginTop: '20px', lineHeight: 1.7 }}>
             Share your date, venue location in Asheville or Western North Carolina, and the moments you'd like bagpipes for. You'll receive a personal response with availability and a tailored quote.

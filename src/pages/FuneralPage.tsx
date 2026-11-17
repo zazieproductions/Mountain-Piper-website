@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Check, Church, Heart, Music2, Clock, MapPin } from 'lucide-react';
+import { ArrowRight, Check, Church, Heart, Music2, Clock, Phone } from 'lucide-react';
 import { SEO } from '../components/SEO';
 
 export function FuneralPage() {
@@ -7,13 +7,13 @@ export function FuneralPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Bagpiper for Funeral and Memorial",
-      "name": "Funeral Bagpiper Asheville | Memorial Bagpiper Western North Carolina",
-      "description": "Professional funeral and memorial bagpiper in Asheville and Western North Carolina. Dignified Highland bagpipes for funerals, memorials, graveside services and celebrations of life.",
+      "serviceType": "Piper for Funeral and Memorial",
+      "name": "Funeral Piper Asheville | Memorial Piper Western North Carolina",
+      "description": "Professional funeral and memorial piper in Asheville and Western North Carolina. Dignified Highland bagpipes for funerals, memorials, graveside services and celebrations of life.",
       "provider": {
         "@type": "ProfessionalService",
         "name": "Mountain Piper - Kit Rashid",
-        "telephone": "+1-828-974-1719",
+        "telephone": "+18642070085",
         "address": { "@type": "PostalAddress", "addressLocality": "Asheville", "addressRegion": "NC", "addressCountry": "US" }
       },
       "areaServed": [
@@ -27,7 +27,7 @@ export function FuneralPage() {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mountainpiperavl.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Funeral and Memorial Bagpiper Asheville", "item": "https://mountainpiperavl.com/funerals-memorials" }
+        { "@type": "ListItem", "position": 2, "name": "Funeral and Memorial Piper Asheville", "item": "https://mountainpiperavl.com/funerals-memorials" }
       ]
     },
     {
@@ -65,8 +65,8 @@ export function FuneralPage() {
   return (
     <>
       <SEO
-        title="Funeral Bagpiper Asheville | Memorial Bagpiper Western North Carolina"
-        description="Professional funeral and memorial bagpiper in Asheville and Western North Carolina. Dignified Highland bagpipes for funerals, graveside services, memorials and celebrations of life. Based in Asheville, NC."
+        title="Funeral Piper Asheville | Memorial Piper Western North Carolina"
+        description="Professional funeral and memorial piper in Asheville and Western North Carolina. Dignified Highland bagpipes for funerals, graveside services, memorials and celebrations of life. Based in Asheville, NC."
         canonicalPath="/funerals-memorials"
         ogImage="https://mountainpiperavl.com/images/kit-rashid-performing-800.webp"
         structuredData={structuredData}
@@ -74,14 +74,7 @@ export function FuneralPage() {
 
       <section className="page-hero" aria-labelledby="funeral-heading">
         <div className="container">
-          <nav aria-label="Breadcrumb">
-            <ol className="breadcrumb">
-              <li><Link to="/">Home</Link></li>
-              <li aria-current="page">Funeral & Memorial Bagpiper</li>
-            </ol>
-          </nav>
-          <p className="eyebrow"><Church size={14} aria-hidden="true" /> Bagpiper for funerals in Western North Carolina</p>
-          <h1 id="funeral-heading">Funeral bagpiper in Asheville for <em>a dignified farewell.</em></h1>
+          <h1 id="funeral-heading">Funerals &amp; <em>memorials</em></h1>
           <p className="lead">
             When words fall short, the Highland bagpipe speaks with solemnity and honor. Kit Rashid provides funeral and memorial bagpipes in Asheville and throughout Western North Carolina — delivered with sensitivity, calm coordination, and genuine respect for the family and the moment.
           </p>
@@ -95,11 +88,10 @@ export function FuneralPage() {
       <section className="content-section section-pad" aria-labelledby="funeral-services-heading">
         <div className="container two-col">
           <div>
-            <p className="eyebrow dark">Funeral & memorial services</p>
             <h2 id="funeral-services-heading">Respectful bagpipes for funerals and memorials in Asheville and WNC.</h2>
             <div className="prose">
               <p>
-                As a funeral bagpiper based in Asheville, Kit understands the weight of these occasions. Whether you are planning a graveside service, church funeral, memorial service, or celebration of life in Asheville or elsewhere in Western North Carolina, the Highland bagpipe offers a tribute that is both deeply personal and universally understood.
+                As a funeral piper based in Asheville, Kit understands the weight of these occasions. Whether you are planning a graveside service, church funeral, memorial service, or celebration of life in Asheville or elsewhere in Western North Carolina, the Highland bagpipe offers a tribute that is both deeply personal and universally understood.
               </p>
               <p>
                 Performances are handled with discretion and care — arriving early, warming up away from guests, and coordinating closely with funeral directors, clergy, and family contacts to ensure timing feels natural, not performative.
@@ -135,7 +127,6 @@ export function FuneralPage() {
       <section className="content-section alt section-pad" aria-labelledby="memorial-repertoire-heading">
         <div className="container">
           <div style={{ maxWidth: '720px' }}>
-            <p className="eyebrow dark">Memorial repertoire</p>
             <h2 id="memorial-repertoire-heading" style={{ fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Funeral and memorial bagpipe music chosen with care.</h2>
             <div className="prose" style={{ marginTop: '20px' }}>
               <p>
@@ -178,8 +169,7 @@ export function FuneralPage() {
       <section className="faq-section section-pad" aria-labelledby="funeral-faq-heading">
         <div className="container faq-grid">
           <div>
-            <p className="eyebrow dark">Funeral bagpiper FAQ</p>
-            <h2 id="funeral-faq-heading" style={{ fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Questions about hiring a funeral bagpiper in Asheville.</h2>
+            <h2 id="funeral-faq-heading" style={{ fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Questions about hiring a funeral piper in Asheville.</h2>
             <p style={{ color: 'var(--muted)', marginTop: '16px', lineHeight: 1.7 }}>
               These are common questions families and funeral directors ask when arranging bagpipes for funerals and memorials in Asheville and Western North Carolina.
             </p>
@@ -188,7 +178,7 @@ export function FuneralPage() {
           <div className="faq-list">
             <div className="faq-item">
               <h3>How much notice do you need for a funeral or memorial service?</h3>
-              <p>Funeral timelines are often short. Kit makes every effort to accommodate services in Asheville and Western North Carolina with limited notice. Contact directly by phone at 828.974.1719 for the quickest response.</p>
+              <p>Funeral timelines are often short. Kit makes every effort to accommodate services in Asheville and Western North Carolina with limited notice. Contact directly by phone at +1 (864) 207-0085 for the quickest response.</p>
             </div>
             <div className="faq-item">
               <h3>Do you coordinate with the funeral home or church?</h3>
@@ -209,10 +199,10 @@ export function FuneralPage() {
       <section className="local-seo section-pad" aria-labelledby="funeral-area-heading">
         <div className="container local-grid">
           <div>
-            <h2 id="funeral-area-heading" style={{ fontFamily: 'Libre Caslon Display' }}>Bagpiper for funerals in Western North Carolina.</h2>
+            <h2 id="funeral-area-heading" style={{ fontFamily: 'Libre Caslon Display' }}>Piper for funerals in Western North Carolina.</h2>
             <div className="prose">
               <p>
-                Based in Asheville, Kit provides funeral and memorial bagpipes throughout Western North Carolina. Families searching for a funeral bagpiper Asheville, memorial bagpiper Asheville, or bagpiper for funerals in Western North Carolina can inquire with service location and date for a prompt, personal response.
+                Based in Asheville, Kit provides funeral and memorial bagpipes throughout Western North Carolina. When you inquire, include the service location and date.
               </p>
               <p>
                 Whether the service is at a funeral home in Asheville, a church in Buncombe County, or a graveside service in the surrounding mountains, the goal remains the same: a dignified, musical tribute that honors a life lived.
@@ -224,7 +214,7 @@ export function FuneralPage() {
             <p style={{ color: 'var(--muted)', fontSize: '13px', lineHeight: 1.6, margin: '0 0 16px' }}>
               For time-sensitive funeral and memorial services in Asheville and WNC, phone is often fastest.
             </p>
-            <a href="tel:+18289741719" className="button gold" style={{ width: '100%' }}><MapPin size={16} aria-hidden="true" /> 828.974.1719 - Asheville</a>
+            <a href="tel:+18642070085" className="button gold" style={{ width: '100%' }}><Phone size={16} aria-hidden="true" /> +1 (864) 207-0085</a>
             <Link to="/contact" className="button outline" style={{ width: '100%', marginTop: '12px' }}>Contact form <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>
         </div>

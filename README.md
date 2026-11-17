@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/assets/banner.svg" alt="Mountain Piper — Kit Rashid, professional Highland bagpiper in Asheville, North Carolina" width="100%" />
+<img src="docs/assets/banner.svg" alt="Mountain Piper — Kit Rashid, professional Highland piper in Asheville, North Carolina" width="100%" />
 
 <br />
 
@@ -8,11 +8,11 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/zazieproductions/Mountain-Piper-website/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=CI&labelColor=09261f)](https://github.com/zazieproductions/Mountain-Piper-website/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Proprietary-e1b964?style=for-the-badge&labelColor=09261f)](LICENSE)
 
-**The marketing website for Mountain Piper — Kit Rashid, a professional Highland bagpiper serving
+**The marketing website for Mountain Piper — Kit Rashid, a professional Highland piper serving
 Asheville and Western North Carolina.**
 
 A React + TypeScript single-page application, engineered around local search intent
-(*"Asheville bagpiper"*, *"wedding bagpiper Western North Carolina"*) and shipped to GitHub Pages
+(*"Asheville piper"*, *"wedding piper Western North Carolina"*) and shipped to GitHub Pages
 by continuous integration on every push to `main`.
 
 [**Live site**](https://zazieproductions.github.io/Mountain-Piper-website/) ·
@@ -47,8 +47,8 @@ by continuous integration on every push to `main`.
 
 ## Why this project exists
 
-A bagpiper does not get discovered by being good at piping. They get discovered when someone in
-Asheville types *"bagpiper for wedding"* into a search bar six months before the date.
+A piper does not get discovered by being good at piping. They get discovered when someone in
+Asheville types *"piper for wedding"* into a search bar six months before the date.
 
 This repository is the answer to that problem: a fast, accessible, static-hostable marketing site
 built as a client-side React application but architected so that every route is a first-class,
@@ -289,12 +289,12 @@ Every route is a deliberately targeted keyword surface:
 
 | Route | Primary intent |
 |---|---|
-| `/` | Asheville bagpiper |
-| `/weddings` | Asheville wedding bagpiper |
-| `/funerals-memorials` | Funeral & memorial bagpiper Asheville |
-| `/events` | Bagpiper for events, ceremonies, commencements |
+| `/` | Asheville piper |
+| `/weddings` | Asheville wedding piper |
+| `/funerals-memorials` | Funeral & memorial piper Asheville |
+| `/events` | Piper for events, ceremonies, commencements |
 | `/lessons` | Bagpipe lessons Asheville |
-| `/about` | Scottish / Highland bagpiper Western North Carolina |
+| `/about` | Scottish / Highland piper Western North Carolina |
 | `/contact` | Booking and availability |
 
 Per route: unique `<title>` and meta description, canonical URL against the production origin,
@@ -382,7 +382,7 @@ See [**LICENSE**](LICENSE) for terms.
 <div align="center">
 
 **Mountain Piper** — Kit Rashid · Asheville, North Carolina ·
-[828.974.1719](tel:+18289741719) ·
+[+1 (864) 207-0085](tel:+18642070085) ·
 [mountainpiper1@gmail.com](mailto:mountainpiper1@gmail.com)
 
 *Built with React, TypeScript and Vite. Published by GitHub Actions.*

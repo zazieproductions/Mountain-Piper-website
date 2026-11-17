@@ -14,7 +14,7 @@ export function LessonsPage() {
       "provider": {
         "@type": "ProfessionalService",
         "name": "Mountain Piper - Kit Rashid",
-        "telephone": "+1-828-974-1719",
+        "telephone": "+18642070085",
         "address": { "@type": "PostalAddress", "addressLocality": "Asheville", "addressRegion": "NC", "addressCountry": "US" }
       },
       "areaServed": [
@@ -75,14 +75,7 @@ export function LessonsPage() {
 
       <section className="page-hero" aria-labelledby="lessons-heading">
         <div className="container">
-          <nav aria-label="Breadcrumb">
-            <ol className="breadcrumb">
-              <li><Link to="/">Home</Link></li>
-              <li aria-current="page">Bagpipe Lessons Asheville</li>
-            </ol>
-          </nav>
-          <p className="eyebrow"><GraduationCap size={14} aria-hidden="true" /> Highland bagpipe lessons in Western North Carolina</p>
-          <h1 id="lessons-heading">Bagpipe lessons in Asheville <em>tradition passed on, one note at a time.</em></h1>
+          <h1 id="lessons-heading">Bagpipe <em>lessons</em></h1>
           <p className="lead">
             Learn Highland bagpipes in Asheville with a professional-grade piper and instructor for the Grandfather Mountain Highlanders. Private and group lessons for beginners through competitive players across Western North Carolina.
           </p>
@@ -96,7 +89,6 @@ export function LessonsPage() {
       <section className="content-section section-pad" aria-labelledby="lessons-approach-heading">
         <div className="container two-col">
           <div>
-            <p className="eyebrow dark">Teaching approach</p>
             <h2 id="lessons-approach-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05 }}>Disciplined technique and musical expression for Asheville students.</h2>
             <div className="prose" style={{ marginTop: '16px' }}>
               <p>
@@ -191,7 +183,6 @@ export function LessonsPage() {
       <section className="faq-section section-pad" aria-labelledby="lessons-faq-heading">
         <div className="container faq-grid">
           <div>
-            <p className="eyebrow dark">Bagpipe lessons FAQ</p>
             <h2 id="lessons-faq-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05 }}>Common questions about bagpipe lessons in Asheville.</h2>
             <p style={{ color: 'var(--muted)', marginTop: '16px', lineHeight: 1.7 }}>
               Interested in Highland bagpipe lessons in Asheville or Western North Carolina? Here are answers to questions new students often ask.
@@ -222,7 +213,6 @@ export function LessonsPage() {
       <section className="contact section-pad" aria-labelledby="lessons-contact-heading">
         <div className="container two-col" style={{ alignItems: 'center' }}>
           <div>
-            <p className="eyebrow">Start bagpipe lessons in Asheville</p>
             <h2 id="lessons-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Ready to learn Highland bagpipes in Western North Carolina?</h2>
             <p style={{ color: 'rgba(255,255,255,.7)', marginTop: '20px', lineHeight: 1.7 }}>
               Share your musical background, goals, and location in Asheville or Western North Carolina. Kit will respond personally about lesson availability and how to get started.

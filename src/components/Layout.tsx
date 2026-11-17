@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Mail, ArrowRight, CalendarDays, Music2 } from 'lucide-react';
+import { Menu, X, Phone, Mail, ArrowRight, CalendarDays } from 'lucide-react';
 
 function BrandMark() {
   return (
-    <Link className="brand" to="/" aria-label="Mountain Piper home - Asheville Bagpiper">
+    <Link className="brand" to="/" aria-label="Mountain Piper home">
       <span className="brand-seal" aria-hidden="true">
         <svg viewBox="0 0 52 52" role="img" aria-hidden="true">
           <path d="M7 35 20 16l7 10 5-7 13 16" />
@@ -140,7 +140,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         aria-label="Mobile navigation"
       >
         <div className="mobile-menu-inner">
-          <p className="eyebrow">Navigate</p>
           {navLinks.map((link, idx) => (
             <Link
               key={link.to}
@@ -152,14 +151,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </Link>
           ))}
           <div className="mobile-contact">
-            <a href="tel:+18289741719">
-              <Phone size={17} aria-hidden="true" /> 828.974.1719
+            <a href="tel:+18642070085">
+              <Phone size={17} aria-hidden="true" /> +1 (864) 207-0085
             </a>
             <a href="mailto:mountainpiper1@gmail.com">
               <Mail size={17} aria-hidden="true" /> mountainpiper1@gmail.com
             </a>
             <p style={{ color: 'rgba(255,255,255,.5)', fontSize: '11px', marginTop: '12px' }}>
-              Professional Highland bagpiper based in Asheville, North Carolina, serving Western North Carolina.
+              Professional Highland piper based in Asheville, North Carolina, serving Western North Carolina.
             </p>
           </div>
         </div>
@@ -177,23 +176,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
               Traditional Highland bagpiping for meaningful occasions in Asheville and Western North Carolina.
               Weddings, funerals, memorials, ceremonies and bagpipe lessons.
             </p>
-            <div style={{ marginTop: '20px', display: 'flex', gap: '12px', alignItems: 'center', color: 'rgba(255,255,255,.5)', fontSize: '11px' }}>
-              <Music2 size={14} aria-hidden="true" /> Asheville bagpiper · Highland bagpiper
-            </div>
           </div>
           <nav className="footer-nav" aria-label="Footer navigation">
             <strong>Explore</strong>
-            <Link to="/">Asheville Bagpiper</Link>
-            <Link to="/weddings">Wedding Bagpiper Asheville</Link>
-            <Link to="/funerals-memorials">Funeral Bagpiper Asheville</Link>
-            <Link to="/events">Bagpiper for Events</Link>
-            <Link to="/lessons">Bagpipe Lessons Asheville</Link>
-            <Link to="/about">Scottish Bagpiper WNC</Link>
-            <Link to="/contact">Contact & Booking</Link>
+            <Link to="/">Home</Link>
+            {navLinks.map(({ to, label }) => <Link key={to} to={to}>{label}</Link>)}
           </nav>
           <div className="footer-contact">
             <strong>Get in touch</strong>
-            <a href="tel:+18289741719">828.974.1719</a>
+            <a href="tel:+18642070085">+1 (864) 207-0085</a>
             <a href="mailto:mountainpiper1@gmail.com">mountainpiper1@gmail.com</a>
             <address>
               <span>Asheville, North Carolina</span>
