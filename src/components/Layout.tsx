@@ -174,7 +174,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <BrandMark />
             <p>
               Traditional Highland bagpiping for meaningful occasions in Asheville and Western North Carolina.
-              Weddings, funerals, memorials, ceremonies and bagpipe lessons.
             </p>
           </div>
           <nav className="footer-nav" aria-label="Footer navigation">

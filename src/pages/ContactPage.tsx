@@ -124,7 +124,7 @@ export function ContactPage() {
               <CalendarDays aria-hidden="true" />
               <span>
                 <strong>Dates are limited — early inquiries recommended</strong>
-                <small>Especially for Asheville weddings in fall and spring, and seasonal events across Western North Carolina. Funeral and memorial services with short notice accommodated when possible — phone is fastest.</small>
+                <small>Fall and spring weekends fill first. If you’re planning a service on short notice, call Kit directly. He’ll help if he’s available.</small>
               </span>
             </div>
 
@@ -228,7 +228,7 @@ export function ContactPage() {
                 id="details"
                 name="details"
                 rows={5}
-                placeholder="Timing, setting, music requests, or anything else that would be helpful for your event in Asheville or Western North Carolina…"
+                placeholder="Tell Kit about your plans, a favorite tune or what you’d like to learn."
               />
             </label>
 
@@ -238,11 +238,11 @@ export function ContactPage() {
 
             {submitted && (
               <p className="form-success" role="status" aria-live="polite">
-                Your message is ready — complete sending it in your email app. Kit will respond personally about your Asheville or WNC event.
+                Your message is ready — complete sending it in your email app. Kit will reply personally.
               </p>
             )}
             <p className="form-fineprint">
-              Submitting opens your default email app with a pre-filled message to mountainpiper1@gmail.com. No information is stored on this website. For time-sensitive funeral inquiries in Asheville, calling +1 (864) 207-0085 is fastest.
+              Submitting opens your default email app with a pre-filled message to mountainpiper1@gmail.com. No information is stored on this website.
             </p>
           </form>
         </div>

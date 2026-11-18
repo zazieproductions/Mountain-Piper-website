@@ -126,7 +126,7 @@ export function AboutPage() {
               </div>
               <h4>Performer</h4>
               <p>More than four decades of music for life's biggest days in Asheville and Western North Carolina, from a quiet graveside lament to a festival crowd, with timing, tone, and attire handled flawlessly.</p>
-              <small>Weddings · Memorials · Ceremonies · Events</small>
+              <small>Solo Highland pipes</small>
             </article>
             <article className="pillar">
               <div className="pillar-top">
@@ -177,7 +177,6 @@ export function AboutPage() {
                 <div><dt style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: '#8d652c' }}>Experience</dt><dd style={{ margin: '4px 0 0', fontSize: '14px' }}>43 years as performer, teacher, competitor</dd></div>
                 <div><dt style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: '#8d652c' }}>Competition</dt><dd style={{ margin: '4px 0 0', fontSize: '14px' }}>Professional grade, Eastern United States Pipe Band Association</dd></div>
                 <div><dt style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: '#8d652c' }}>Teaching</dt><dd style={{ margin: '4px 0 0', fontSize: '14px' }}>Instructor, Grandfather Mountain Highlanders; private & group lessons</dd></div>
-                <div><dt style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: '#8d652c' }}>Services</dt><dd style={{ margin: '4px 0 0', fontSize: '14px' }}>Weddings, funerals, memorials, ceremonies, events, bagpipe lessons</dd></div>
               </dl>
               <Link to="/contact" className="button green" style={{ width: '100%', marginTop: '20px' }}>Check availability <ArrowRight size={16} aria-hidden="true" /></Link>
             </div>
@@ -189,7 +188,7 @@ export function AboutPage() {
         <div className="container" style={{ textAlign: 'center', maxWidth: '720px' }}>
           <h2 id="about-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Work with a professional Highland piper based in Asheville.</h2>
           <p style={{ color: 'rgba(255,255,255,.7)', marginTop: '20px', lineHeight: 1.7 }}>
-            Whether you need a wedding piper in Asheville, a funeral piper in Western North Carolina, or bagpipe lessons in Asheville, reach out with your date and location.
+            Have a tune in mind or a question about learning to play? You can talk it through with Kit directly.
           </p>
           <div style={{ marginTop: '32px', display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact" className="button gold">Contact Kit <ArrowRight size={18} aria-hidden="true" /></Link>

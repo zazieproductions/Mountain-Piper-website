@@ -271,7 +271,7 @@ Accessibility is treated as a build requirement, not a nice-to-have:
 - **Semantic landmarks** — one `<header>`, `<main>`, `<footer>`, and `aria-labelledby` tying every
   section to its heading.
 - **`prefers-reduced-motion`** disables smooth scrolling and the rotating About-page seal.
-  *(The venue marquee is not yet covered — see the [roadmap](docs/ROADMAP.md).)*
+  *(The repertoire marquee is not yet covered — see the [roadmap](docs/ROADMAP.md).)*
 - **Contrast passes WCAG AA at every pairing in the palette**, measured against the tokens in
   `src/index.css`:
 
@@ -354,7 +354,7 @@ Prioritised, and honest about what is not done yet:
 - [ ] **Route-level code splitting** — `React.lazy` per page to cut the 113 kB gzipped bundle.
 - [ ] **Prerender the 7 routes** — removes the only real SEO caveat of client rendering.
 - [ ] **Framer Motion page transitions** — the library is installed but unused today.
-- [ ] **`prefers-reduced-motion` for the venue marquee** — the one remaining ungated animation.
+- [ ] **`prefers-reduced-motion` for the repertoire marquee** — the one remaining ungated animation.
 - [ ] **Automated tests** — Vitest + React Testing Library for form validation and the SEO runtime;
       Playwright smoke tests for each route.
 - [ ] **Lighthouse CI budget** — fail the build on performance, accessibility or SEO regressions.

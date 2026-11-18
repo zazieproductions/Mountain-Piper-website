@@ -159,7 +159,7 @@ Two CSS animations, both infinite loops:
 | Animation | Duration | Where | `prefers-reduced-motion` |
 |---|---|---|---|
 | `seal-spin` | 28 s linear | Rotating seal on the About page | **Disabled** |
-| `venue-scroll` | 42 s linear | Horizontal venue marquee | **Not yet disabled** — see [ROADMAP.md](ROADMAP.md) |
+| `venue-scroll` | 42 s linear | Horizontal repertoire marquee | **Not yet disabled** — see [ROADMAP.md](ROADMAP.md) |
 
 Hover transitions are 0.2–0.25 s on `transform`, `background` and `color`.
 `html { scroll-behavior: smooth }` is reverted to `auto` under reduced motion.
