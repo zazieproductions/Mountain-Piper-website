@@ -107,7 +107,8 @@ Mountain-Piper-website/
 │   └── publish-github-pages.mjs  Copies dist/ to the repository root, with a base-path guard
 ├── src/
 │   ├── components/
-│   │   ├── Layout.tsx            Header and booking link, mobile nav dialog, footer
+│   │   ├── Layout.tsx            Header, footer, route focus
+│   │   ├── SiteNavigation.tsx    Primary links, mobile dialog and header booking link
 │   │   └── SEO.tsx               Per-route document head management + JSON-LD injection
 │   ├── pages/
 │   │   ├── HomePage.tsx          Hero, services, credentials, repertoire, FAQ, CTA
@@ -266,7 +267,9 @@ explains which visual duplicates stay out of the reading order.
 - **Skip link** is the first tab stop on a fresh visit. It jumps to `#main-content`; client-side
   page changes focus that same landmark.
 - **Visible focus** — a 3 px gold ring via `:focus-visible`, suppressed for pointer interactions.
-- **The mobile menu uses a native modal dialog.** Opening it focuses the first destination. Tab
+- **One primary menu** is mounted at a time. Its links appear inline on desktop or in a native
+  modal dialog on mobile. The footer links back to it rather than repeating the list.
+- **Mobile keyboard behavior.** Opening it focuses the first destination. Tab
   and Shift+Tab stay inside; Escape or Close returns focus to the opener. The background is inert
   until dismissal. The booking shortcut stays in the header, not over the content.
 - **Decorative icons are `aria-hidden`**; interactive elements carry accessible names.

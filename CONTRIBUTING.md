@@ -33,7 +33,7 @@ They are overwritten on every deploy. To change them, edit the **source** instea
 |---|---|
 | The static `<head>`, base JSON-LD or the no-JS fallback | `index.dev.html` |
 | Page copy, structure or per-route SEO | `src/pages/*.tsx` |
-| Shared chrome (header, nav, footer) | `src/components/Layout.tsx` |
+| Shared chrome (header, nav, footer) | `src/components/Layout.tsx`, `src/components/SiteNavigation.tsx` |
 | Colours, type scale, spacing, breakpoints | `src/index.css` |
 | `robots.txt` / `sitemap.xml` | `public/robots.txt` / `public/sitemap.xml` |
 | `favicon.svg` | `public/favicon.svg` |
@@ -84,6 +84,16 @@ Available commands:
 Continuous integration runs lint, typecheck, keyboard and accessibility tests, and both builds on every
 pull request. See [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
 
+### Checking navigation with a keyboard
+
+- Above 900 px, tab through the header: each destination should occur once. Activate **Back to
+  navigation** in the footer and Tab should take you straight to the first menu link.
+- At 900 px or below, Tab should skip the closed menu’s links. Open it with Enter, tab forward
+  and backward, and check that no background links receive focus. Escape should return focus to
+  the opener; following a link to another page should move focus to the new main content.
+- Widen the viewport with the dialog open: only the desktop menu should remain, and the page
+  should scroll again.
+
 ### Adding or renaming a route
 
 A route is not finished until all five of these are updated:
@@ -91,7 +101,8 @@ A route is not finished until all five of these are updated:
 1. `src/App.tsx` — add the `<Route>`.
 2. `src/pages/NewPage.tsx` — the component, including a `<SEO />` with a unique `title`,
    `description`, `canonicalPath` and `structuredData`.
-3. `src/components/Layout.tsx` — the `navLinks` array shared by the desktop nav, mobile dialog, and footer.
+3. `src/components/SiteNavigation.tsx` — the shared `navLinks` array. Update the no-JavaScript
+   navigation in `index.dev.html` to match.
 4. `public/sitemap.xml` — a new `<url>` entry.
 5. `public/_redirects` — a new SPA redirect line (used if the site is ever hosted on Netlify).
 

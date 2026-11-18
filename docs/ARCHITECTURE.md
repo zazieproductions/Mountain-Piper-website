@@ -67,15 +67,19 @@ That static snapshot is what crawlers and no-JS visitors get before React hydrat
 ```
 
 `<Layout />` leaves initial focus alone so the skip link is first. On a pathname change, it
-closes the dialog, scrolls to the top, and focuses `#main-content` (`tabIndex={-1}`).
+scrolls to the top and focuses `#main-content` (`tabIndex={-1}`).
 
 `<Layout />` owns the shared page chrome:
 
 | Piece | Notes |
 |---|---|
-| Sticky header | `BrandMark`, desktop nav, "Check availability" CTA, hamburger. |
-| Mobile nav dialog | Native `<dialog>` opened with `showModal()`. Tab stays inside; Escape and Close return focus to the toggle. |
-| Footer | Brand, footer nav, contact details, and a back-to-top link on the current page. |
+| Sticky header | `BrandMark` and `SiteNavigation`, including the "Check availability" link. |
+| Primary navigation | One set of links: inline above 900 px, or inside a native `<dialog>` on smaller screens. Tab stays inside the open dialog; Escape and Close return focus to the toggle. |
+| Footer | Brand, contact details, and a `#navigation-start` shortcut to the desktop nav or mobile opener on the current page. |
+
+`SiteNavigation` subscribes to the viewport breakpoint with `matchMedia`. Changing pathname or
+switching to desktop unmounts the mobile dialog. If it was open when the screen widened, focus
+moves to the current desktop destination (or the first link).
 
 ## Routing
 
@@ -200,7 +204,7 @@ There is no store. The entire application state is:
 
 | State | Where | Lifetime |
 |---|---|---|
-| `menuOpen` | `Layout` | Mirrors the mobile dialog state on the opener |
+| `open` | `MobileMenu` | Mirrors the mobile dialog state on the opener |
 | `errors`, `submitted` | `ContactPage` | Form validation |
 
 Everything else is module-level constant data — services, repertoire, FAQs, credentials, venue
