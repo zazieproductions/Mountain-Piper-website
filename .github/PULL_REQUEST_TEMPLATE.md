@@ -30,9 +30,8 @@
 
 ## Checklist
 
-- [ ] Routes: if I added or renamed a route, I updated `App.tsx`, the page component,
-      the shared `navLinks` in `SiteNavigation.tsx`, the no-JS navigation in `index.dev.html`,
-      `sitemap.xml`, and `_redirects`
+- [ ] Routes: if I added or renamed a route, I updated all five places
+      (`App.tsx`, the page component, `Layout.tsx` nav ×3, `sitemap.xml`, `_redirects`)
 - [ ] SEO: any new or changed page has exactly one `<h1>`, a unique title and
       description, and a `BreadcrumbList`
 - [ ] Accessibility: new interactive controls have accessible names; new
