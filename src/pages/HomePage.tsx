@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Award, Check, Church, GraduationCap, Heart, Music2, Sparkles, CalendarDays, Phone, Mail } from 'lucide-react';
+import { ArrowDown, ArrowRight, Award, Check, Church, GraduationCap, Heart, Music2, Sparkles, CalendarDays, Phone, Mail } from 'lucide-react';
 import { KitBiography } from '../components/KitBiography';
 import { SEO } from '../components/SEO';
 import { publicAsset, publicSrcSet } from '../publicAsset';
@@ -10,16 +10,16 @@ const services = [
     number: '01',
     title: 'Weddings',
     slug: '/weddings',
-    description: 'Welcome your guests with a favorite melody, walk down the aisle to a stately march, or lead the way to the reception.',
-    details: ['Prelude as guests arrive', 'Processional & recessional', 'Reception atmosphere'],
-    cta: 'Plan your wedding music',
+    description: 'Kit takes his cue from your officiant and matches the pace of the march to your walk down the aisle.',
+    details: ['Prelude as guests arrive', 'Processional & recessional', 'Music at the reception'],
+    cta: 'Choose your ceremony music',
   },
   {
     icon: Church,
     number: '02',
     title: 'Funerals & Memorials',
     slug: '/funerals-memorials',
-    description: 'A familiar hymn or a quiet lament can give family and friends a moment to remember someone they love.',
+    description: 'If someone you love had a favorite hymn, start there. Kit can help you find a setting for the pipes or suggest a traditional lament.',
     details: ['Amazing Grace & slow airs', 'Hymns and family requests', 'Graveside or church service'],
     cta: 'Plan a tribute',
   },
@@ -28,16 +28,16 @@ const services = [
     number: '03',
     title: 'Ceremonies & Events',
     slug: '/events',
-    description: 'Lead a procession of graduates, open a festival, or mark the presentation of tartans at a church service.',
-    details: ['College commencements', "Kirkin' o' the Tartans", 'Festivals & sporting events'],
-    cta: 'Explore event music',
+    description: 'A piper can bring a crowd to attention before anyone steps up to the lectern. A bright march gives a procession a steady pace to follow.',
+    details: ['College commencements', "Kirkin' o' the Tartans", 'Festivals & race days'],
+    cta: 'Music for your gathering',
   },
 ];
 
 const aboutStats = [
   { value: '43', label: 'Years on the pipes', detail: 'Performing, teaching & competing' },
   { value: 'Pro', label: 'Grade solo competitor', detail: 'Eastern United States Pipe Band Assoc.' },
-  { value: '40+', label: 'Years of performances', detail: 'Weddings, memorials & celebrations' },
+  { value: '40+', label: 'Years of performances', detail: 'In chapels and in the open air' },
   { value: 'Host band', label: 'Instructor', detail: 'Grandfather Mountain Highlanders' },
 ];
 
@@ -47,15 +47,15 @@ const teachers = [
   { name: 'Ian McLellan', honour: 'BEM', note: 'World-renowned Strathclyde Police Pipe Band' },
 ];
 
-const venues = [
-  'Weddings',
-  'Funerals & memorials',
-  "Kirkin' o' the Tartans",
-  'College commencements',
-  'Collegiate sporting events',
-  'Festivals',
-  'Regattas',
-  'Horse races',
+const tunes = [
+  'Highland Cathedral',
+  'Scotland the Brave',
+  'Going Home',
+  'Flower of Scotland',
+  'Highland Laddie',
+  'Flowers of the Forest',
+  'Green Hills of Tyrol',
+  'Amazing Grace',
 ];
 
 const pillars = [
@@ -63,7 +63,7 @@ const pillars = [
     icon: Music2,
     title: 'Performer',
     text: 'Playing for a family at a graveside calls for a different touch than leading graduates onto a field. Kit plans where to stand and when to start with the people running the day.',
-    note: 'Weddings · Memorials · Ceremonies',
+    note: 'Solo Highland pipes',
   },
   {
     icon: Award,
@@ -175,15 +175,16 @@ export function HomePage() {
               Kit Rashid <em>Traditional Scottish bagpiping and Interceltic music</em>
             </h1>
             <p className="hero-intro">
-              Based in Asheville, Kit plays at weddings, memorials, and community gatherings throughout Western North Carolina. He’ll help you choose a tune and find the right moment to play it.
+              A march sets a procession in motion. A slow air gives a family time to say goodbye.
+              Kit plays the Highland pipes in Asheville and across Western North Carolina.
             </p>
             <div className="hero-actions">
               <Link className="button gold" to="/contact">
                 Inquire about your date <ArrowRight size={18} aria-hidden="true" />
               </Link>
-              <Link className="text-link" to="/weddings">
-                Explore wedding music <ArrowRight size={16} aria-hidden="true" />
-              </Link>
+              <a className="text-link" href="#services">
+                Explore performance options <ArrowDown size={16} aria-hidden="true" />
+              </a>
             </div>
           </div>
         </div>
@@ -210,7 +211,7 @@ export function HomePage() {
               <h2 id="services-heading">Music for your occasion</h2>
             </div>
             <p className="section-copy">
-              You might want just one tune, or music at several points in a ceremony. Start with the moment you want to mark.
+              Start with the part of the day you’d like to mark with music. Kit can suggest a tune that suits the space and the people who’ll hear it.
             </p>
           </div>
 
@@ -334,14 +335,14 @@ export function HomePage() {
           </div>
 
           <div className="venue-marquee">
-            <p className="venue-label" id="venue-heading">Heard at</p>
-            <ul className="sr-only" aria-labelledby="venue-heading">
-              {venues.map((venue) => <li key={venue}>{venue}</li>)}
+            <p className="venue-label" id="repertoire-label">From Kit’s repertoire</p>
+            <ul className="sr-only" aria-labelledby="repertoire-label">
+              {tunes.map((tune) => <li key={tune}>{tune}</li>)}
             </ul>
             {/* Only the visual loop repeats. The list above is read once. */}
             <div className="venue-track" aria-hidden="true">
-              {[...venues, ...venues].map((venue, index) => (
-                <span key={`${venue}-${index}`}>{venue}</span>
+              {[...tunes, ...tunes].map((tune, index) => (
+                <span key={`${tune}-${index}`}>{tune}</span>
               ))}
             </div>
           </div>
@@ -428,7 +429,7 @@ export function HomePage() {
               <a href="tel:+18642070085"><span aria-hidden="true"><Phone /></span><div><small>Call Kit</small><strong>+1 (864) 207-0085</strong></div></a>
               <a href="mailto:mountainpiper1@gmail.com"><span aria-hidden="true"><Mail /></span><div><small>Email Kit</small><strong>mountainpiper1@gmail.com</strong></div></a>
             </div>
-            <div className="availability-note"><CalendarDays aria-hidden="true" /><span><strong>Dates are limited</strong><small>For spring and fall weddings, get in touch once you have a venue.</small></span></div>
+            <div className="availability-note"><CalendarDays aria-hidden="true" /><span><strong>Dates are limited</strong><small>Spring and fall weekends fill early. If you’re making arrangements on short notice, a phone call is best.</small></span></div>
           </div>
 
           <div className="inquiry-form" role="region" aria-labelledby="quick-inquiry-heading">
@@ -463,14 +464,8 @@ export function HomePage() {
             </ul>
           </div>
           <div>
-            <h3 style={{ fontFamily: 'Libre Caslon Display', fontSize: '22px', margin: '0 0 16px' }}>What Kit brings to your event</h3>
-            <ul className="check-list">
-              <li><Check aria-hidden="true" /> Familiarity with local churches, wedding venues, and mountain overlooks</li>
-              <li><Check aria-hidden="true" /> Arrival and musical cues agreed with your officiant</li>
-              <li><Check aria-hidden="true" /> Traditional Highland dress and polished presentation</li>
-              <li><Check aria-hidden="true" /> Repertoire guidance — from Amazing Grace to wedding processionals</li>
-              <li><Check aria-hidden="true" /> Direct communication with Kit — no agency</li>
-            </ul>
+            <h3 style={{ fontFamily: 'Libre Caslon Display', fontSize: '22px', margin: '0 0 16px' }}>Playing in the mountains</h3>
+            <p className="section-copy">A stone chapel and an open lawn carry sound differently. Kit knows the local venues and can help you choose a spot where everyone can hear the tune comfortably.</p>
             <Link to="/contact" className="button green" style={{ marginTop: '20px' }}>Check availability <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>
         </div>

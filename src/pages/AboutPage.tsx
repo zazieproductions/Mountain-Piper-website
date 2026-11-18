@@ -127,7 +127,7 @@ export function AboutPage() {
               </div>
               <h4>Performer</h4>
               <p>A graveside lament needs space and quiet; a procession needs a clear, steady beat. Kit chooses the music with the people who will hear it in mind.</p>
-              <small>Weddings · Memorials · Ceremonies · Events</small>
+              <small>Solo Highland pipes</small>
             </article>
             <article className="pillar">
               <div className="pillar-top" aria-hidden="true">
@@ -178,7 +178,6 @@ export function AboutPage() {
                 <div><dt style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: '#8d652c' }}>Experience</dt><dd style={{ margin: '4px 0 0', fontSize: '14px' }}>43 years as performer, teacher, competitor</dd></div>
                 <div><dt style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: '#8d652c' }}>Competition</dt><dd style={{ margin: '4px 0 0', fontSize: '14px' }}>Professional grade, Eastern United States Pipe Band Association</dd></div>
                 <div><dt style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: '#8d652c' }}>Teaching</dt><dd style={{ margin: '4px 0 0', fontSize: '14px' }}>Instructor, Grandfather Mountain Highlanders; private & group lessons</dd></div>
-                <div><dt style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: '#8d652c' }}>Services</dt><dd style={{ margin: '4px 0 0', fontSize: '14px' }}>Weddings, funerals, memorials, ceremonies, events, bagpipe lessons</dd></div>
               </dl>
               <Link to="/contact" className="button green" style={{ width: '100%', marginTop: '20px' }}>Check availability <ArrowRight size={16} aria-hidden="true" /></Link>
             </div>

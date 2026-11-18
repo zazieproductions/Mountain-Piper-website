@@ -160,7 +160,7 @@ Two CSS animations, both infinite loops:
 | Animation | Duration | Where | `prefers-reduced-motion` |
 |---|---|---|---|
 | `seal-spin` | 28 s linear | Rotating seal on the About page | **Disabled** |
-| `venue-scroll` | 42 s linear | Horizontal venue marquee | **Not yet disabled** — see [ROADMAP.md](ROADMAP.md) |
+| `venue-scroll` | 42 s linear | Horizontal repertoire marquee | **Not yet disabled** — see [ROADMAP.md](ROADMAP.md) |
 
 Hover transitions are 0.2–0.25 s on `transform`, `background` and `color`.
 `html { scroll-behavior: smooth }` is reverted to `auto` under reduced motion.
@@ -187,7 +187,7 @@ Anything you add must hold these:
 - **Hide decoration, not information.** Checks, arrows, brand artwork, and card/menu ornaments
   have no independent meaning. Process steps, service names, contact details, and photo
   descriptions remain readable. The rotating “43 years” seal repeats the adjoining biography;
-  the animated venue track repeats a static screen-reader list. Keep those equivalents if you
+  the animated repertoire track repeats a static screen-reader list. Keep those equivalents if you
   change the artwork. Never use `aria-hidden` alone to disable a control.
 - **Keep the keyboard path predictable.** On a fresh visit: skip link → header → page content →
   footer, in reverse with Shift+Tab. The sticky booking shortcut belongs in the header. Opening

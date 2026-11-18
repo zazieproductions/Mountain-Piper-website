@@ -45,10 +45,10 @@ export function EventsPage() {
         <div className="container">
           <h1 id="events-heading">Ceremonies &amp; <em>events</em></h1>
           <p className="lead">
-            A march can bring a crowd together before the first speaker takes the stage. Kit Rashid travels from Asheville to play at ceremonies, festivals, and private gatherings throughout Western North Carolina.
+            The opening bars of a march tell a crowd when to turn and watch the procession. Based in Asheville, Kit Rashid plays for communities throughout Western North Carolina.
           </p>
           <div style={{ marginTop: '28px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-            <Link to="/contact" className="button gold">Check event date <ArrowRight size={18} aria-hidden="true" /></Link>
+            <Link to="/contact" className="button gold">Check your date <ArrowRight size={18} aria-hidden="true" /></Link>
             <Link to="/weddings" className="button outline-light">Wedding bagpipes</Link>
           </div>
         </div>
@@ -60,7 +60,7 @@ export function EventsPage() {
             <h2 id="events-types-heading" style={{ fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Music to open, close, or lead the way</h2>
             <div className="prose" style={{ marginTop: '16px' }}>
               <p>
-                The music might last one tune or the length of a procession. Start with the part of your program you want people to notice.
+                Some programs call for a piper out front, setting the pace. In others, the music belongs at the door, where guests can pause to listen on their way in.
               </p>
             </div>
           </div>
@@ -72,7 +72,7 @@ export function EventsPage() {
                 <span className="service-number">01</span>
               </div>
               <h3>Commencements</h3>
-              <p>A steady march sets the pace for graduates and faculty as they enter, then sends them out in celebration.</p>
+              <p>A measured march gives graduates and faculty an even pace as they enter the hall. Kit can lead the line or play from a fixed spot.</p>
               <ul>
                 <li><Check size={15} aria-hidden="true" /> Processional & recessional</li>
                 <li><Check size={15} aria-hidden="true" /> Coordination with organizers</li>
@@ -98,7 +98,7 @@ export function EventsPage() {
                 <span className="service-number">03</span>
               </div>
               <h3>Festivals & Private Events</h3>
-              <p>Festivals, sporting events, corporate gatherings, regattas, horse races, and private parties benefit from the unmistakable presence of Highland bagpipes — festive, memorable, and photogenic.</p>
+              <p>A short set of tunes can welcome guests to a company dinner or draw spectators to the start of a race. The sound carries especially well outdoors.</p>
               <ul>
                 <li><Check size={15} aria-hidden="true" /> Festival atmosphere</li>
                 <li><Check size={15} aria-hidden="true" /> Sporting events & regattas</li>
@@ -112,10 +112,10 @@ export function EventsPage() {
       <section className="content-section alt section-pad" aria-labelledby="event-details-heading">
         <div className="container two-col">
           <div>
-            <h2 id="event-details-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05 }}>Planning the performance</h2>
+            <h2 id="event-details-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05 }}>Working out the timing</h2>
             <div className="prose" style={{ marginTop: '16px' }}>
               <p>
-                Tell Kit where the audience will gather and what happens just before and after the music. Together you can choose a tune, a place to stand, and a cue to begin.
+                Where would you like the music to come in? Send Kit a running order, even a rough one. He’ll work with the organizer to settle on a starting cue and decide how long to play.
               </p>
               <p>
                 As a professional-grade piper and instructor for the Grandfather Mountain Highlanders, Kit brings both musical standards and practical experience with mountain venues, variable weather, and diverse audiences.
@@ -129,19 +129,9 @@ export function EventsPage() {
             </ul>
           </div>
           <div style={{ background: 'white', border: '1px solid #ddd6ca', padding: '28px' }}>
-            <h3 style={{ fontFamily: 'Libre Caslon Display', fontSize: '22px', margin: '0 0 16px' }}>Where Kit has played</h3>
-            <ul style={{ margin: 0, paddingLeft: '18px', color: 'var(--muted)', lineHeight: 1.8 }}>
-              <li>College commencements</li>
-              <li>Kirkin' o' the Tartans services</li>
-              <li>Collegiate sporting events</li>
-              <li>Festivals and cultural celebrations</li>
-              <li>Regattas and horse races</li>
-              <li>Church observances and private ceremonies</li>
-            </ul>
-            <div style={{ marginTop: '24px', padding: '16px', background: '#f5f1e8', borderLeft: '3px solid var(--gold)', fontSize: '13px', lineHeight: 1.6, color: '#4a5a53' }}>
-              <strong>Have a program already?</strong> Include the timing of the entrance, presentation, or closing ceremony when you inquire.
-            </div>
-            <Link to="/contact" className="button green" style={{ width: '100%', marginTop: '20px' }}>Inquire about your event <ArrowRight size={16} aria-hidden="true" /></Link>
+            <h3 style={{ fontFamily: 'Libre Caslon Display', fontSize: '22px', margin: '0 0 16px' }}>An outdoor gathering</h3>
+            <p className="section-copy">Kit has played for regattas and horse races. On a large course, knowing where spectators will gather helps him choose a spot where the tune will carry.</p>
+            <Link to="/contact" className="button green" style={{ width: '100%', marginTop: '20px' }}>Discuss your venue <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>
         </div>
       </section>

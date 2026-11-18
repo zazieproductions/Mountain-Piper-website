@@ -66,7 +66,7 @@ reader.
 
 If used: a subtle fade-and-rise on route change, gated behind `prefers-reduced-motion`.
 
-### 5. `prefers-reduced-motion` for the venue marquee
+### 5. `prefers-reduced-motion` for the repertoire marquee
 
 The one remaining ungated animation. `venue-scroll` (42 s infinite horizontal scroll on the
 homepage) has no reduced-motion override, unlike `seal-spin` which does.

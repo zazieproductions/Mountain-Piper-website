@@ -36,9 +36,9 @@ export function HomePage() {   // ← the component
 **Edit text between `>` and `<`.** For example, to change a sentence:
 
 ```tsx
-<p className="lead">
-  Kit Rashid brings the unmistakable sound of the Highland bagpipe to weddings,
-  memorials, ceremonies, and celebrations across Asheville.
+<p className="hero-intro">
+  A march sets a procession in motion. A slow air gives a family time to say goodbye.
+  Kit plays the Highland pipes in Asheville and across Western North Carolina.
 </p>
 ```
 
@@ -58,7 +58,7 @@ Rules that keep things from breaking:
 | Homepage service cards | `src/pages/HomePage.tsx` | `const services = [` |
 | The stat strip ("43 years on the pipes") | `src/pages/HomePage.tsx` | `const aboutStats = [` |
 | Teachers / mentors list | `src/pages/HomePage.tsx` | `const teachers = [` |
-| The scrolling venue list | `src/pages/HomePage.tsx` | `const venues = [` |
+| The scrolling repertoire list | `src/pages/HomePage.tsx` | `const tunes = [` |
 | Performer / Competitor / Teacher blurbs | `src/pages/HomePage.tsx` | `const pillars = [` |
 | Homepage FAQ | `src/pages/HomePage.tsx` | the `FAQPage` object in `structuredData` **and** the visible FAQ section |
 | Wedding services & repertoire | `src/pages/WeddingPage.tsx` | section headings `wedding-services-heading`, `repertoire-heading` |
@@ -74,13 +74,10 @@ Rules that keep things from breaking:
 Lists are declared as arrays of objects. Adding an item is copy, paste, edit:
 
 ```tsx
-const venues = [
-  'Weddings',
-  'Funerals & memorials',
-  "Kirkin' o' the Tartans",     // ← note the double quotes because of the apostrophe
-  'College commencements',
-  'Festivals',
-  'Your new item here',
+const tunes = [
+  'Highland Cathedral',
+  'Scotland the Brave',
+  "Mairi's Wedding",     // ← note the double quotes because of the apostrophe
 ];
 ```
 
@@ -95,9 +92,15 @@ Write the heading a visitor would expect, such as “Music for your wedding.” 
 where it helps someone decide whether Kit can travel to them: the introduction, service area, or
 contact details. Don’t append it to every card, link, or photo description.
 
+Use plain service names in navigation and card headings so visitors can find the right page. In
+nearby paragraphs, describe what they'll hear or what they need to plan instead of repeating the
+service list.
+
 ### Adding an FAQ
 
-There are two places, and they must agree:
+On the wedding and funeral pages, edit `const questions` at the top of the component. Both the
+visible answers and the search metadata use that list. For separately authored FAQs, there are
+two places, and they must agree:
 
 1. The visible FAQ section in the page's JSX.
 2. The `FAQPage` block inside `structuredData` at the top of the same component.

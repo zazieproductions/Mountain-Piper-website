@@ -123,7 +123,7 @@ export function ContactPage() {
               <CalendarDays aria-hidden="true" />
               <span>
                 <strong>Dates are limited — early inquiries recommended</strong>
-                <small>Spring and fall weekends book early. For a funeral or memorial at short notice, a call is usually fastest.</small>
+                <small>Fall and spring weekends fill first. If you’re planning a service on short notice, call Kit directly. He’ll help if he’s available.</small>
               </span>
             </div>
 
@@ -227,7 +227,7 @@ export function ContactPage() {
                 id="details"
                 name="details"
                 rows={5}
-                placeholder="Timing, setting, music requests, or anything else Kit should know…"
+                placeholder="Tell Kit about your plans, a favorite tune or what you’d like to learn."
               />
             </label>
 

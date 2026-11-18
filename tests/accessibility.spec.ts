@@ -73,7 +73,7 @@ test('mobile menu contains focus, dismisses to its opener, and hands off to the 
   await expect(page).toHaveURL('/weddings');
   await expect(dialog).toBeHidden();
   await expect(page.getByRole('main')).toBeFocused();
-  await tabTo(page, page.getByRole('link', { name: 'Check wedding date' }));
+  await tabTo(page, page.getByRole('link', { name: 'Check your date' }));
 
   await opener.click();
   await page.setViewportSize({ width: 901, height: 800 });
@@ -105,9 +105,9 @@ test('informative images and link names are exposed; decorative text has a reada
     await expect(link).not.toHaveAttribute('aria-label');
     await expect(link).toHaveAccessibleName((await link.innerText()).trim());
   }
-  const venues = await page.locator('.venue-marquee').ariaSnapshot();
-  expect(venues.match(/Regattas/g)).toHaveLength(1); // Not both copies in the animated track.
-  await expect(page.getByRole('list', { name: 'Heard at' }).getByRole('listitem')).toHaveCount(8);
+  const repertoire = await page.locator('.venue-marquee').ariaSnapshot();
+  expect(repertoire.match(/Highland Cathedral/g)).toHaveLength(1); // Not both copies in the animated track.
+  await expect(page.getByRole('list', { name: 'From Kit’s repertoire' }).getByRole('listitem')).toHaveCount(8);
   expect(await page.locator('.about-copy').ariaSnapshot()).toContain('43 years of experience as a performer, teacher, and competitor');
 });
 
