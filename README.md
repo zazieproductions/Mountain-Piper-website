@@ -70,7 +70,7 @@ run.
 | **Self-defending deploy** | The publish script refuses to write anything unless the built HTML actually references the `/Mountain-Piper-website/` base path — the exact failure that once put a blank page on the live site. |
 | **Responsive image pipeline** | Every photo ships as WebP with a JPEG fallback across 400 / 800 / 1200 px, wired through `<picture>` + `srcset` + `sizes`. |
 | **Accessibility by construction** | Skip link, focus-visible rings, focus restoration on route change, `aria`-annotated dialog menu with `Escape` handling and scroll lock, `prefers-reduced-motion` support, and a palette measured to WCAG AA or better. |
-| **Green CI** | Lint, typecheck, standard build and Pages-base build all run on every pull request. |
+| **Green CI** | Lint, typecheck, keyboard and accessibility tests, standard build and Pages-base build all run on every pull request. |
 
 ## Tech stack
 
@@ -107,7 +107,7 @@ Mountain-Piper-website/
 │   └── publish-github-pages.mjs  Copies dist/ to the repository root, with a base-path guard
 ├── src/
 │   ├── components/
-│   │   ├── Layout.tsx            Header, mobile nav dialog, footer, floating booking CTA
+│   │   ├── Layout.tsx            Header and booking link, mobile nav dialog, footer
 │   │   └── SEO.tsx               Per-route document head management + JSON-LD injection
 │   ├── pages/
 │   │   ├── HomePage.tsx          Hero, services, credentials, repertoire, FAQ, CTA
@@ -117,7 +117,7 @@ Mountain-Piper-website/
 │   │   ├── LessonsPage.tsx
 │   │   ├── AboutPage.tsx
 │   │   └── ContactPage.tsx       Validated inquiry form → mailto:
-│   ├── App.tsx                   Router, scroll restoration, in-app 404
+│   ├── App.tsx                   Router and in-app 404
 │   ├── index.css                 Design tokens + the full visual system
 │   ├── main.tsx                  Bootstrap, GitHub Pages path normalisation
 │   ├── publicAsset.ts            Base-path-aware asset URLs, srcset and router basename
@@ -157,6 +157,7 @@ the server binds `0.0.0.0` with all hosts allowed so it works behind tunnels and
 | `npm run build:pages` | Build in `pages` mode and publish the output to the repository root. **This is what CI runs.** |
 | `npm run typecheck` | Typecheck only (`tsc -b`). |
 | `npm run lint` | ESLint across the project. |
+| `npm run test:a11y` | Chromium keyboard and accessibility regression checks (see [Accessibility](#accessibility)). |
 | `npm run lint:fix` | ESLint with automatic fixes. |
 | `npm run preview` | Serve the last build locally. |
 
@@ -209,9 +210,9 @@ Full details, including the local reproduction and rollback procedure, are in
 ```
 index.dev.html  ──►  src/main.tsx  ──►  <App/>  ──►  <BrowserRouter basename={routerBasename()}>
   (static head,          (strips              │
-   base schema,           /index.html,        ├── <ScrollToTop/>  (scroll + focus on route change)
+   base schema,           /index.html,        │
    noscript HTML)         seeds CSS var)      │
-                                              └── <Layout>            ← header, nav dialog, footer, CTA
+                                              └── <Layout>            ← page chrome, scroll + focus on navigation
                                                     └── <Routes>      ← 7 routes + 404
                                                           └── <Page>
                                                                 └── <SEO …/>   ← owns the document head
@@ -248,7 +249,6 @@ What is done deliberately:
 - **WebP with JPEG fallback**, sized 400 / 800 / 1200 px, selected by `srcset` + `sizes`.
 - **Fonts are preconnected** (`fonts.googleapis.com`, `fonts.gstatic.com`) and loaded with
   `display=swap`.
-- **Scroll listeners are `passive`** and coalesced through `requestAnimationFrame`.
 - **Six of seven images are `loading="lazy"`**; the seventh is the LCP hero, which is
   `fetchPriority="high"` instead.
 - **No analytics, no tag managers, no ad or A/B scripts.** The only third-party origins the page
@@ -259,14 +259,16 @@ Known trade-off: the JavaScript is a single chunk. Route-level code splitting is
 
 ## Accessibility
 
-Accessibility is treated as a build requirement, not a nice-to-have:
+Run `npx playwright install --with-deps chromium` once, then `npm run test:a11y`. The suite uses
+real keyboard input and targeted axe checks. The [accessibility contract](docs/DESIGN-SYSTEM.md#accessibility-contract)
+explains which visual duplicates stay out of the reading order.
 
-- **Skip link** jumps to `#main-content`, which is `tabIndex={-1}` and programmatically focused on
-  every route change.
+- **Skip link** is the first tab stop on a fresh visit. It jumps to `#main-content`; client-side
+  page changes focus that same landmark.
 - **Visible focus** — a 3 px gold ring via `:focus-visible`, suppressed for pointer interactions.
-- **The mobile menu is a real dialog**: `role="dialog"`, `aria-modal`, `aria-expanded` /
-  `aria-controls` on the toggle, focus moved to the first link on open, returned to the toggle on
-  `Escape`, with `body` scroll locked while open.
+- **The mobile menu uses a native modal dialog.** Opening it focuses the first destination. Tab
+  and Shift+Tab stay inside; Escape or Close returns focus to the opener. The background is inert
+  until dismissal. The booking shortcut stays in the header, not over the content.
 - **Decorative icons are `aria-hidden`**; interactive elements carry accessible names.
 - **Semantic landmarks** — one `<header>`, `<main>`, `<footer>`, and `aria-labelledby` tying every
   section to its heading.
@@ -285,7 +287,7 @@ Accessibility is treated as a build requirement, not a nice-to-have:
 
 ## Search engine optimisation
 
-Every route is a deliberately targeted keyword surface:
+Each route answers a different visitor need. Use the location where it helps the reader, not in every heading or link:
 
 | Route | Primary intent |
 |---|---|

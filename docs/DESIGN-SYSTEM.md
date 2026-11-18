@@ -93,7 +93,7 @@ Body copy is 15–17 px at `line-height: 1.6–1.75`.
 | Header row | `width: min(1320px, calc(100% - 48px))` — deliberately wider than content |
 | Section rhythm | `.section-pad { padding: 96px 0 }` (72 px below 820 px) |
 | Header height | 84 px (70 px below 820 px) |
-| `scroll-padding-top` | 84 px, so anchor jumps clear the sticky header |
+| `scroll-padding-top` | 90 px, so anchor jumps and focus rings clear the sticky header |
 
 At ≤ 820 px the gutters tighten to 16 px and the column is capped at 660 px.
 
@@ -102,19 +102,20 @@ with `main { flex: 1 }`, so the footer sits at the bottom on short pages.
 
 ## Breakpoints
 
-Five, all `max-width`, all hand-authored:
+All use `max-width`:
 
 | Width | What changes |
 |---|---|
 | **1100 px** | Multi-column grids begin stacking |
-| **1024 px** | Header CTA tightens |
-| **900 px** | Desktop nav is replaced by the hamburger; the mobile dialog becomes usable |
+| **1024 px** | Header CTA is hidden while desktop nav still fits |
+| **900 px** | Mobile menu button and booking link replace desktop nav |
 | **820 px** | The main mobile breakpoint — gutters, section padding, header height, grids collapse |
 | **520 px** | Small-phone refinements |
+| **360 px** | The header drops the decorative seal to leave room for its controls |
 
 **820 px is the one to test.** Almost everything responds there.
 
-Note that the menu's JavaScript uses `window.innerWidth > 900` to auto-close, matching the 900 px
+The menu watches `matchMedia('(max-width: 900px)')` to auto-close, matching the 900 px
 nav breakpoint — change one and you must change the other.
 
 ## Components
@@ -181,10 +182,18 @@ Anything you add must hold these:
 
 - **Focus is visible.** A global `:focus-visible` rule draws a 3 px `var(--focus)` outline with
   2 px offset; `:focus:not(:focus-visible)` suppresses it for pointer use.
-- **Interactive elements have accessible names** — text content, `aria-label`, or `aria-labelledby`.
-- **Decorative icons are `aria-hidden="true"`.** Every lucide icon in the app is.
-- **Dialogs manage focus.** The mobile menu moves focus in on open, restores it on close, traps
-  `Escape`, and locks `body` scroll.
+- **Use visible link text as its accessible name.** Reserve explicit labels for icon-only buttons
+  and landmarks that need distinguishing (e.g. Primary and Footer).
+- **Hide decoration, not information.** Checks, arrows, brand artwork, and card/menu ornaments
+  have no independent meaning. Process steps, service names, contact details, and photo
+  descriptions remain readable. The rotating “43 years” seal repeats the adjoining biography;
+  the animated venue track repeats a static screen-reader list. Keep those equivalents if you
+  change the artwork. Never use `aria-hidden` alone to disable a control.
+- **Keep the keyboard path predictable.** On a fresh visit: skip link → header → page content →
+  footer, in reverse with Shift+Tab. The sticky booking shortcut belongs in the header. Opening
+  the mobile dialog focuses its first link and makes the background inert; Tab and Shift+Tab
+  wrap through its links and Close button. Dismissal restores the opener, selecting a new page
+  focuses `main`, and widening past 900 px returns focus to the desktop nav.
 - **Images have `alt`** (or `alt=""` when decorative) and explicit `width`/`height`.
 - **One `<h1>` per page**, sections labelled by `aria-labelledby`.
 

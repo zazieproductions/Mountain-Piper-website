@@ -77,7 +77,7 @@ export function LessonsPage() {
         <div className="container">
           <h1 id="lessons-heading">Bagpipe <em>lessons</em></h1>
           <p className="lead">
-            Learn Highland bagpipes in Asheville with a professional-grade piper and instructor for the Grandfather Mountain Highlanders. Private and group lessons for beginners through competitive players across Western North Carolina.
+            Kit Rashid teaches individuals and groups in Asheville, from first-time players to solo competitors. You don’t need a set of pipes to get started.
           </p>
           <div style={{ marginTop: '28px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             <Link to="/contact" className="button gold">Ask about lessons <ArrowRight size={18} aria-hidden="true" /></Link>
@@ -89,17 +89,17 @@ export function LessonsPage() {
       <section className="content-section section-pad" aria-labelledby="lessons-approach-heading">
         <div className="container two-col">
           <div>
-            <h2 id="lessons-approach-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05 }}>Disciplined technique and musical expression for Asheville students.</h2>
+            <h2 id="lessons-approach-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05 }}>From practice chanter to pipes</h2>
             <div className="prose" style={{ marginTop: '16px' }}>
               <p>
-                The Highland bagpipe asks for both disciplined technique and musical expression. Kit's teaching gives aspiring pipers in Asheville and Western North Carolina the patient, expert guidance to build both — starting with practice chanter fundamentals before moving to the full instrument.
+                On a practice chanter, you can hear each note clearly and concentrate on your fingers. As tunes become familiar, you can give more attention to rhythm and expression before moving to the full instrument.
               </p>
               <p>
                 As an instructor for the Grandfather Mountain Highlanders, the host band of the Grandfather Mountain Highland Games, and a solo competitor in the professional grade of the Eastern United States Pipe Band Association, Kit brings competitive standards to every lesson while keeping instruction inclusive and encouraging.
               </p>
             </div>
             <ul className="check-list">
-              <li><Check aria-hidden="true" /> Private or group bagpipe instruction in Asheville area</li>
+              <li><Check aria-hidden="true" /> Individual, group, or band instruction</li>
               <li><Check aria-hidden="true" /> Beginners through competitive players</li>
               <li><Check aria-hidden="true" /> Technique, expression, repertoire, tuning and maintenance</li>
               <li><Check aria-hidden="true" /> 43 years of piping experience as performer, teacher, competitor</li>
@@ -112,7 +112,7 @@ export function LessonsPage() {
                 <source srcSet={publicSrcSet([['images/kit-rashid-artist-studios-400.webp', '400w'], ['images/kit-rashid-artist-studios-800.webp', '800w']])} sizes="(max-width: 820px) 100vw, 500px" type="image/webp" />
                 <img
                   src={publicAsset('images/kit-rashid-artist-studios-800.jpg')}
-                  alt="Kit Rashid teaching Highland bagpipes, bagpipe lessons in Asheville, North Carolina"
+                  alt="Kit holding his pipes by a doorway marked “Artist Studios”"
                   width={800}
                   height={600}
                   loading="lazy"
@@ -121,7 +121,7 @@ export function LessonsPage() {
                 />
               </picture>
               <div style={{ position: 'absolute', right: 0, bottom: 0, width: '280px', padding: '20px 22px', background: 'var(--forest)', color: 'rgba(255,255,255,.72)', fontFamily: 'Libre Caslon Display', fontSize: '16px', lineHeight: 1.45 }}>
-                Grounded in a musical tradition passed on for generations in Western North Carolina.
+                From your first tune to playing in a band.
               </div>
             </div>
           </div>
@@ -131,19 +131,19 @@ export function LessonsPage() {
       <section className="content-section alt section-pad" aria-labelledby="lessons-offerings-heading">
         <div className="container">
           <div style={{ maxWidth: '720px', marginBottom: '40px' }}>
-            <h2 id="lessons-offerings-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05 }}>Lesson formats for bagpipe students in Asheville and WNC.</h2>
+            <h2 id="lessons-offerings-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05 }}>Find a lesson that fits</h2>
             <p style={{ color: 'var(--muted)', marginTop: '12px', lineHeight: 1.7 }}>
               Whether you are picking up the practice chanter for the first time, returning after years away, or preparing for competition, lessons are shaped around your goals.
             </p>
           </div>
           <div className="service-grid">
             <article className="service-card" style={{ minHeight: 'auto' }}>
-              <div className="service-top">
-                <span className="service-icon" aria-hidden="true"><Music2 size={20} /></span>
+              <div className="service-top" aria-hidden="true">
+                <span className="service-icon"><Music2 size={20} /></span>
                 <span className="service-number">01</span>
               </div>
               <h3>Beginner lessons</h3>
-              <p>Start with practice chanter — finger technique, embellishments, reading music, and building a solid foundation before moving to pipes. Ideal for students in Asheville new to Highland bagpipes.</p>
+              <p>Start on the practice chanter with a simple melody. Work on reading the notes, placing your fingers, and adding the first embellishments.</p>
               <ul>
                 <li><Check size={15} aria-hidden="true" /> Practice chanter fundamentals</li>
                 <li><Check size={15} aria-hidden="true" /> Reading and rhythm</li>
@@ -151,12 +151,12 @@ export function LessonsPage() {
               </ul>
             </article>
             <article className="service-card" style={{ minHeight: 'auto' }}>
-              <div className="service-top">
-                <span className="service-icon" aria-hidden="true"><Award size={20} /></span>
+              <div className="service-top" aria-hidden="true">
+                <span className="service-icon"><Award size={20} /></span>
                 <span className="service-number">02</span>
               </div>
               <h3>Intermediate & advanced</h3>
-              <p>Refine tone, tuning, expression, and repertoire. For pipers in Western North Carolina looking to join a band, play at events, or compete in EUSPBA.</p>
+              <p>Refine tone, tuning, expression, and repertoire. Bring a piece for a band audition, an upcoming performance, or a solo competition.</p>
               <ul>
                 <li><Check size={15} aria-hidden="true" /> Tuning and tone</li>
                 <li><Check size={15} aria-hidden="true" /> Competition preparation</li>
@@ -164,8 +164,8 @@ export function LessonsPage() {
               </ul>
             </article>
             <article className="service-card" style={{ minHeight: 'auto' }}>
-              <div className="service-top">
-                <span className="service-icon" aria-hidden="true"><GraduationCap size={20} /></span>
+              <div className="service-top" aria-hidden="true">
+                <span className="service-icon"><GraduationCap size={20} /></span>
                 <span className="service-number">03</span>
               </div>
               <h3>Group & band instruction</h3>
@@ -183,16 +183,16 @@ export function LessonsPage() {
       <section className="faq-section section-pad" aria-labelledby="lessons-faq-heading">
         <div className="container faq-grid">
           <div>
-            <h2 id="lessons-faq-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05 }}>Common questions about bagpipe lessons in Asheville.</h2>
+            <h2 id="lessons-faq-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05 }}>Before your first lesson</h2>
             <p style={{ color: 'var(--muted)', marginTop: '16px', lineHeight: 1.7 }}>
-              Interested in Highland bagpipe lessons in Asheville or Western North Carolina? Here are answers to questions new students often ask.
+              If you’re unsure about an instrument or where to start, ask before you buy anything.
             </p>
             <Link to="/contact" className="button outline" style={{ marginTop: '20px' }}>Ask about lessons <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>
           <div className="faq-list">
             <div className="faq-item">
               <h3>How old do you need to be to start bagpipe lessons?</h3>
-              <p>Students of many ages learn bagpipes. The practice chanter is a good starting point and requires less air than full pipes. Contact Kit to discuss whether lessons are a good fit for you or your child in Asheville.</p>
+              <p>Students of many ages learn bagpipes. The practice chanter is a good starting point and requires less air than full pipes. Contact Kit to discuss whether lessons are a good fit for you or your child.</p>
             </div>
             <div className="faq-item">
               <h3>Do I need to own bagpipes before starting?</h3>
@@ -204,7 +204,7 @@ export function LessonsPage() {
             </div>
             <div className="faq-item">
               <h3>Where do lessons take place?</h3>
-              <p>Kit is based in Asheville, North Carolina, and teaches students from across Western North Carolina. Share your location and scheduling needs when you inquire to discuss current lesson options.</p>
+              <p>Kit teaches locally in Asheville. Send your location and the days you’re available to discuss the current options.</p>
             </div>
           </div>
         </div>
@@ -213,9 +213,9 @@ export function LessonsPage() {
       <section className="contact section-pad" aria-labelledby="lessons-contact-heading">
         <div className="container two-col" style={{ alignItems: 'center' }}>
           <div>
-            <h2 id="lessons-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Ready to learn Highland bagpipes in Western North Carolina?</h2>
+            <h2 id="lessons-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Ready for your first lesson?</h2>
             <p style={{ color: 'rgba(255,255,255,.7)', marginTop: '20px', lineHeight: 1.7 }}>
-              Share your musical background, goals, and location in Asheville or Western North Carolina. Kit will respond personally about lesson availability and how to get started.
+              Tell Kit what you’d like to play. He’ll get back to you about availability and where to begin.
             </p>
             <div style={{ marginTop: '24px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
               <Link to="/contact" className="button gold">Ask about lessons <ArrowRight size={18} aria-hidden="true" /></Link>
@@ -225,7 +225,7 @@ export function LessonsPage() {
           <div style={{ background: '#f8f4eb', padding: '28px', color: 'var(--ink)' }}>
             <h3 style={{ fontFamily: 'Libre Caslon Display', fontSize: '22px', margin: '0 0 12px' }}>What to include in your inquiry</h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '12px' }}>
-              <li style={{ display: 'flex', gap: '10px' }}><Clock size={18} aria-hidden="true" style={{ color: 'var(--gold)', flex: 'none' }} /><span style={{ fontSize: '13px' }}><strong>Your location</strong> — Asheville or elsewhere in WNC</span></li>
+              <li style={{ display: 'flex', gap: '10px' }}><Clock size={18} aria-hidden="true" style={{ color: 'var(--gold)', flex: 'none' }} /><span style={{ fontSize: '13px' }}><strong>Your location</strong> — where you’ll be coming from</span></li>
               <li style={{ display: 'flex', gap: '10px' }}><Music2 size={18} aria-hidden="true" style={{ color: 'var(--gold)', flex: 'none' }} /><span style={{ fontSize: '13px' }}><strong>Musical background</strong> — beginner or experienced</span></li>
               <li style={{ display: 'flex', gap: '10px' }}><GraduationCap size={18} aria-hidden="true" style={{ color: 'var(--gold)', flex: 'none' }} /><span style={{ fontSize: '13px' }}><strong>Goals</strong> — personal enjoyment, band, competition</span></li>
             </ul>

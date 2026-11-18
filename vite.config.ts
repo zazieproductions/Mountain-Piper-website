@@ -20,7 +20,9 @@ function serveDevIndex(): Plugin {
   return {
     name: 'serve-dev-index',
     configureServer(server: ViteDevServer) {
-      server.middlewares.use((req, _res, next) => {
+      // Run after Vite's SPA fallback: a direct visit to an inner page must also
+      // use the source entry, not the previously published GitHub Pages bundle.
+      return () => server.middlewares.use((req, _res, next) => {
         const raw = req.url ?? ''
         const pathOnly = raw.split('?')[0]
         if (pathOnly === '/' || pathOnly === '/index.html') {

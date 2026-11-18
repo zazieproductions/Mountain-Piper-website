@@ -81,7 +81,8 @@ A two-line fix. It should probably just be done rather than tracked.
 
 ### 6. Automated tests
 
-There are none today. The highest-value first tests, in order:
+`npm run test:a11y` covers keyboard navigation, informative images, and accessible names in Chromium.
+Further coverage to add:
 
 1. **`ContactPage` validation** — pure logic, easy to test, and it guards the conversion path.
 2. **`<SEO />` reconciliation** — render two pages in sequence and assert `<head>` has exactly one
