@@ -1,6 +1,5 @@
-import { BrowserRouter, Routes, Route, useLocation, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { routerBasename } from './publicAsset';
-import { useEffect } from 'react';
 import { Layout } from './components/Layout';
 import { HomePage } from './pages/HomePage';
 import { WeddingPage } from './pages/WeddingPage';
@@ -9,20 +8,6 @@ import { EventsPage } from './pages/EventsPage';
 import { LessonsPage } from './pages/LessonsPage';
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
-
-// Scroll to top on route change for SEO and UX
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
-    // Focus main content for accessibility
-    const main = document.getElementById('main-content');
-    if (main) {
-      main.focus({ preventScroll: true });
-    }
-  }, [pathname]);
-  return null;
-}
 
 function NotFoundPage() {
   return (
@@ -45,7 +30,6 @@ function NotFoundPage() {
 export default function App() {
   return (
     <BrowserRouter basename={routerBasename()}>
-      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />

@@ -54,8 +54,7 @@ That static snapshot is what crawlers and no-JS visitors get before React hydrat
 
 ```
 <App>
-├── <ScrollToTop />              side-effect only; renders null
-└── <Layout>                     header · mobile nav dialog · footer · floating CTA
+└── <Layout>                     header with booking link · mobile nav dialog · footer
     └── <Routes>
         ├── /                     <HomePage />
         ├── /weddings             <WeddingPage />
@@ -67,23 +66,16 @@ That static snapshot is what crawlers and no-JS visitors get before React hydrat
         └── *                     <NotFoundPage />   (defined inline in App.tsx)
 ```
 
-`<ScrollToTop />` reads `useLocation()` and, on every pathname change, scrolls to the top and moves
-focus to `#main-content` (which carries `tabIndex={-1}`). This is what makes keyboard navigation
-between pages behave the way a server-rendered site does.
+`<Layout />` leaves initial focus alone so the skip link is first. On a pathname change, it
+closes the dialog, scrolls to the top, and focuses `#main-content` (`tabIndex={-1}`).
 
-`<Layout />` owns four pieces of chrome:
+`<Layout />` owns the shared page chrome:
 
 | Piece | Notes |
 |---|---|
 | Sticky header | `BrandMark`, desktop nav, "Check availability" CTA, hamburger. |
-| Mobile nav dialog | `role="dialog"`, `aria-modal`, focus moved to the first link on open, `Escape` closes and returns focus to the toggle, `body` scroll locked. |
-| Footer | Brand blurb, an SEO-labelled footer nav, and contact details. |
-| Floating CTA | Visibility is computed in a `requestAnimationFrame`-throttled scroll listener: on `/` it appears only between the hero and the contact section; elsewhere after 400 px of scroll. |
-
-The mobile menu closes on route change via React's
-[render-time state adjustment](https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes)
-rather than an effect — comparing a stored pathname against the current one during render avoids a
-paint where the menu is still open over the new page.
+| Mobile nav dialog | Native `<dialog>` opened with `showModal()`. Tab stays inside; Escape and Close return focus to the toggle. |
+| Footer | Brand, footer nav, contact details, and a back-to-top link on the current page. |
 
 ## Routing
 
@@ -208,8 +200,7 @@ There is no store. The entire application state is:
 
 | State | Where | Lifetime |
 |---|---|---|
-| `menuOpen`, `menuPathname` | `Layout` | Mobile nav |
-| `showBookButton` | `Layout` | Floating CTA visibility |
+| `menuOpen` | `Layout` | Mirrors the mobile dialog state on the opener |
 | `errors`, `submitted` | `ContactPage` | Form validation |
 
 Everything else is module-level constant data — services, repertoire, FAQs, credentials, venue

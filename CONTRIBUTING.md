@@ -42,8 +42,8 @@ They are overwritten on every deploy. To change them, edit the **source** instea
 **2. Every route change touches five places.** See [Adding or renaming a route](#adding-or-renaming-a-route).
 
 **3. Copy is marketing copy, not placeholder text.** It is written deliberately for local search.
-Read [docs/CONTENT.md](docs/CONTENT.md) before rewording a heading, and keep the target keyword in
-the `<h1>`.
+Read [docs/CONTENT.md](docs/CONTENT.md) before rewording a heading. Make the service and area
+easy to find without repeating a search phrase throughout the copy.
 
 **4. Small, reviewable diffs.** One concern per pull request.
 
@@ -81,8 +81,8 @@ Available commands:
 
 4. **Open a pull request** against `main` and fill in the template.
 
-Continuous integration runs lint, typecheck, a standard build and a `pages`-mode build on every
-pull request. All four must pass. See [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
+Continuous integration runs lint, typecheck, keyboard and accessibility tests, and both builds on every
+pull request. See [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
 
 ### Adding or renaming a route
 
@@ -91,8 +91,7 @@ A route is not finished until all five of these are updated:
 1. `src/App.tsx` — add the `<Route>`.
 2. `src/pages/NewPage.tsx` — the component, including a `<SEO />` with a unique `title`,
    `description`, `canonicalPath` and `structuredData`.
-3. `src/components/Layout.tsx` — desktop nav **and** the `navLinks` array used by the mobile
-   dialog **and** the footer nav.
+3. `src/components/Layout.tsx` — the `navLinks` array shared by the desktop nav, mobile dialog, and footer.
 4. `public/sitemap.xml` — a new `<url>` entry.
 5. `public/_redirects` — a new SPA redirect line (used if the site is ever hosted on Netlify).
 
@@ -119,7 +118,7 @@ Before requesting review, confirm:
 - [ ] `npm run build` succeeds.
 - [ ] I checked the change in a mobile viewport (≤ 820 px) as well as desktop.
 - [ ] I did not hand-edit generated files at the repository root.
-- [ ] New or changed copy preserves the page's target keyword in the `<h1>` and `<title>`.
+- [ ] The heading and title identify the service in plain language.
 - [ ] Any new interactive control has an accessible name, and any new animation honours
       `prefers-reduced-motion`.
 - [ ] Images have `alt` text (or `alt=""` when purely decorative), explicit `width`/`height`, and

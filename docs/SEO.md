@@ -19,7 +19,7 @@ Western North Carolina searches for a piper, does this page answer them?*
 Three constraints shaped the approach:
 
 1. **Local intent dominates.** People search "piper Asheville" or "wedding piper Western NC",
-   not "highland bagpipes". Copy leads with place.
+   not just "highland bagpipes". State the service area clearly, then answer the visitor’s question.
 2. **Service pages are separate landing surfaces.** A wedding planner and a funeral director need
    completely different answers, so weddings, funerals, events and lessons each get their own
    route rather than a section on the homepage.
@@ -120,11 +120,11 @@ is worse.
 
 ## On-page conventions
 
-- **Exactly one `<h1>` per page**, containing the page's target phrase.
+- **Exactly one `<h1>` per page**, clearly identifying the page.
 - **`aria-labelledby`** ties every `<section>` to its heading, so the heading structure doubles as
   the accessibility outline.
-- **Descriptive internal link text.** The footer nav uses full phrases ("Wedding Piper
-  Asheville") rather than "Weddings" — deliberate, and worth keeping.
+- **Descriptive internal link text.** “Plan your wedding music” makes sense on its own. Don’t
+  prepend an `aria-label` or append a place name to a link that already describes its destination.
 - **Breadcrumbs are visible**, not just structured data.
 - **Images** carry `alt` text (or `alt=""` when decorative), plus explicit `width`/`height`.
 - **Canonical origin** is `https://mountainpiperavl.com`, defined once in `src/siteConfig.ts`.
@@ -134,7 +134,7 @@ is worse.
 After any SEO-affecting change:
 
 - [ ] Each route has a unique `<title>` and meta description, ≤ ~60 and ~160 characters.
-- [ ] Each route has exactly one `<h1>` containing its target phrase.
+- [ ] Each route has exactly one `<h1>` that describes its content.
 - [ ] `canonical` resolves to the correct absolute URL for the route.
 - [ ] Navigate between all 7 routes and confirm no duplicate `<meta name="description">` or extra
       `<script type="application/ld+json">` elements accumulate in `<head>`.

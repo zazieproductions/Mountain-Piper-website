@@ -76,7 +76,7 @@ export function WeddingPage() {
         <div className="container">
           <h1 id="wedding-heading">Music for your <em>wedding</em></h1>
           <p className="lead">
-            The Highland bagpipe brings pageantry, emotion, and a sense of occasion that photographs can't capture. Based in Asheville, Kit Rashid provides professional wedding bagpipes across Western North Carolina — from intimate mountain elopements to grand ballroom processionals.
+            Based in Asheville, Kit Rashid plays for weddings throughout Western North Carolina, from two people exchanging vows on a mountain to a wedding party making its entrance into a ballroom.
           </p>
           <div style={{ marginTop: '28px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             <Link to="/contact" className="button gold">Check wedding date <ArrowRight size={18} aria-hidden="true" /></Link>
@@ -88,13 +88,13 @@ export function WeddingPage() {
       <section className="content-section section-pad" aria-labelledby="wedding-services-heading">
         <div className="container two-col">
           <div>
-            <h2 id="wedding-services-heading">How bagpipes fit your Asheville wedding day.</h2>
+            <h2 id="wedding-services-heading">When would you like the music to begin?</h2>
             <div className="prose">
               <p>
-                As an Asheville piper, Kit tailors each wedding performance to your venue, timeline, and the feeling you want your guests to carry. Whether you're planning a wedding in downtown Asheville, a mountaintop ceremony near Black Mountain, or a celebration in the broader Western North Carolina region, the bagpipes can anchor key moments.
+                You might hear the first notes as guests find their seats, or save them for the moment you step into view. Kit works with your planner or officiant so the music starts on cue.
               </p>
               <p>
-                Most couples book for ceremony prelude, processional, and recessional. The sound of Highland bagpipes carrying across a mountain venue or greeting guests as they arrive creates an immediate sense of arrival and celebration.
+                Most couples choose a prelude, an entrance tune, and a recessional. You can also have the music continue as everyone walks from the ceremony to the reception.
               </p>
             </div>
             <ul className="check-list">
@@ -106,18 +106,18 @@ export function WeddingPage() {
           </div>
           <div>
             <div style={{ background: 'white', border: '1px solid #ddd6ca', padding: '28px' }}>
-              <h3 style={{ fontFamily: 'Libre Caslon Display', fontSize: '26px', margin: '0 0 16px' }}>Popular wedding bagpipe moments in Asheville</h3>
+              <h3 style={{ fontFamily: 'Libre Caslon Display', fontSize: '26px', margin: '0 0 16px' }}>Moments to set to music</h3>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '16px' }}>
                 <li style={{ display: 'flex', gap: '12px' }}><Clock size={18} aria-hidden="true" style={{ color: 'var(--gold)', flex: 'none', marginTop: '2px' }} /><span><strong>Guest arrival</strong><br /><small style={{ color: 'var(--muted)' }}>Sets tone before ceremony begins</small></span></li>
                 <li style={{ display: 'flex', gap: '12px' }}><Users size={18} aria-hidden="true" style={{ color: 'var(--gold)', flex: 'none', marginTop: '2px' }} /><span><strong>Bridal or couple processional</strong><br /><small style={{ color: 'var(--muted)' }}>Unmistakable entrance music</small></span></li>
                 <li style={{ display: 'flex', gap: '12px' }}><Music2 size={18} aria-hidden="true" style={{ color: 'var(--gold)', flex: 'none', marginTop: '2px' }} /><span><strong>Recessional & exit</strong><br /><small style={{ color: 'var(--muted)' }}>Celebratory send-off</small></span></li>
-                <li style={{ display: 'flex', gap: '12px' }}><MapPin size={18} aria-hidden="true" style={{ color: 'var(--gold)', flex: 'none', marginTop: '2px' }} /><span><strong>Mountain overlook or lawn</strong><br /><small style={{ color: 'var(--muted)' }}>Natural acoustics for outdoor WNC weddings</small></span></li>
+                <li style={{ display: 'flex', gap: '12px' }}><MapPin size={18} aria-hidden="true" style={{ color: 'var(--gold)', flex: 'none', marginTop: '2px' }} /><span><strong>Mountain overlook or lawn</strong><br /><small style={{ color: 'var(--muted)' }}>Room for the sound to carry</small></span></li>
               </ul>
               <Link to="/contact" className="button green" style={{ width: '100%', marginTop: '24px' }}>Inquire about your wedding <ArrowRight size={16} aria-hidden="true" /></Link>
             </div>
             <div style={{ marginTop: '20px', padding: '20px', background: '#ebe5d9', borderLeft: '3px solid var(--gold)' }}>
               <p style={{ margin: 0, fontSize: '13px', lineHeight: 1.6, color: '#4a5a53' }}>
-                <strong>Based in Asheville, serving Western North Carolina:</strong> Whether your venue is in Asheville, Black Mountain, Weaverville, Hendersonville, or the greater WNC mountains, share your location when you inquire for a tailored response.
+                <strong>Planning an outdoor ceremony?</strong> Tell Kit about the approach to your venue and how far your guests will be from the music.
               </p>
             </div>
           </div>
@@ -127,7 +127,7 @@ export function WeddingPage() {
       <section className="content-section alt section-pad" aria-labelledby="repertoire-heading">
         <div className="container">
           <div style={{ maxWidth: '720px' }}>
-            <h2 id="repertoire-heading" style={{ fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Wedding bagpipe music for Western North Carolina ceremonies.</h2>
+            <h2 id="repertoire-heading" style={{ fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Choosing your wedding tunes</h2>
             <div className="prose" style={{ marginTop: '20px' }}>
               <p>
                 Highland bagpipe repertoire for weddings blends traditional Scottish airs, hymn adaptations, and celebratory marches. Kit will help you choose music that fits your ceremony — from classic processionals to tunes with personal family significance.
@@ -169,16 +169,16 @@ export function WeddingPage() {
       <section className="faq-section section-pad" aria-labelledby="wedding-faq-heading">
         <div className="container faq-grid">
           <div>
-            <h2 id="wedding-faq-heading" style={{ fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Common questions about hiring a piper for weddings in Asheville.</h2>
+            <h2 id="wedding-faq-heading" style={{ fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Couples often ask</h2>
             <p style={{ color: 'var(--muted)', marginTop: '16px', lineHeight: 1.7 }}>
-              Planning a wedding in Asheville or Western North Carolina? Here are answers to questions couples often ask about booking Highland bagpipes.
+              If you have a song in mind or a question about your venue, you can ask Kit directly.
             </p>
             <Link to="/contact" className="button outline" style={{ marginTop: '20px' }}>Ask about your date <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>
           <div className="faq-list">
             <div className="faq-item">
-              <h3>How far in advance should we book a wedding piper in Asheville?</h3>
-              <p>Weekend dates, especially in fall and spring wedding season in Western North Carolina, book early. If you have a date in mind, inquire as soon as your venue is set. Kit responds personally with availability.</p>
+              <h3>How far in advance should we book?</h3>
+              <p>Spring and fall weekends book early. If you have a date in mind, inquire as soon as your venue is set. Kit responds personally with availability.</p>
             </div>
             <div className="faq-item">
               <h3>Can you learn a specific song for our wedding?</h3>
@@ -186,7 +186,7 @@ export function WeddingPage() {
             </div>
             <div className="faq-item">
               <h3>Do you coordinate with our wedding planner or venue?</h3>
-              <p>Yes. Kit coordinates directly with planners, venue managers, and officiants in Asheville and across Western North Carolina to confirm timing, placement, and acoustics for a smooth ceremony.</p>
+              <p>Yes. Kit coordinates directly with your planner, venue manager, and officiant to confirm timing, placement, and acoustics for a smooth ceremony.</p>
             </div>
             <div className="faq-item">
               <h3>What should we provide for the piper at our venue?</h3>
@@ -198,9 +198,9 @@ export function WeddingPage() {
 
       <section className="contact section-pad" aria-labelledby="wedding-contact-heading">
         <div className="container" style={{ textAlign: 'center', maxWidth: '720px' }}>
-          <h2 id="wedding-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Check availability for your wedding date in Western North Carolina.</h2>
+          <h2 id="wedding-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Is your wedding date available?</h2>
           <p style={{ color: 'rgba(255,255,255,.7)', marginTop: '20px', lineHeight: 1.7 }}>
-            Share your date, venue location in Asheville or Western North Carolina, and the moments you'd like bagpipes for. You'll receive a personal response with availability and a tailored quote.
+            Share your date, your venue, and the moments you’d like music for. You'll receive a personal response with availability and a tailored quote.
           </p>
           <div style={{ marginTop: '32px', display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact" className="button gold">Inquire about weddings <ArrowRight size={18} aria-hidden="true" /></Link>

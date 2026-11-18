@@ -45,7 +45,7 @@ export function EventsPage() {
         <div className="container">
           <h1 id="events-heading">Ceremonies &amp; <em>events</em></h1>
           <p className="lead">
-            From college commencements and Kirkin' o' the Tartans to festivals, sporting events, and private celebrations, the Highland bagpipe brings emotional power and tradition. Kit Rashid performs as an Asheville piper for events across Western North Carolina.
+            A march can bring a crowd together before the first speaker takes the stage. Kit Rashid travels from Asheville to play at ceremonies, festivals, and private gatherings throughout Western North Carolina.
           </p>
           <div style={{ marginTop: '28px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             <Link to="/contact" className="button gold">Check event date <ArrowRight size={18} aria-hidden="true" /></Link>
@@ -57,22 +57,22 @@ export function EventsPage() {
       <section className="content-section section-pad" aria-labelledby="events-types-heading">
         <div className="container">
           <div style={{ maxWidth: '760px', marginBottom: '48px' }}>
-            <h2 id="events-types-heading" style={{ fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Highland bagpipes for ceremonies and celebrations throughout WNC.</h2>
+            <h2 id="events-types-heading" style={{ fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Music to open, close, or lead the way</h2>
             <div className="prose" style={{ marginTop: '16px' }}>
               <p>
-                As a Highland piper based in Asheville, Kit has performed for a wide range of events across Western North Carolina and beyond — each with its own traditions, timing, and audience. Every event performance is tailored to the setting and purpose.
+                The music might last one tune or the length of a procession. Start with the part of your program you want people to notice.
               </p>
             </div>
           </div>
 
           <div className="service-grid">
             <article className="service-card">
-              <div className="service-top">
-                <span className="service-icon" aria-hidden="true"><GraduationCap size={22} /></span>
+              <div className="service-top" aria-hidden="true">
+                <span className="service-icon"><GraduationCap size={22} /></span>
                 <span className="service-number">01</span>
               </div>
               <h3>Commencements</h3>
-              <p>College and school commencements call for music that marks transition with dignity. Highland bagpipes provide a stately processional for graduates and faculty in Asheville and Western North Carolina.</p>
+              <p>A steady march sets the pace for graduates and faculty as they enter, then sends them out in celebration.</p>
               <ul>
                 <li><Check size={15} aria-hidden="true" /> Processional & recessional</li>
                 <li><Check size={15} aria-hidden="true" /> Coordination with organizers</li>
@@ -80,12 +80,12 @@ export function EventsPage() {
               </ul>
             </article>
             <article className="service-card">
-              <div className="service-top">
-                <span className="service-icon" aria-hidden="true"><Church size={22} /></span>
+              <div className="service-top" aria-hidden="true">
+                <span className="service-icon"><Church size={22} /></span>
                 <span className="service-number">02</span>
               </div>
               <h3>Kirkin' & Church Services</h3>
-              <p>Kirkin' o' the Tartans, Scottish heritage services, and other church observances are a natural fit for Highland bagpipes. Respectful, traditional music for congregations in Asheville and WNC.</p>
+              <p>Traditional airs and hymns accompany the presentation of tartans and the entrance or departure of the congregation.</p>
               <ul>
                 <li><Check size={15} aria-hidden="true" /> Kirkin' o' the Tartans</li>
                 <li><Check size={15} aria-hidden="true" /> Hymns and processionals</li>
@@ -93,8 +93,8 @@ export function EventsPage() {
               </ul>
             </article>
             <article className="service-card">
-              <div className="service-top">
-                <span className="service-icon" aria-hidden="true"><Sparkles size={22} /></span>
+              <div className="service-top" aria-hidden="true">
+                <span className="service-icon"><Sparkles size={22} /></span>
                 <span className="service-number">03</span>
               </div>
               <h3>Festivals & Private Events</h3>
@@ -112,24 +112,24 @@ export function EventsPage() {
       <section className="content-section alt section-pad" aria-labelledby="event-details-heading">
         <div className="container two-col">
           <div>
-            <h2 id="event-details-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05 }}>What to expect from an Asheville piper for your event.</h2>
+            <h2 id="event-details-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.05 }}>Planning the performance</h2>
             <div className="prose" style={{ marginTop: '16px' }}>
               <p>
-                Booking a piper for events in Asheville and Western North Carolina starts with a conversation about your event's purpose, venue, and schedule. Kit provides guidance on timing, placement, and repertoire so the bagpipes support your event rather than overwhelm it.
+                Tell Kit where the audience will gather and what happens just before and after the music. Together you can choose a tune, a place to stand, and a cue to begin.
               </p>
               <p>
                 As a professional-grade piper and instructor for the Grandfather Mountain Highlanders, Kit brings both musical standards and practical experience with mountain venues, variable weather, and diverse audiences.
               </p>
             </div>
             <ul className="check-list">
-              <li><Check aria-hidden="true" /> Local Asheville piper with 43 years experience</li>
+              <li><Check aria-hidden="true" /> 43 years of playing experience</li>
               <li><Check aria-hidden="true" /> Professional-grade EUSPBA competitor</li>
               <li><Check aria-hidden="true" /> Full Highland dress and polished presentation</li>
               <li><Check aria-hidden="true" /> Direct coordination — no agency, no middleman</li>
             </ul>
           </div>
           <div style={{ background: 'white', border: '1px solid #ddd6ca', padding: '28px' }}>
-            <h3 style={{ fontFamily: 'Libre Caslon Display', fontSize: '22px', margin: '0 0 16px' }}>Past event settings in WNC and beyond</h3>
+            <h3 style={{ fontFamily: 'Libre Caslon Display', fontSize: '22px', margin: '0 0 16px' }}>Where Kit has played</h3>
             <ul style={{ margin: 0, paddingLeft: '18px', color: 'var(--muted)', lineHeight: 1.8 }}>
               <li>College commencements</li>
               <li>Kirkin' o' the Tartans services</li>
@@ -139,7 +139,7 @@ export function EventsPage() {
               <li>Church observances and private ceremonies</li>
             </ul>
             <div style={{ marginTop: '24px', padding: '16px', background: '#f5f1e8', borderLeft: '3px solid var(--gold)', fontSize: '13px', lineHeight: 1.6, color: '#4a5a53' }}>
-              <strong>Asheville and Western North Carolina:</strong> Share your event type, date, and venue location when you inquire. Kit will respond personally with availability.
+              <strong>Have a program already?</strong> Include the timing of the entrance, presentation, or closing ceremony when you inquire.
             </div>
             <Link to="/contact" className="button green" style={{ width: '100%', marginTop: '20px' }}>Inquire about your event <ArrowRight size={16} aria-hidden="true" /></Link>
           </div>
@@ -148,13 +148,13 @@ export function EventsPage() {
 
       <section className="contact section-pad" aria-labelledby="events-contact-heading">
         <div className="container" style={{ textAlign: 'center', maxWidth: '720px' }}>
-          <h2 id="events-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Make your event in Western North Carolina unforgettable.</h2>
+          <h2 id="events-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Tell Kit about your gathering</h2>
           <p style={{ color: 'rgba(255,255,255,.7)', marginTop: '20px', lineHeight: 1.7 }}>
-            Tell Kit about your event in Asheville or Western North Carolina — date, location, and the atmosphere you're envisioning — for a personal response.
+            Share your date and location to find out whether Kit is available and what the performance would cost.
           </p>
           <div style={{ marginTop: '32px', display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact" className="button gold">Check availability <ArrowRight size={18} aria-hidden="true" /></Link>
-            <Link to="/lessons" className="button outline-light">Bagpipe lessons Asheville</Link>
+            <Link to="/lessons" className="button outline-light">Explore lessons</Link>
           </div>
         </div>
       </section>

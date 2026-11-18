@@ -41,7 +41,7 @@ export function ContactPage() {
     if (!name || name.length < 2) newErrors.name = 'Please enter your full name.';
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) newErrors.email = 'Please enter a valid email address.';
     if (!eventType) newErrors.eventType = 'Please select a type of inquiry.';
-    if (!location || location.length < 3) newErrors.location = 'Please enter city or venue, e.g., Asheville, NC.';
+    if (!location || location.length < 3) newErrors.location = 'Please enter your city or venue.';
     return newErrors;
   };
 
@@ -99,13 +99,12 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="contact section-pad" id="contact-form" aria-labelledby="form-heading">
-        <div className="contact-texture" aria-hidden="true" />
+      <section className="contact textured-contact section-pad" id="contact-form" aria-labelledby="form-heading">
         <div className="container contact-grid">
           <div className="contact-copy">
             <h2 id="form-heading">Booking inquiries</h2>
             
-            <div className="direct-contact" aria-label="Direct contact methods">
+            <div className="direct-contact">
               <a href="tel:+18642070085">
                 <span aria-hidden="true"><Phone /></span>
                 <div><small>Call Kit</small><strong>+1 (864) 207-0085</strong></div>
@@ -124,7 +123,7 @@ export function ContactPage() {
               <CalendarDays aria-hidden="true" />
               <span>
                 <strong>Dates are limited — early inquiries recommended</strong>
-                <small>Especially for Asheville weddings in fall and spring, and seasonal events across Western North Carolina. Funeral and memorial services with short notice accommodated when possible — phone is fastest.</small>
+                <small>Spring and fall weekends book early. For a funeral or memorial at short notice, a call is usually fastest.</small>
               </span>
             </div>
 
@@ -132,7 +131,7 @@ export function ContactPage() {
               <h3 style={{ fontFamily: 'Libre Caslon Display', fontSize: '18px', margin: '0 0 12px' }}>What happens after you inquire?</h3>
               <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: '10px', fontSize: '13px', lineHeight: 1.6, color: 'rgba(255,255,255,.7)' }}>
                 <li style={{ display: 'flex', gap: '8px' }}><Check size={14} aria-hidden="true" style={{ color: 'var(--gold-bright)', flex: 'none', marginTop: '3px' }} /> Personal response from Kit (not an agency)</li>
-                <li style={{ display: 'flex', gap: '8px' }}><Check size={14} aria-hidden="true" style={{ color: 'var(--gold-bright)', flex: 'none', marginTop: '3px' }} /> Availability for your date in Asheville or WNC</li>
+                <li style={{ display: 'flex', gap: '8px' }}><Check size={14} aria-hidden="true" style={{ color: 'var(--gold-bright)', flex: 'none', marginTop: '3px' }} /> Availability for your date</li>
                 <li style={{ display: 'flex', gap: '8px' }}><Check size={14} aria-hidden="true" style={{ color: 'var(--gold-bright)', flex: 'none', marginTop: '3px' }} /> Tailored guidance on timing, repertoire, and logistics</li>
               </ul>
             </div>
@@ -143,7 +142,7 @@ export function ContactPage() {
               <span id="inquiry-form-title">Performance inquiry</span>
               <small>All fields marked * are required</small>
             </div>
-            <p id="form-instructions" className="sr-only">Fill out this form to inquire about booking an Asheville piper. Required fields are marked with an asterisk. Submitting opens your email app.</p>
+            <p id="form-instructions" className="sr-only">Required fields are marked with an asterisk. Submitting opens your email app.</p>
             
             <div className="form-row">
               <label htmlFor="name">Full name * 
@@ -218,7 +217,7 @@ export function ContactPage() {
                   aria-invalid={!!errors.location}
                   aria-describedby={errors.location ? 'location-error' : 'location-help'}
                 />
-                <span id="location-help" className="sr-only">Enter your event location, for example Asheville, NC or Black Mountain, NC</span>
+                <span id="location-help" className="sr-only">Enter the town or the name of the venue.</span>
                 {errors.location && <span id="location-error" className="field-error" role="alert">{errors.location}</span>}
               </label>
             </div>
@@ -228,7 +227,7 @@ export function ContactPage() {
                 id="details"
                 name="details"
                 rows={5}
-                placeholder="Timing, setting, music requests, or anything else that would be helpful for your event in Asheville or Western North Carolina…"
+                placeholder="Timing, setting, music requests, or anything else Kit should know…"
               />
             </label>
 
@@ -238,11 +237,11 @@ export function ContactPage() {
 
             {submitted && (
               <p className="form-success" role="status" aria-live="polite">
-                Your message is ready — complete sending it in your email app. Kit will respond personally about your Asheville or WNC event.
+                Your message is ready — complete sending it in your email app. Kit will respond personally.
               </p>
             )}
             <p className="form-fineprint">
-              Submitting opens your default email app with a pre-filled message to mountainpiper1@gmail.com. No information is stored on this website. For time-sensitive funeral inquiries in Asheville, calling +1 (864) 207-0085 is fastest.
+              Submitting opens your default email app with a pre-filled message to mountainpiper1@gmail.com. No information is stored on this website. For time-sensitive inquiries, call +1 (864) 207-0085.
             </p>
           </form>
         </div>

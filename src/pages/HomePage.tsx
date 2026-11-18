@@ -10,7 +10,7 @@ const services = [
     number: '01',
     title: 'Weddings',
     slug: '/weddings',
-    description: 'Create a stirring sense of occasion for your wedding day in Asheville and Western North Carolina — from guest arrival to processional.',
+    description: 'Welcome your guests with a favorite melody, walk down the aisle to a stately march, or lead the way to the reception.',
     details: ['Prelude as guests arrive', 'Processional & recessional', 'Reception atmosphere'],
     cta: 'Plan your wedding music',
   },
@@ -19,7 +19,7 @@ const services = [
     number: '02',
     title: 'Funerals & Memorials',
     slug: '/funerals-memorials',
-    description: 'A dignified musical tribute for funerals and memorial services across Asheville and Western North Carolina, delivered with sensitivity.',
+    description: 'A familiar hymn or a quiet lament can give family and friends a moment to remember someone they love.',
     details: ['Amazing Grace & slow airs', 'Hymns and family requests', 'Graveside or church service'],
     cta: 'Plan a tribute',
   },
@@ -28,7 +28,7 @@ const services = [
     number: '03',
     title: 'Ceremonies & Events',
     slug: '/events',
-    description: 'Bring pageantry and emotional power to commencements, festivals, church observances and private events throughout the region.',
+    description: 'Lead a procession of graduates, open a festival, or mark the presentation of tartans at a church service.',
     details: ['College commencements', "Kirkin' o' the Tartans", 'Festivals & sporting events'],
     cta: 'Explore event music',
   },
@@ -62,19 +62,19 @@ const pillars = [
   {
     icon: Music2,
     title: 'Performer',
-    text: 'More than four decades of music for life’s biggest days in Asheville and Western North Carolina, from a quiet graveside lament to a festival crowd, with timing, tone, and attire handled flawlessly.',
+    text: 'Playing for a family at a graveside calls for a different touch than leading graduates onto a field. Kit plans where to stand and when to start with the people running the day.',
     note: 'Weddings · Memorials · Ceremonies',
   },
   {
     icon: Award,
     title: 'Competitor',
-    text: 'Kit competes as a soloist in the professional grade of the Eastern United States Pipe Band Association. That competitive standard shows up at every booking.',
+    text: 'In solo competition, judges listen for steady tone, precise timing, and expression. Kit brings the same ear to a hymn as he does to a competition march.',
     note: 'EUSPBA · Professional grade',
   },
   {
     icon: GraduationCap,
     title: 'Teacher',
-    text: 'An instructor for the Grandfather Mountain Highlanders and a patient private teacher for bagpipe lessons in Asheville, equally at home with a single beginner or a full group.',
+    text: 'From a first tune on the practice chanter to playing in unison with a band, Kit breaks a difficult passage into steps a student can practice at home.',
     note: 'Private · Group · Band instruction',
   },
 ];
@@ -155,20 +155,18 @@ export function HomePage() {
 
       {/* Hero - LCP optimized */}
       <section className="hero" id="home-hero" aria-labelledby="home-heading">
-        <div className="hero-grain" aria-hidden="true" />
-        <div className="hero-media" aria-hidden="true">
+        <div className="hero-media">
           <picture>
             <source srcSet={publicSrcSet([['images/kit-rashid-mountains-400.webp', '400w'], ['images/kit-rashid-mountains-800.webp', '800w'], ['images/kit-rashid-mountains-1200.webp', '1200w']])} sizes="(max-width: 820px) 100vw, 54vw" type="image/webp" />
             <img
               src={publicAsset('images/kit-rashid-mountains-1200.jpg')}
-              alt=""
+              alt="Kit Rashid in a tartan kilt, holding his bagpipes beside a stone-lined stream"
               width={1200}
               height={800}
               fetchPriority="high"
               decoding="async"
             />
           </picture>
-          <div className="hero-image-shade" />
         </div>
 
         <div className="hero-content">
@@ -177,35 +175,33 @@ export function HomePage() {
               Kit Rashid <em>Traditional Scottish bagpiping and Interceltic music</em>
             </h1>
             <p className="hero-intro">
-              Kit Rashid brings the unmistakable sound of the Highland bagpipe to weddings,
-              memorials, ceremonies, and celebrations across Asheville and Western North Carolina.
-              Scottish and Highland traditions, delivered with care for the moment.
+              Based in Asheville, Kit plays at weddings, memorials, and community gatherings throughout Western North Carolina. He’ll help you choose a tune and find the right moment to play it.
             </p>
             <div className="hero-actions">
               <Link className="button gold" to="/contact">
                 Inquire about your date <ArrowRight size={18} aria-hidden="true" />
               </Link>
               <Link className="text-link" to="/weddings">
-                Explore wedding bagpipes <span aria-hidden="true">↓</span>
+                Explore wedding music <ArrowRight size={16} aria-hidden="true" />
               </Link>
             </div>
           </div>
         </div>
 
-        <div className="hero-bottom" aria-label="Experience highlights">
+        <div className="hero-bottom">
           <div><strong>43+</strong><span>years of piping experience</span></div>
-          <div><strong>100s</strong><span>of meaningful occasions in WNC</span></div>
-          <div><strong>1</strong><span>unforgettable Highland sound</span></div>
+          <div><strong>100s</strong><span>ceremonies and celebrations</span></div>
+          <div><strong>1</strong><span>musician from inquiry to performance</span></div>
         </div>
       </section>
 
-      <section className="intro-strip" aria-label="Service keywords">
-        <p>Traditional Scottish bagpiping</p>
+      <div className="intro-strip">
+        <p>Slow airs</p>
         <Music2 size={20} aria-hidden="true" />
-        <p>Highland piper Asheville</p>
+        <p>Hymns</p>
         <Music2 size={20} aria-hidden="true" />
-        <p>Western North Carolina</p>
-      </section>
+        <p>Lively marches</p>
+      </div>
 
       <section className="services section-pad" id="services" aria-labelledby="services-heading">
         <div className="container">
@@ -214,7 +210,7 @@ export function HomePage() {
               <h2 id="services-heading">Music for your occasion</h2>
             </div>
             <p className="section-copy">
-              Every performance is shaped around the occasion, the setting, and the feeling you want your guests to carry with them. Based in Asheville, serving Western North Carolina.
+              You might want just one tune, or music at several points in a ceremony. Start with the moment you want to mark.
             </p>
           </div>
 
@@ -223,8 +219,8 @@ export function HomePage() {
               const Icon = service.icon;
               return (
                 <article className="service-card" key={service.title}>
-                  <div className="service-top">
-                    <span className="service-icon" aria-hidden="true"><Icon size={26} /></span>
+                  <div className="service-top" aria-hidden="true">
+                    <span className="service-icon"><Icon size={26} /></span>
                     <span className="service-number">{service.number}</span>
                   </div>
                   <h3>{service.title}</h3>
@@ -234,7 +230,7 @@ export function HomePage() {
                       <li key={detail}><Check size={15} aria-hidden="true" /> {detail}</li>
                     ))}
                   </ul>
-                  <Link to={service.slug} className="card-cta" aria-label={`Learn more about ${service.cta}`}>
+                  <Link to={service.slug} className="card-cta">
                     {service.cta} <ArrowRight size={16} aria-hidden="true" />
                   </Link>
                 </article>
@@ -244,7 +240,7 @@ export function HomePage() {
 
           <div style={{ marginTop: '40px', textAlign: 'center' }}>
             <Link to="/lessons" className="button outline">
-              Bagpipe lessons in Asheville <ArrowRight size={18} aria-hidden="true" />
+              Explore lessons <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>
         </div>
@@ -259,7 +255,7 @@ export function HomePage() {
                   <source srcSet={publicSrcSet([['images/kit-rashid-performing-400.webp', '400w'], ['images/kit-rashid-performing-800.webp', '800w']])} sizes="(max-width: 820px) 100vw, 400px" type="image/webp" />
                   <img
                     src={publicAsset('images/kit-rashid-performing-800.jpg')}
-                    alt="Kit Rashid performing on the Highland bagpipes beside a stone tower in Western North Carolina"
+                    alt="Kit playing the pipes at the foot of a stone stairway"
                     width={800}
                     height={1000}
                     loading="lazy"
@@ -272,7 +268,7 @@ export function HomePage() {
                   <source srcSet={publicSrcSet([['images/kit-rashid-stone-steps-400.webp', '400w'], ['images/kit-rashid-stone-steps-800.webp', '800w']])} sizes="200px" type="image/webp" />
                   <img
                     src={publicAsset('images/kit-rashid-stone-steps-800.jpg')}
-                    alt="Kit Rashid in full Highland dress on stone steps, Asheville piper"
+                    alt="Kit in Highland dress, holding his pipes on the steps"
                     width={400}
                     height={533}
                     loading="lazy"
@@ -280,6 +276,7 @@ export function HomePage() {
                   />
                 </picture>
               </div>
+              {/* The biography gives the same roles and years in reading order. */}
               <div className="about-seal" aria-hidden="true">
                 <svg viewBox="0 0 200 200">
                   <defs>
@@ -298,7 +295,7 @@ export function HomePage() {
               <KitBiography />
               <div className="about-lineage">
                 <p className="lineage-intro">
-                  Kit has had the good fortune to study with some of piping's greats, including:
+                  Kit studied with pipe majors including:
                 </p>
                 <ul>
                   {teachers.map((teacher) => (
@@ -336,14 +333,15 @@ export function HomePage() {
             </div>
           </div>
 
-          <div className="venue-marquee" aria-label="Venues where Kit has performed">
-            <p className="venue-label">Heard at</p>
-            <ul className="sr-only">
+          <div className="venue-marquee">
+            <p className="venue-label" id="venue-heading">Heard at</p>
+            <ul className="sr-only" aria-labelledby="venue-heading">
               {venues.map((venue) => <li key={venue}>{venue}</li>)}
             </ul>
+            {/* Only the visual loop repeats. The list above is read once. */}
             <div className="venue-track" aria-hidden="true">
               {[...venues, ...venues].map((venue, index) => (
-                <span key={`${venue}-${index}`}>{venue}<Music2 size={15} /></span>
+                <span key={`${venue}-${index}`}>{venue}</span>
               ))}
             </div>
           </div>
@@ -359,8 +357,8 @@ export function HomePage() {
                 const Icon = pillar.icon;
                 return (
                   <article className="pillar" key={pillar.title}>
-                    <div className="pillar-top">
-                      <span className="pillar-icon" aria-hidden="true"><Icon size={22} /></span>
+                    <div className="pillar-top" aria-hidden="true">
+                      <span className="pillar-icon"><Icon size={22} /></span>
                       <span className="pillar-number">0{index + 1}</span>
                     </div>
                     <h4>{pillar.title}</h4>
@@ -380,9 +378,9 @@ export function HomePage() {
             <h2 id="process-heading">Planning your performance</h2>
           </div>
           <div className="process-grid">
-            <div><span>01</span><h3>Tell Kit about the moment</h3><p>Share the date, location in Asheville or Western North Carolina, and the atmosphere you have in mind.</p></div>
-            <div><span>02</span><h3>Shape the performance</h3><p>Kit helps choose the right timing and repertoire for your wedding, memorial, or event setting.</p></div>
-            <div><span>03</span><h3>Be fully present</h3><p>On the day, every detail is handled with care, poise, and precision — so you can focus on your guests.</p></div>
+            <div><span>01</span><h3>Tell Kit about the moment</h3><p>Tell him when and where you’re gathering and who will be there.</p></div>
+            <div><span>02</span><h3>Shape the performance</h3><p>Choose the tunes together and agree on cues with your planner or officiant.</p></div>
+            <div><span>03</span><h3>Be fully present</h3><p>On the day, Kit arrives early to tune and check his position before your guests take their seats.</p></div>
           </div>
           <div style={{ marginTop: '48px' }}>
             <Link to="/contact" className="button gold">Start your inquiry <ArrowRight size={18} aria-hidden="true" /></Link>
@@ -395,61 +393,56 @@ export function HomePage() {
           <div className="lessons-copy">
             <h2 id="lessons-heading">Highland bagpipe lessons</h2>
             <p>
-              The Highland bagpipe asks for both disciplined technique and musical expression. Kit's
-              teaching gives aspiring pipers in Asheville and Western North Carolina the patient, expert guidance to build both.
+              New students start on a practice chanter, learning to place their fingers and give a tune its rhythm. Already playing? Bring a passage you’re working on or a piece for your next competition.
             </p>
             <ul className="check-list">
-              <li><Check aria-hidden="true" /> Private or group bagpipe instruction in Asheville area</li>
+              <li><Check aria-hidden="true" /> One-to-one or group instruction</li>
               <li><Check aria-hidden="true" /> Beginners through competitive players</li>
               <li><Check aria-hidden="true" /> Technique, expression, and traditional repertoire</li>
             </ul>
-            <Link className="button outline" to="/lessons">Bagpipe lessons Asheville <ArrowRight size={18} aria-hidden="true" /></Link>
+            <Link className="button outline" to="/lessons">Find a lesson format <ArrowRight size={18} aria-hidden="true" /></Link>
           </div>
           <div className="lessons-image">
             <picture>
               <source srcSet={publicSrcSet([['images/kit-rashid-artist-studios-400.webp', '400w'], ['images/kit-rashid-artist-studios-800.webp', '800w']])} sizes="(max-width: 820px) 100vw, 500px" type="image/webp" />
               <img
                 src={publicAsset('images/kit-rashid-artist-studios-800.jpg')}
-                alt="Kit Rashid in full Highland dress holding bagpipes outside an artist studio in Asheville, North Carolina"
+                alt="Kit holding his pipes by a doorway marked “Artist Studios”"
                 width={800}
                 height={600}
                 loading="lazy"
                 decoding="async"
               />
             </picture>
-            <div className="lessons-note">Grounded in a musical tradition passed on for generations in Western North Carolina.</div>
+            <div className="lessons-note">From your first tune to playing in a band.</div>
           </div>
         </div>
       </section>
 
-      <section className="contact section-pad" id="contact" aria-labelledby="contact-heading">
-        <div className="contact-texture" aria-hidden="true" />
+      <section className="contact textured-contact section-pad" id="contact" aria-labelledby="contact-heading">
         <div className="container contact-grid">
           <div className="contact-copy">
             <h2 id="contact-heading">Get in touch</h2>
-            <p>Every occasion is different. Share a few details and Kit will respond personally with availability and a tailored quote for your event in Western North Carolina.</p>
+            <p>Ask Kit about your date and what a performance would cost. You’ll hear back from him directly.</p>
             <div className="direct-contact">
               <a href="tel:+18642070085"><span aria-hidden="true"><Phone /></span><div><small>Call Kit</small><strong>+1 (864) 207-0085</strong></div></a>
               <a href="mailto:mountainpiper1@gmail.com"><span aria-hidden="true"><Mail /></span><div><small>Email Kit</small><strong>mountainpiper1@gmail.com</strong></div></a>
             </div>
-            <div className="availability-note"><CalendarDays aria-hidden="true" /><span><strong>Dates are limited</strong><small>Early inquiries are recommended for weddings and seasonal events in Asheville and Western North Carolina.</small></span></div>
-            <div style={{ marginTop: '32px' }}>
-              <Link to="/contact" className="button outline-light">Full contact form <ArrowRight size={16} aria-hidden="true" /></Link>
-            </div>
+            <div className="availability-note"><CalendarDays aria-hidden="true" /><span><strong>Dates are limited</strong><small>For spring and fall weddings, get in touch once you have a venue.</small></span></div>
           </div>
 
           <div className="inquiry-form" role="region" aria-labelledby="quick-inquiry-heading">
-            <div className="form-heading"><span id="quick-inquiry-heading">Quick inquiry</span><small>Asheville & WNC</small></div>
+            <div className="form-heading"><span id="quick-inquiry-heading">Before you inquire</span></div>
             <p style={{ fontSize: '13px', color: '#5a6b63', margin: 0, lineHeight: 1.6 }}>
-              Looking for an Asheville piper for your wedding, funeral, or event? Use the full contact form for a detailed response.
+              A few details will help Kit plan with you. It’s fine if you don’t know them all yet.
             </p>
             <ul className="check-list" style={{ margin: '12px 0 0' }}>
-              <li><Check aria-hidden="true" /> Professional Highland bagpipes</li>
-              <li><Check aria-hidden="true" /> Based in Asheville, serving Western North Carolina</li>
-              <li><Check aria-hidden="true" /> Weddings, memorials, ceremonies, lessons</li>
+              <li><Check aria-hidden="true" /> Your date and venue</li>
+              <li><Check aria-hidden="true" /> When you’d like the music to begin</li>
+              <li><Check aria-hidden="true" /> Any tunes that mean something to you</li>
             </ul>
             <Link to="/contact" className="button gold submit">Go to booking form <ArrowRight size={18} aria-hidden="true" /></Link>
-            <p className="form-fineprint">No information is stored on this website. Inquiries open your email app or go directly to Kit.</p>
+            <p className="form-fineprint">The booking form prepares a message in your email app. Nothing is stored here.</p>
           </div>
         </div>
       </section>
@@ -458,7 +451,7 @@ export function HomePage() {
         <div className="container local-grid">
           <div>
             <h2 id="local-seo-heading">Service area</h2>
-            <ul className="service-area-list" aria-label="Areas served">
+            <ul className="service-area-list">
               <li>Asheville</li>
               <li>Western North Carolina</li>
               <li>Buncombe County</li>
@@ -472,8 +465,8 @@ export function HomePage() {
           <div>
             <h3 style={{ fontFamily: 'Libre Caslon Display', fontSize: '22px', margin: '0 0 16px' }}>What Kit brings to your event</h3>
             <ul className="check-list">
-              <li><Check aria-hidden="true" /> Local knowledge of Asheville wedding venues, churches, and mountain settings</li>
-              <li><Check aria-hidden="true" /> Reliable timing and coordination for high-stakes moments</li>
+              <li><Check aria-hidden="true" /> Familiarity with local churches, wedding venues, and mountain overlooks</li>
+              <li><Check aria-hidden="true" /> Arrival and musical cues agreed with your officiant</li>
               <li><Check aria-hidden="true" /> Traditional Highland dress and polished presentation</li>
               <li><Check aria-hidden="true" /> Repertoire guidance — from Amazing Grace to wedding processionals</li>
               <li><Check aria-hidden="true" /> Direct communication with Kit — no agency</li>
