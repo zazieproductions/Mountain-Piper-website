@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowDown, ArrowRight, Award, Check, Church, GraduationCap, Heart, Music2, Sparkles, CalendarDays, Phone, Mail } from 'lucide-react';
+import { ArrowRight, Award, Check, Church, GraduationCap, Heart, Music2, Sparkles, CalendarDays, Phone, Mail } from 'lucide-react';
 import { KitBiography } from '../components/KitBiography';
 import { SEO } from '../components/SEO';
 import { publicAsset, publicSrcSet } from '../publicAsset';
@@ -182,9 +182,6 @@ export function HomePage() {
               <Link className="button gold" to="/contact">
                 Inquire about your date <ArrowRight size={18} aria-hidden="true" />
               </Link>
-              <a className="text-link" href="#services">
-                Explore performance options <ArrowDown size={16} aria-hidden="true" />
-              </a>
             </div>
           </div>
         </div>

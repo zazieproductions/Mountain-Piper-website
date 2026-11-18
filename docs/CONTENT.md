@@ -67,7 +67,8 @@ Rules that keep things from breaking:
 | Lesson formats & FAQ | `src/pages/LessonsPage.tsx` | `lessons-offerings-heading`, `lessons-faq-heading` |
 | Biography and credentials | `src/pages/AboutPage.tsx` | `about-story-heading` |
 | Contact details, availability note | `src/pages/ContactPage.tsx` | `direct-contact` section |
-| Header, navigation, footer | `src/components/Layout.tsx` | `navLinks` array, `<footer>` |
+| Navigation destinations | `src/components/SiteNavigation.tsx` | `navLinks` array (desktop and mobile) |
+| Header and footer | `src/components/Layout.tsx` | `BrandMark`, `<footer>` |
 
 ### Data arrays
 
@@ -179,8 +180,8 @@ footer, the mobile menu, the contact page and the structured data.
 
 | Detail | Files containing it |
 |---|---|
-| Phone `+1 (864) 207-0085` / `+18642070085` | `src/components/Layout.tsx`, `src/pages/{Home,Contact,Funeral,Events,Lessons,Wedding,About}Page.tsx`, `index.dev.html` |
-| Email `mountainpiper1@gmail.com` | `src/components/Layout.tsx`, `src/pages/{Home,Contact,About}Page.tsx`, `index.dev.html` |
+| Phone `+1 (864) 207-0085` / `+18642070085` | `src/components/{Layout,SiteNavigation}.tsx`, `src/pages/{Home,Contact,Funeral,Events,Lessons,Wedding,About}Page.tsx`, `index.dev.html` |
+| Email `mountainpiper1@gmail.com` | `src/components/{Layout,SiteNavigation}.tsx`, `src/pages/{Home,Contact,About}Page.tsx`, `index.dev.html` |
 | Service area (Asheville, Western NC, Buncombe County) | every page's `structuredData`, `index.dev.html`, `sitemap.xml` |
 
 **To change the phone number or email, search the whole repository for the old value and update
