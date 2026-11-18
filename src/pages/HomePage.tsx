@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Award, Check, Church, GraduationCap, Heart, Music2, Sparkles, CalendarDays, Phone, Mail } from 'lucide-react';
+import { ArrowDown, ArrowRight, Award, Check, Church, GraduationCap, Heart, Music2, Sparkles, CalendarDays, Phone, Mail } from 'lucide-react';
 import { KitBiography } from '../components/KitBiography';
 import { SEO } from '../components/SEO';
 import { publicAsset, publicSrcSet } from '../publicAsset';
@@ -62,19 +62,19 @@ const pillars = [
   {
     icon: Music2,
     title: 'Performer',
-    text: 'More than four decades of music for life’s biggest days in Asheville and Western North Carolina, from a quiet graveside lament to a festival crowd, with timing, tone, and attire handled flawlessly.',
+    text: 'Playing for a family at a graveside calls for a different touch than leading graduates onto a field. Kit plans where to stand and when to start with the people running the day.',
     note: 'Solo Highland pipes',
   },
   {
     icon: Award,
     title: 'Competitor',
-    text: 'Kit competes as a soloist in the professional grade of the Eastern United States Pipe Band Association. That competitive standard shows up at every booking.',
+    text: 'In solo competition, judges listen for steady tone, precise timing, and expression. Kit brings the same ear to a hymn as he does to a competition march.',
     note: 'EUSPBA · Professional grade',
   },
   {
     icon: GraduationCap,
     title: 'Teacher',
-    text: 'An instructor for the Grandfather Mountain Highlanders and a patient private teacher for bagpipe lessons in Asheville, equally at home with a single beginner or a full group.',
+    text: 'From a first tune on the practice chanter to playing in unison with a band, Kit breaks a difficult passage into steps a student can practice at home.',
     note: 'Private · Group · Band instruction',
   },
 ];
@@ -155,20 +155,18 @@ export function HomePage() {
 
       {/* Hero - LCP optimized */}
       <section className="hero" id="home-hero" aria-labelledby="home-heading">
-        <div className="hero-grain" aria-hidden="true" />
-        <div className="hero-media" aria-hidden="true">
+        <div className="hero-media">
           <picture>
             <source srcSet={publicSrcSet([['images/kit-rashid-mountains-400.webp', '400w'], ['images/kit-rashid-mountains-800.webp', '800w'], ['images/kit-rashid-mountains-1200.webp', '1200w']])} sizes="(max-width: 820px) 100vw, 54vw" type="image/webp" />
             <img
               src={publicAsset('images/kit-rashid-mountains-1200.jpg')}
-              alt=""
+              alt="Kit Rashid in a tartan kilt, holding his bagpipes beside a stone-lined stream"
               width={1200}
               height={800}
               fetchPriority="high"
               decoding="async"
             />
           </picture>
-          <div className="hero-image-shade" />
         </div>
 
         <div className="hero-content">
@@ -185,26 +183,26 @@ export function HomePage() {
                 Inquire about your date <ArrowRight size={18} aria-hidden="true" />
               </Link>
               <a className="text-link" href="#services">
-                Explore performance options <span aria-hidden="true">↓</span>
+                Explore performance options <ArrowDown size={16} aria-hidden="true" />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="hero-bottom" aria-label="Experience highlights">
+        <div className="hero-bottom">
           <div><strong>43+</strong><span>years of piping experience</span></div>
-          <div><strong>100s</strong><span>of meaningful occasions in WNC</span></div>
-          <div><strong>1</strong><span>unforgettable Highland sound</span></div>
+          <div><strong>100s</strong><span>ceremonies and celebrations</span></div>
+          <div><strong>1</strong><span>musician from inquiry to performance</span></div>
         </div>
       </section>
 
-      <section className="intro-strip" aria-label="Service keywords">
-        <p>Traditional Scottish bagpiping</p>
+      <div className="intro-strip">
+        <p>Slow airs</p>
         <Music2 size={20} aria-hidden="true" />
-        <p>Highland piper Asheville</p>
+        <p>Hymns</p>
         <Music2 size={20} aria-hidden="true" />
-        <p>Western North Carolina</p>
-      </section>
+        <p>Lively marches</p>
+      </div>
 
       <section className="services section-pad" id="services" aria-labelledby="services-heading">
         <div className="container">
@@ -222,8 +220,8 @@ export function HomePage() {
               const Icon = service.icon;
               return (
                 <article className="service-card" key={service.title}>
-                  <div className="service-top">
-                    <span className="service-icon" aria-hidden="true"><Icon size={26} /></span>
+                  <div className="service-top" aria-hidden="true">
+                    <span className="service-icon"><Icon size={26} /></span>
                     <span className="service-number">{service.number}</span>
                   </div>
                   <h3>{service.title}</h3>
@@ -243,7 +241,7 @@ export function HomePage() {
 
           <div style={{ marginTop: '40px', textAlign: 'center' }}>
             <Link to="/lessons" className="button outline">
-              Bagpipe lessons in Asheville <ArrowRight size={18} aria-hidden="true" />
+              Explore lessons <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>
         </div>
@@ -258,7 +256,7 @@ export function HomePage() {
                   <source srcSet={publicSrcSet([['images/kit-rashid-performing-400.webp', '400w'], ['images/kit-rashid-performing-800.webp', '800w']])} sizes="(max-width: 820px) 100vw, 400px" type="image/webp" />
                   <img
                     src={publicAsset('images/kit-rashid-performing-800.jpg')}
-                    alt="Kit Rashid performing on the Highland bagpipes beside a stone tower in Western North Carolina"
+                    alt="Kit playing the pipes at the foot of a stone stairway"
                     width={800}
                     height={1000}
                     loading="lazy"
@@ -271,7 +269,7 @@ export function HomePage() {
                   <source srcSet={publicSrcSet([['images/kit-rashid-stone-steps-400.webp', '400w'], ['images/kit-rashid-stone-steps-800.webp', '800w']])} sizes="200px" type="image/webp" />
                   <img
                     src={publicAsset('images/kit-rashid-stone-steps-800.jpg')}
-                    alt="Kit Rashid in full Highland dress on stone steps, Asheville piper"
+                    alt="Kit in Highland dress, holding his pipes on the steps"
                     width={400}
                     height={533}
                     loading="lazy"
@@ -279,6 +277,7 @@ export function HomePage() {
                   />
                 </picture>
               </div>
+              {/* The biography gives the same roles and years in reading order. */}
               <div className="about-seal" aria-hidden="true">
                 <svg viewBox="0 0 200 200">
                   <defs>
@@ -297,7 +296,7 @@ export function HomePage() {
               <KitBiography />
               <div className="about-lineage">
                 <p className="lineage-intro">
-                  Kit has had the good fortune to study with some of piping's greats, including:
+                  Kit studied with pipe majors including:
                 </p>
                 <ul>
                   {teachers.map((teacher) => (
@@ -340,9 +339,10 @@ export function HomePage() {
             <ul className="sr-only" aria-labelledby="repertoire-label">
               {tunes.map((tune) => <li key={tune}>{tune}</li>)}
             </ul>
+            {/* Only the visual loop repeats. The list above is read once. */}
             <div className="venue-track" aria-hidden="true">
               {[...tunes, ...tunes].map((tune, index) => (
-                <span key={`${tune}-${index}`}>{tune}<Music2 size={15} /></span>
+                <span key={`${tune}-${index}`}>{tune}</span>
               ))}
             </div>
           </div>
@@ -358,8 +358,8 @@ export function HomePage() {
                 const Icon = pillar.icon;
                 return (
                   <article className="pillar" key={pillar.title}>
-                    <div className="pillar-top">
-                      <span className="pillar-icon" aria-hidden="true"><Icon size={22} /></span>
+                    <div className="pillar-top" aria-hidden="true">
+                      <span className="pillar-icon"><Icon size={22} /></span>
                       <span className="pillar-number">0{index + 1}</span>
                     </div>
                     <h4>{pillar.title}</h4>
@@ -379,9 +379,9 @@ export function HomePage() {
             <h2 id="process-heading">Planning your performance</h2>
           </div>
           <div className="process-grid">
-            <div><span>01</span><h3>Tell Kit about the moment</h3><p>Share the date, location in Asheville or Western North Carolina, and the atmosphere you have in mind.</p></div>
-            <div><span>02</span><h3>Shape the performance</h3><p>Together you’ll choose the tunes and decide where Kit should stand and when the music should begin.</p></div>
-            <div><span>03</span><h3>Be fully present</h3><p>On the day, every detail is handled with care, poise, and precision — so you can focus on your guests.</p></div>
+            <div><span>01</span><h3>Tell Kit about the moment</h3><p>Tell him when and where you’re gathering and who will be there.</p></div>
+            <div><span>02</span><h3>Shape the performance</h3><p>Choose the tunes together and agree on cues with your planner or officiant.</p></div>
+            <div><span>03</span><h3>Be fully present</h3><p>On the day, Kit arrives early to tune and check his position before your guests take their seats.</p></div>
           </div>
           <div style={{ marginTop: '48px' }}>
             <Link to="/contact" className="button gold">Start your inquiry <ArrowRight size={18} aria-hidden="true" /></Link>
@@ -394,39 +394,37 @@ export function HomePage() {
           <div className="lessons-copy">
             <h2 id="lessons-heading">Highland bagpipe lessons</h2>
             <p>
-              The Highland bagpipe asks for both disciplined technique and musical expression. Kit's
-              teaching gives aspiring pipers in Asheville and Western North Carolina the patient, expert guidance to build both.
+              New students start on a practice chanter, learning to place their fingers and give a tune its rhythm. Already playing? Bring a passage you’re working on or a piece for your next competition.
             </p>
             <ul className="check-list">
-              <li><Check aria-hidden="true" /> Private or group bagpipe instruction in Asheville area</li>
+              <li><Check aria-hidden="true" /> One-to-one or group instruction</li>
               <li><Check aria-hidden="true" /> Beginners through competitive players</li>
               <li><Check aria-hidden="true" /> Technique, expression, and traditional repertoire</li>
             </ul>
-            <Link className="button outline" to="/lessons">Bagpipe lessons Asheville <ArrowRight size={18} aria-hidden="true" /></Link>
+            <Link className="button outline" to="/lessons">Find a lesson format <ArrowRight size={18} aria-hidden="true" /></Link>
           </div>
           <div className="lessons-image">
             <picture>
               <source srcSet={publicSrcSet([['images/kit-rashid-artist-studios-400.webp', '400w'], ['images/kit-rashid-artist-studios-800.webp', '800w']])} sizes="(max-width: 820px) 100vw, 500px" type="image/webp" />
               <img
                 src={publicAsset('images/kit-rashid-artist-studios-800.jpg')}
-                alt="Kit Rashid in full Highland dress holding bagpipes outside an artist studio in Asheville, North Carolina"
+                alt="Kit holding his pipes by a doorway marked “Artist Studios”"
                 width={800}
                 height={600}
                 loading="lazy"
                 decoding="async"
               />
             </picture>
-            <div className="lessons-note">Grounded in a musical tradition passed on for generations in Western North Carolina.</div>
+            <div className="lessons-note">From your first tune to playing in a band.</div>
           </div>
         </div>
       </section>
 
-      <section className="contact section-pad" id="contact" aria-labelledby="contact-heading">
-        <div className="contact-texture" aria-hidden="true" />
+      <section className="contact textured-contact section-pad" id="contact" aria-labelledby="contact-heading">
         <div className="container contact-grid">
           <div className="contact-copy">
             <h2 id="contact-heading">Get in touch</h2>
-            <p>Call or write to Kit directly. He’ll check his calendar and put together a quote for the music you have in mind.</p>
+            <p>Ask Kit about your date and what a performance would cost. You’ll hear back from him directly.</p>
             <div className="direct-contact">
               <a href="tel:+18642070085"><span aria-hidden="true"><Phone /></span><div><small>Call Kit</small><strong>+1 (864) 207-0085</strong></div></a>
               <a href="mailto:mountainpiper1@gmail.com"><span aria-hidden="true"><Mail /></span><div><small>Email Kit</small><strong>mountainpiper1@gmail.com</strong></div></a>
@@ -435,17 +433,17 @@ export function HomePage() {
           </div>
 
           <div className="inquiry-form" role="region" aria-labelledby="quick-inquiry-heading">
-            <div className="form-heading"><span id="quick-inquiry-heading">Quick inquiry</span><small>Asheville & WNC</small></div>
+            <div className="form-heading"><span id="quick-inquiry-heading">Before you inquire</span></div>
             <p style={{ fontSize: '13px', color: '#5a6b63', margin: 0, lineHeight: 1.6 }}>
-              Here’s what helps Kit give you a useful first reply:
+              A few details will help Kit plan with you. It’s fine if you don’t know them all yet.
             </p>
             <ul className="check-list" style={{ margin: '12px 0 0' }}>
-              <li><Check aria-hidden="true" /> Your preferred date and location</li>
-              <li><Check aria-hidden="true" /> When you’d like the pipes to play</li>
-              <li><Check aria-hidden="true" /> Any tune that means something to you</li>
+              <li><Check aria-hidden="true" /> Your date and venue</li>
+              <li><Check aria-hidden="true" /> When you’d like the music to begin</li>
+              <li><Check aria-hidden="true" /> Any tunes that mean something to you</li>
             </ul>
             <Link to="/contact" className="button gold submit">Go to booking form <ArrowRight size={18} aria-hidden="true" /></Link>
-            <p className="form-fineprint">No information is stored on this website. Inquiries open your email app or go directly to Kit.</p>
+            <p className="form-fineprint">The booking form prepares a message in your email app. Nothing is stored here.</p>
           </div>
         </div>
       </section>
@@ -454,7 +452,7 @@ export function HomePage() {
         <div className="container local-grid">
           <div>
             <h2 id="local-seo-heading">Service area</h2>
-            <ul className="service-area-list" aria-label="Areas served">
+            <ul className="service-area-list">
               <li>Asheville</li>
               <li>Western North Carolina</li>
               <li>Buncombe County</li>

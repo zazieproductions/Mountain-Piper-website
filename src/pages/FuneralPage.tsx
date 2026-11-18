@@ -86,13 +86,13 @@ export function FuneralPage() {
       <section className="content-section section-pad" aria-labelledby="funeral-services-heading">
         <div className="container two-col">
           <div>
-            <h2 id="funeral-services-heading">A place for the music</h2>
+            <h2 id="funeral-services-heading">Music for the service</h2>
             <div className="prose">
               <p>
                 At a graveside, a single lament can follow the final words. For a celebration of life, you might prefer to welcome people with a tune they associate with your loved one.
               </p>
               <p>
-                Kit can speak with your funeral director or officiant ahead of time. Together they’ll settle on a place to stand and a cue to begin, so no one in the family has to watch the clock.
+                Kit arrives early, tunes out of earshot, and takes his cue from the funeral director or clergy so the family needn’t watch the clock.
               </p>
             </div>
           </div>
@@ -173,7 +173,7 @@ export function FuneralPage() {
       <section className="local-seo section-pad" aria-labelledby="funeral-area-heading">
         <div className="container local-grid">
           <div>
-            <h2 id="funeral-area-heading" style={{ fontFamily: 'Libre Caslon Display' }}>Serving families across Western North Carolina</h2>
+            <h2 id="funeral-area-heading" style={{ fontFamily: 'Libre Caslon Display' }}>Get in touch about a service</h2>
             <div className="prose">
               <p>
                 Kit travels from Asheville to churches, chapels and burial grounds throughout Buncombe County and the surrounding mountains. If arrangements are still taking shape, share the date and location as you know them.
@@ -183,7 +183,7 @@ export function FuneralPage() {
           <div style={{ background: 'white', border: '1px solid #ddd6ca', padding: '24px' }}>
             <h3 style={{ fontFamily: 'Libre Caslon Display', fontSize: '20px', margin: '0 0 12px' }}>Speak with Kit</h3>
             <p style={{ color: 'var(--muted)', fontSize: '13px', lineHeight: 1.6, margin: '0 0 16px' }}>
-              If there’s little time to plan, calling is the quickest way to check whether Kit can be there.
+              If the service is in the next few days, a call is usually fastest.
             </p>
             <a href="tel:+18642070085" className="button gold" style={{ width: '100%' }}><Phone size={16} aria-hidden="true" /> +1 (864) 207-0085</a>
             <Link to="/contact" className="button outline" style={{ width: '100%', marginTop: '12px' }}>Contact form <ArrowRight size={16} aria-hidden="true" /></Link>

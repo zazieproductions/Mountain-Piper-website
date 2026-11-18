@@ -88,9 +88,9 @@ fine), and strings containing an apostrophe must use double quotes.
 
 ### Rewording a heading
 
-The `<h1>` on each page carries the phrase the page is trying to rank for. **Keep the key phrase
-in it.** "Asheville wedding piper" should stay in the weddings `<h1>`. Rewording around it is
-fine; removing it costs rankings.
+Write the heading a visitor would expect, such as “Music for your wedding.” Keep the location
+where it helps someone decide whether Kit can travel to them: the introduction, service area, or
+contact details. Don’t append it to every card, link, or photo description.
 
 Use plain service names in navigation and card headings so visitors can find the right page. In
 nearby paragraphs, describe what they'll hear or what they need to plan instead of repeating the

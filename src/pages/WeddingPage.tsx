@@ -109,7 +109,7 @@ export function WeddingPage() {
             </div>
             <div style={{ marginTop: '20px', padding: '20px', background: '#ebe5d9', borderLeft: '3px solid var(--gold)' }}>
               <p style={{ margin: 0, fontSize: '13px', lineHeight: 1.6, color: '#4a5a53' }}>
-                <strong>Based in Asheville, serving Western North Carolina:</strong> Whether your venue is in Asheville, Black Mountain, Weaverville, Hendersonville, or the greater WNC mountains, share your location when you inquire for a tailored response.
+                <strong>Planning an outdoor ceremony?</strong> Tell Kit about the approach to your venue and how far your guests will be from the music.
               </p>
             </div>
           </div>
@@ -179,7 +179,7 @@ export function WeddingPage() {
         <div className="container" style={{ textAlign: 'center', maxWidth: '720px' }}>
           <h2 id="wedding-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Have a date in mind?</h2>
           <p style={{ color: 'rgba(255,255,255,.7)', marginTop: '20px', lineHeight: 1.7 }}>
-            Send Kit your date and venue, along with the part of the day you’d like him to play. He’ll get back to you with availability and a quote.
+            Share your date, your venue, and the moments you’d like music for. You'll receive a personal response with availability and a tailored quote.
           </p>
           <div style={{ marginTop: '32px', display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact" className="button gold">Request a quote <ArrowRight size={18} aria-hidden="true" /></Link>

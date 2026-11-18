@@ -42,6 +42,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Keyboard and accessibility checks
+        run: |
+          npx playwright install --with-deps --only-shell chromium
+          npm run test:a11y
+
       # Build again in `pages` mode so a base-path regression is caught here
       # rather than after it has been committed to main by publish-pages.yml.
       - name: Build for GitHub Pages

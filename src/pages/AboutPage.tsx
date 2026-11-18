@@ -53,7 +53,7 @@ export function AboutPage() {
                 <source srcSet={publicSrcSet([['images/kit-rashid-performing-400.webp', '400w'], ['images/kit-rashid-performing-800.webp', '800w']])} sizes="(max-width: 820px) 100vw, 400px" type="image/webp" />
                 <img
                   src={publicAsset('images/kit-rashid-performing-800.jpg')}
-                  alt="Kit Rashid performing Highland bagpipes, Scottish piper in Western North Carolina"
+                  alt="Kit playing the pipes at the foot of a stone stairway"
                   width={800}
                   height={1000}
                   loading="lazy"
@@ -66,7 +66,7 @@ export function AboutPage() {
                 <source srcSet={publicSrcSet([['images/kit-rashid-stone-steps-400.webp', '400w'], ['images/kit-rashid-stone-steps-800.webp', '800w']])} sizes="200px" type="image/webp" />
                 <img
                   src={publicAsset('images/kit-rashid-stone-steps-800.jpg')}
-                  alt="Kit Rashid in Highland dress on stone steps, Asheville piper"
+                  alt="Kit in Highland dress, holding his pipes on the steps"
                   width={400}
                   height={533}
                   loading="lazy"
@@ -74,6 +74,7 @@ export function AboutPage() {
                 />
               </picture>
             </div>
+            {/* The biography gives the same roles and years in reading order. */}
             <div className="about-seal" aria-hidden="true">
               <svg viewBox="0 0 200 200">
                 <defs>
@@ -91,11 +92,11 @@ export function AboutPage() {
             <h2 id="about-story-heading" className="sr-only">About Kit Rashid</h2>
             <KitBiography />
             <div className="about-lineage">
-              <p className="lineage-intro">Kit has had the good fortune to study with some of piping's greats, including:</p>
+              <p className="lineage-intro">Kit studied with pipe majors including:</p>
               <ul>
                 <li>
                   <span className="lineage-rank">PM</span>
-                  <span className="lineage-name"><strong>Jimmy McIntosh</strong> <small>MBE</small></span>
+                  <span className="lineage-name"><strong>Jimmy McIntosh</strong></span>
                   <span className="lineage-honour">MBE</span>
                 </li>
                 <li>
@@ -120,31 +121,31 @@ export function AboutPage() {
           </div>
           <div className="pillar-grid">
             <article className="pillar">
-              <div className="pillar-top">
-                <span className="pillar-icon" aria-hidden="true"><Music2 size={22} /></span>
+              <div className="pillar-top" aria-hidden="true">
+                <span className="pillar-icon"><Music2 size={22} /></span>
                 <span className="pillar-number">01</span>
               </div>
               <h4>Performer</h4>
-              <p>More than four decades of music for life's biggest days in Asheville and Western North Carolina, from a quiet graveside lament to a festival crowd, with timing, tone, and attire handled flawlessly.</p>
+              <p>A graveside lament needs space and quiet; a procession needs a clear, steady beat. Kit chooses the music with the people who will hear it in mind.</p>
               <small>Solo Highland pipes</small>
             </article>
             <article className="pillar">
-              <div className="pillar-top">
-                <span className="pillar-icon" aria-hidden="true"><Award size={22} /></span>
+              <div className="pillar-top" aria-hidden="true">
+                <span className="pillar-icon"><Award size={22} /></span>
                 <span className="pillar-number">02</span>
               </div>
               <h4>Competitor</h4>
-              <p>Kit competes as a soloist in the professional grade of the Eastern United States Pipe Band Association. That competitive standard shows up at every booking in Asheville and WNC.</p>
+              <p>Kit competes as a soloist in the professional grade of the Eastern United States Pipe Band Association. The discipline of preparing a tune for judges carries over to playing it for guests.</p>
               <small>EUSPBA · Professional grade</small>
             </article>
             <article className="pillar">
-              <div className="pillar-top">
-                <span className="pillar-icon" aria-hidden="true"><GraduationCap size={22} /></span>
+              <div className="pillar-top" aria-hidden="true">
+                <span className="pillar-icon"><GraduationCap size={22} /></span>
                 <span className="pillar-number">03</span>
               </div>
               <h4>Teacher</h4>
-              <p>An instructor for the Grandfather Mountain Highlanders and a patient private teacher for bagpipe lessons in Asheville, equally at home with a single beginner or a full group of pipers.</p>
-              <small>Private · Group · Band instruction · Asheville</small>
+              <p>Kit teaches the Grandfather Mountain Highlanders as well as private students. He works on finger technique with beginners and on tone and unison with groups.</p>
+              <small>Private · Group · Band instruction</small>
             </article>
           </div>
         </div>
@@ -156,7 +157,7 @@ export function AboutPage() {
             <h2 id="highland-heading" style={{ fontFamily: 'Libre Caslon Display', fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05 }}>The Highland bagpipe</h2>
             <div className="prose" style={{ marginTop: '16px' }}>
               <p>
-                The Highland bagpipe is often called the Scottish bagpipe — its sound is inseparable from Scottish heritage, but its power translates across cultures and occasions. In Asheville and Western North Carolina, where mountain traditions and Scottish heritage run deep, the bagpipe feels particularly at home.
+                The drones sound a steady note underneath the melody on the chanter. Outdoors, that combination carries far enough to welcome guests before they can see the ceremony.
               </p>
               <p>
                 Kit's background as both a performer and teacher means he can speak to the instrument's history, repertoire, and etiquette while keeping focus on your event — not on performance for its own sake.
@@ -165,7 +166,7 @@ export function AboutPage() {
             <ul className="check-list">
               <li><Check aria-hidden="true" /> Professional-grade Highland bagpipes, full Highland dress</li>
               <li><Check aria-hidden="true" /> Repertoire guidance — traditional airs, hymns, marches, and personal requests</li>
-              <li><Check aria-hidden="true" /> Experience with Asheville venues, churches, mountain overlooks, and seasonal weather</li>
+              <li><Check aria-hidden="true" /> Experience with churches, mountain overlooks, and seasonal weather</li>
               <li><Check aria-hidden="true" /> Direct booking — you work with Kit, not an agency</li>
             </ul>
           </div>
@@ -186,9 +187,9 @@ export function AboutPage() {
 
       <section className="contact section-pad" aria-labelledby="about-contact-heading">
         <div className="container" style={{ textAlign: 'center', maxWidth: '720px' }}>
-          <h2 id="about-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Work with a professional Highland piper based in Asheville.</h2>
+          <h2 id="about-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Work with Kit</h2>
           <p style={{ color: 'rgba(255,255,255,.7)', marginTop: '20px', lineHeight: 1.7 }}>
-            Have a tune in mind or a question about learning to play? You can talk it through with Kit directly.
+            Tell Kit about the occasion you’re planning or a tune you’d like to learn.
           </p>
           <div style={{ marginTop: '32px', display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact" className="button gold">Contact Kit <ArrowRight size={18} aria-hidden="true" /></Link>

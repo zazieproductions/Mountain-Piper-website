@@ -57,7 +57,7 @@ export function EventsPage() {
       <section className="content-section section-pad" aria-labelledby="events-types-heading">
         <div className="container">
           <div style={{ maxWidth: '760px', marginBottom: '48px' }}>
-            <h2 id="events-types-heading" style={{ fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Where the pipes fit in</h2>
+            <h2 id="events-types-heading" style={{ fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.05, fontFamily: 'Libre Caslon Display' }}>Music to open, close, or lead the way</h2>
             <div className="prose" style={{ marginTop: '16px' }}>
               <p>
                 Some programs call for a piper out front, setting the pace. In others, the music belongs at the door, where guests can pause to listen on their way in.
@@ -67,8 +67,8 @@ export function EventsPage() {
 
           <div className="service-grid">
             <article className="service-card">
-              <div className="service-top">
-                <span className="service-icon" aria-hidden="true"><GraduationCap size={22} /></span>
+              <div className="service-top" aria-hidden="true">
+                <span className="service-icon"><GraduationCap size={22} /></span>
                 <span className="service-number">01</span>
               </div>
               <h3>Commencements</h3>
@@ -80,12 +80,12 @@ export function EventsPage() {
               </ul>
             </article>
             <article className="service-card">
-              <div className="service-top">
-                <span className="service-icon" aria-hidden="true"><Church size={22} /></span>
+              <div className="service-top" aria-hidden="true">
+                <span className="service-icon"><Church size={22} /></span>
                 <span className="service-number">02</span>
               </div>
               <h3>Kirkin' & Church Services</h3>
-              <p>Kit works with the clergy to fit the pipes into the order of worship, leaving space for readings and congregational singing.</p>
+              <p>Traditional airs and hymns accompany the presentation of tartans and the entrance or departure of the congregation.</p>
               <ul>
                 <li><Check size={15} aria-hidden="true" /> Kirkin' o' the Tartans</li>
                 <li><Check size={15} aria-hidden="true" /> Hymns and processionals</li>
@@ -93,8 +93,8 @@ export function EventsPage() {
               </ul>
             </article>
             <article className="service-card">
-              <div className="service-top">
-                <span className="service-icon" aria-hidden="true"><Sparkles size={22} /></span>
+              <div className="service-top" aria-hidden="true">
+                <span className="service-icon"><Sparkles size={22} /></span>
                 <span className="service-number">03</span>
               </div>
               <h3>Festivals & Private Events</h3>
@@ -122,7 +122,7 @@ export function EventsPage() {
               </p>
             </div>
             <ul className="check-list">
-              <li><Check aria-hidden="true" /> Local Asheville piper with 43 years experience</li>
+              <li><Check aria-hidden="true" /> 43 years of playing experience</li>
               <li><Check aria-hidden="true" /> Professional-grade EUSPBA competitor</li>
               <li><Check aria-hidden="true" /> Full Highland dress and polished presentation</li>
               <li><Check aria-hidden="true" /> Direct coordination — no agency, no middleman</li>
@@ -138,13 +138,13 @@ export function EventsPage() {
 
       <section className="contact section-pad" aria-labelledby="events-contact-heading">
         <div className="container" style={{ textAlign: 'center', maxWidth: '720px' }}>
-          <h2 id="events-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Bring the pipes to your gathering</h2>
+          <h2 id="events-contact-heading" style={{ fontSize: 'clamp(36px, 5vw, 60px)', lineHeight: .98, fontFamily: 'Libre Caslon Display' }}>Tell Kit about your gathering</h2>
           <p style={{ color: 'rgba(255,255,255,.7)', marginTop: '20px', lineHeight: 1.7 }}>
-            Send Kit your date and venue. If you already have a tune in mind, he’d like to hear about that, too.
+            Share your date and location to find out whether Kit is available and what the performance would cost.
           </p>
           <div style={{ marginTop: '32px', display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact" className="button gold">Check availability <ArrowRight size={18} aria-hidden="true" /></Link>
-            <Link to="/lessons" className="button outline-light">Bagpipe lessons Asheville</Link>
+            <Link to="/lessons" className="button outline-light">Explore lessons</Link>
           </div>
         </div>
       </section>
